@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./components/Card";
-import "./App.css";
+import Button from "./components/Button";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         />
 
         <Card title="Card 2" content="Here is another card with some different content. You can pass any content here.">
-          <button className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">Click Me!</button>
+          <Button href="https://github.com/DaFrankort">Visit my super cool site!</Button>
         </Card>
       </div>
     </div>
