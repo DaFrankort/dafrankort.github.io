@@ -6,7 +6,7 @@ type FooterProps = {};
 const Footer: React.FC<FooterProps> = ({}) => {
   return (
     <footer className="absolute bottom-0 left-0 right-0 pt-6 pb-3 mt-8 bg-gradient-to-tr from-black to-background-950 text-background-600">
-      <div className="grid grid-cols-2 text-sm section">
+      <div className="container grid grid-cols-2 text-sm">
         <ul id="footer-left">
           <li>
             <b className="text-background-400">Social Media</b>
