@@ -14,6 +14,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  min-height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -21,6 +25,26 @@ h4,
 h5,
 h6 {
   @apply text-text-50;
+}
+
+li > a {
+  @apply relative inline-block transition-colors;
+  @apply hover:text-primary-100;
+}
+
+li > a::before {
+  content: "";
+  position: absolute;
+  bottom: 2px; /* or try bottom: -1px / -2px for fine tuning */
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+li > a:hover::before {
+  width: 100%;
 }
 
 code {
