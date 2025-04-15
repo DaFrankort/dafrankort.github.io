@@ -4,7 +4,7 @@
 
 body {
   @apply bg-background-950 bg-gradient-to-tr from-background-950 to-primary-900;
-  @apply text-text-100;
+  @apply text-text-200;
 
   width: auto;
   min-height: 97vh;
@@ -25,4 +25,15 @@ h6 {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.section {
+  @apply mx-auto;
+  @apply max-w-7xl sm:px-6 lg:px-8;
+}
+
+.grid-lg {
+  @apply grid grid-cols-3 gap-6;
+  @apply sm:gap-8;
+  @apply lg:gap-16;
 }
