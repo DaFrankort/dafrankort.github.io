@@ -4,8 +4,8 @@ import Button from "./components/Button";
 
 function App() {
   return (
-    <div className="text-center mt-10">
-      <h1 className="text-4xl font-bold mb-6">Lorem Ipsum</h1>
+    <div className="mt-10 text-center">
+      <h1 className="mb-6 text-4xl font-bold">Lorem Ipsum</h1>
 
       <div className="flex justify-center gap-5">
         <Card

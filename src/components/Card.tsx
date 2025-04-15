@@ -1,6 +1,13 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-const Card = ({ title, content, image, children }) => {
+type CardProps = {
+  title: string;
+  content: string;
+  image?: string;
+  children?: ReactNode;
+};
+
+const Card: React.FC<CardProps> = ({ title, content, image, children }) => {
   return (
     <div className="m-5 overflow-hidden shadow-md bg-background-900 bg-gradient-to-tr from-secondary-900 to-primary-800 rounded-2xl w-80 group">
       {image && (
