@@ -5,3 +5,11 @@
 .button-list > a {
   @apply text-center min-w-20;
 }
+
+.button {
+  @apply transition-all hover:rotate-2;
+  @apply inline-block px-4 py-2 rounded-3xl;
+
+  @apply bg-secondary-500 hover:bg-secondary-400;
+  @apply text-text-100 hover:text-text-50;
+}

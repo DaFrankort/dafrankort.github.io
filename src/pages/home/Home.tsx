@@ -15,11 +15,11 @@ function Home() {
             title="Check out my projects!"
             content="I have many projects you can see on this website, feel free to take a look around!"
           >
-            <ul className="button-list">
+            <div className="button-list">
               <Button href="https://github.com/DaFrankort">Java</Button>
               <Button href="https://github.com/DaFrankort">Python</Button>
               <Button href="https://github.com/DaFrankort">Typescript</Button>
-            </ul>
+            </div>
           </Card>
         </section>
 
