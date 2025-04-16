@@ -1,0 +1,7 @@
+.button-list {
+  @apply flex flex-row-reverse gap-2;
+}
+
+.button-list > a {
+  @apply text-center min-w-20;
+}

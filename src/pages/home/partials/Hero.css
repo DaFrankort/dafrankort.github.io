@@ -1,0 +1,12 @@
+#hero-left,
+#hero-right {
+  @apply text-left h-fit;
+}
+
+#hero-left {
+  @apply w-[80ch];
+}
+
+#hero-right {
+  @apply text-text-100;
+}
