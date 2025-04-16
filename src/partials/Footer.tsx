@@ -5,11 +5,11 @@ type FooterProps = {};
 
 const Footer: React.FC<FooterProps> = ({}) => {
   return (
-    <footer className="absolute bottom-0 left-0 right-0 pt-6 pb-3 mt-8 bg-gradient-to-tr from-black to-background-950 text-background-600">
-      <div className="container grid grid-cols-2 text-sm">
+    <footer className="fixed bottom-0 left-0 right-0 hidden pt-4 pb-4 md:inline bg-gradient-to-tr from-black to-background-950 text-background-600">
+      <div className="container flex justify-between text-sm">
         <ul id="footer-left">
           <li>
-            <b className="text-background-400">Social Media</b>
+            <b className="text-background-500">Social</b>
           </li>
           <li>
             <a href="https://github.com/DaFrankort" target="_blank" rel="noopener noreferrer">
@@ -23,9 +23,13 @@ const Footer: React.FC<FooterProps> = ({}) => {
           </li>
         </ul>
 
+        <div id="footer-center">
+          <p className="">© 2025 Daniël Frankort. All rights reserved.</p>
+        </div>
+
         <ul id="footer-right" className="text-right">
           <li>
-            <b className="text-background-400">Navigate</b>
+            <b className="text-background-500">Navigate</b>
           </li>
           <li>
             <a href="/" rel="noopener noreferrer">
@@ -33,10 +37,6 @@ const Footer: React.FC<FooterProps> = ({}) => {
             </a>
           </li>
         </ul>
-      </div>
-
-      <div className="flex justify-center w-full">
-        <p className="text-xs text-background-700">© 2025 Daniël Frankort. All rights reserved.</p>
       </div>
     </footer>
   );
