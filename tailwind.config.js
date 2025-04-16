@@ -5,7 +5,7 @@ import colors from "tailwindcss/colors";
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    // https://www.realtimecolors.com/?colors=eeeef6-050506-9d9cce-6b336a-b05e92&fonts=Carlito-Carlito
+    // https://www.realtimecolors.com/?colors=eeeef6-050506-9d9cce-6b336a-b05e92&fonts=Righteous-Carlito
     colors: {
       ...colors,
       text: {
