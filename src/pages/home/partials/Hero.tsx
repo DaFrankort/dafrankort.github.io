@@ -1,31 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import KUTE from "kute.js";
+import React from "react";
 import "./Hero.css";
 
 const Hero: React.FC = ({}) => {
-  useEffect(() => {
-    // TODO: This is too slow (and overkill), use a CSS solution instead!
-    let tweens = [];
-
-    for (let i = 0; i < 3; i++) {
-      const pathA = document.getElementById(`blob-a${i}`);
-      const pathB = document.getElementById(`blob-b${i}`);
-      if (pathA && pathB) {
-        KUTE.fromTo(
-          pathA,
-          { path: pathA },
-          { path: pathB },
-          {
-            repeat: 999,
-            duration: 12000,
-            yoyo: true,
-            easing: "easingCubicInOut",
-          }
-        ).start();
-      }
-    }
-  }, []);
-
   return (
     <section className="w-full -mb-20 py-16 overflow-hidden h-[960px]">
       {/* Background */}
@@ -33,35 +9,14 @@ const Hero: React.FC = ({}) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          className="w-full h-[960px] will-change-transform opacity-50"
-          viewBox="0 0 720 480"
+          className="w-full h-[960px] will-change-transform"
+          viewBox="0 0 500 250"
           preserveAspectRatio="xMidYMid slice"
         >
-          <g className="lg:blur-lg sm:blur-2xl blur-xl">
-            <path
-              d="M173,459a363,363 0 1,0 726,0a363,363 0 1,0 -726,0"
-              fill="currentColor"
-              id="blob-a0"
-              className="text-primary-900 md:text-primary-700"
-            />
-            <path
-              d="M527,138a363,363 0 1,0 726,0a363,363 0 1,0 -726,0"
-              fill="currentColor"
-              id="blob-a1"
-              className="md:scale-75 text-secondary-800"
-            />
-            <path
-              d="M38,128a363,363 0 1,0 726,0a363,363 0 1,0 -726,0"
-              fill="currentColor"
-              id="blob-a2"
-              className="md:scale-50 text-primary-600"
-            />
-          </g>
-
-          <g style={{ visibility: "hidden" }}>
-            <path d="M-125,185a363,363 0 1,0 726,0a363,363 0 1,0 -726,0" id="blob-b0" />
-            <path d="M125,186a363,363 0 1,0 726,0a363,363 0 1,0 -726,0" id="blob-b1" />
-            <path d="M511,28a363,363 0 1,0 726,0a363,363 0 1,0 -726,0" id="blob-b2" />
+          <g>
+            <circle id="blob-1" cx="250" cy="280" r="250" fill="currentColor" />
+            <circle id="blob-2" cx="500" cy="140" r="250" fill="currentColor" />
+            <circle id="blob-3" cx="0" cy="140" r="250" fill="currentColor" />
           </g>
         </svg>
       </div>
