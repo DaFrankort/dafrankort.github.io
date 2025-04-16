@@ -86,7 +86,7 @@ module.exports = {
     "5xl": "4.210rem",
   },
   fontFamily: {
-    heading: "Carlito",
+    heading: "Righteous",
     body: "Carlito",
   },
   fontWeight: {

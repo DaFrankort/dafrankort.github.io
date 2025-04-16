@@ -23,20 +23,16 @@ const Hero: React.FC = ({}) => {
 
       {/* Content */}
       <div className="container flex items-center justify-between h-full -mt-20">
-        <div id="hero-left">
-          <h1 className="mb-2 text-7xl">Full-Stack Developer</h1>
-          <h2 className="mb-8 text-5xl text-transparent bg-clip-text bg-gradient-to-l from-primary-500 to-primary-200">
-            Daniël Frankort
-          </h2>
+        <div id="hero-content">
+          <h1>Full-Stack Developer</h1>
+          <h2>Daniël Frankort</h2>
           <p>
-            A diligent programmer with a strong focus on self-growth and continuous improvement. My background inthe
-            automation sector has provided me with valuableexperience in solution-oriented thinking, project-basedwork,
+            A diligent programmer with a strong focus on self-growth and continuous improvement. My background in the
+            automation sector has provided me with valuable experience in solution-oriented thinking, project-basedwork,
             meeting deadlines, and effective teamwork. My core values include clear communication, writing clean and
             maintainable code, and fostering growth in both my skills and those of my team.
           </p>
         </div>
-
-        <div id="hero-right">Placeholder</div>
       </div>
     </section>
   );

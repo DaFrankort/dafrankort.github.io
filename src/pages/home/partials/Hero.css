@@ -57,15 +57,19 @@
 }
 
 /* HERO CONTENT */
-#hero-left,
-#hero-right {
+#hero-content {
   @apply text-left h-fit;
+  @apply w-[90ch];
+  @apply mx-4 lg:mx-0;
 }
 
-#hero-left {
-  @apply w-[80ch];
+#hero-content > h1 {
+  @apply mb-2 text-6xl;
+  @apply lg:mb-2 lg:text-7xl;
 }
 
-#hero-right {
-  @apply text-text-100;
+#hero-content > h2 {
+  @apply text-transparent bg-clip-text bg-gradient-to-l from-primary-500 to-primary-200;
+  @apply mb-10 text-3xl;
+  @apply lg:mb-8 lg:text-5xl;
 }

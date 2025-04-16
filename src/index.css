@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css?family=Righteous:700|Righteous:400");
+
 body {
   @apply bg-background-950 bg-gradient-to-tr from-background-950 to-primary-900;
   @apply text-text-200;
@@ -25,6 +27,8 @@ h4,
 h5,
 h6 {
   @apply text-text-50;
+  font-family: "Righteous";
+  font-weight: 400;
 }
 
 code {
