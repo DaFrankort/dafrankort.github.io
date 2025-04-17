@@ -38,7 +38,7 @@ class GitHub:
         return projects
     
     @staticmethod
-    def _get_projects_json() -> dict:
+    def _get_projects_json() -> list[any]:
         all_repos = []
         page = 1
         per_page = 50
