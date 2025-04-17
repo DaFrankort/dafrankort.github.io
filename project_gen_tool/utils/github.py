@@ -1,23 +1,22 @@
 import logging
-import os
 import requests
 from dotenv import get_key, load_dotenv
 
-env_path = os.path.join(os.getcwd(), '.env')
-load_dotenv(env_path)
-print(env_path)
+from utils.paths import Paths
+
+load_dotenv(Paths.env())
 
 class GitHub:
     @staticmethod
     def get_headers() -> object:
-        token = get_key(env_path, "GH_TOKEN")
+        token = get_key(Paths.env(), "GH_TOKEN")
         return {
             'Authorization': f'token {token}'
         }
     
     @staticmethod
     def get_username() -> str:
-        return get_key(env_path, "GH_USERNAME")
+        return get_key(Paths.env(), "GH_USERNAME")
     
     @staticmethod
     def generate_new_projects() -> list[object]:
@@ -44,7 +43,6 @@ class GitHub:
         per_page = 50
 
         while True:
-            username = GitHub.get_username()
             headers = GitHub.get_headers()
 
             url = f"https://api.github.com/user/repos?per_page={per_page}&page={page}"

@@ -7,7 +7,6 @@ class ProjectEditor:
 
     frame: tk.Frame
     private: tk.BooleanVar
-    hidden: tk.BooleanVar
     name: tk.Entry
     excerpt: tk.Text
     description: tk.Text
@@ -22,19 +21,19 @@ class ProjectEditor:
         self.frame = tk.Frame(outer_frame, bg=bg_color)
         self.frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
 
-        self.private = tk.BooleanVar(value=False)
-        tk.Checkbutton(self.frame, text="Private", variable=self.private).pack(anchor="w")
-
-        self.hidden = tk.BooleanVar(value=False)
-        tk.Checkbutton(self.frame, text="Hidden", variable=self.hidden).pack(anchor="w")
-
         tk.Label(self.frame, text="Name:").pack(anchor="w")
         self.name = tk.Entry(self.frame, width=50)
         self.name.pack(pady=5, anchor="w")
 
-        tk.Label(self.frame, text="URL:").pack(anchor="w")
+        url_frame = tk.Frame(self.frame)
+        url_frame.pack(anchor='w', pady=5)
+        tk.Label(url_frame, text="URL:").pack(side='left')
+        self.private = tk.BooleanVar(value=False)
+        tk.Checkbutton(url_frame, text="Private", variable=self.private).pack(side="left", padx=10)
+
         self.url = tk.Entry(self.frame, width=50)
         self.url.pack(pady=5, anchor="w")
+
 
         tk.Label(self.frame, text="Excerpt:").pack(anchor="w")
         self.excerpt = tk.Text(self.frame, width=50, height=4)
@@ -53,7 +52,6 @@ class ProjectEditor:
         self.data.excerpt = self.excerpt.get("1.0", tk.END).strip()
         self.data.description = self.description.get("1.0", tk.END).strip()
         self.data.private = self.private.get()
-        self.data.hidden = self.hidden.get()
 
         self.project = self.data
         self.project.save()

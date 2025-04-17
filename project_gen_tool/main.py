@@ -1,12 +1,7 @@
 import tkinter as tk
-from tkinter import messagebox
-import json
-import os
 import logging
-
 from interface.project_editor import ProjectEditor
-from interface.project_list import ProjectList
-from utils.repo import Repo
+from interface.project_list import _Listbox, ProjectList
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -14,15 +9,16 @@ logging.basicConfig(
 )
 
 # Select a project to edit
-def on_project_select(event, p_list: ProjectList, p_edit: ProjectEditor):
+def on_project_select(event, lb: _Listbox, p_edit: ProjectEditor):
     try:
-        index = p_list.listbox.curselection()[0]
-        selected_project = p_list.projects[index]
+        print('yipie')
+        index = lb.listbox.curselection()[0]
+        selected_project = lb.projects[index]
         logging.info(f"Selected {selected_project.name}")
 
         p_edit.open_project(selected_project)
     except:
-        pass  # No project selected
+        pass # No project selected
 
 def on_save_project(event, p_list: ProjectList, p_edit: ProjectEditor):
     p_edit.save_changes()
@@ -35,15 +31,14 @@ def main():
 
     root = tk.Tk()
     root.title("Portfolio Project Gen Tool")
-    root.geometry("720x480")
+    root.geometry("1280x720")
     root.configure(bg=accent_clr)
     
     p_list = ProjectList(root, accent_clr)
-    p_list.update_list()
-
     p_edit = ProjectEditor(root, gray_clr)
     
-    p_list.listbox.bind("<<ListboxSelect>>", lambda e: on_project_select(e, p_list, p_edit))
+    for lb in p_list.listboxes:
+        lb.listbox.bind("<<ListboxSelect>>", lambda e, lb=lb: on_project_select(e, lb, p_edit))
     p_edit.save_btn.bind("<ButtonRelease-1>", lambda e: on_save_project(e, p_list, p_edit))
 
     root.mainloop()

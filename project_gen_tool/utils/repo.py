@@ -1,10 +1,12 @@
 from pathlib import Path
+from typing import Callable
+from utils.paths import Paths
 from utils.github import GitHub
 import json
-import os
 import logging
 
 class Repo:
+    path: Path
     name: str
     display_name: str
     excerpt: str
@@ -28,6 +30,7 @@ class Repo:
     def __init__(self, json: dict):
         self.name = json.get('name', '')
         self.display_name = json.get('display_name', self.name if self.name != '' else 'Untitled')
+        self.path = Paths.projects_hidden(self.name)
 
         self.description = json.get('description', '')
         self.excerpt = json.get('excerpt', self.description)
@@ -37,16 +40,15 @@ class Repo:
         self.hidden = json.get('hidden', True)
 
     @classmethod
-    def load(cls, filename: str):
-        if not filename.endswith('.json'):
-            filename += '.json'
-
-        path = os.path.join(os.getcwd(), "public", "projects", filename)
-
+    def load(cls, filename: str, path_command: Callable[[], Path]):
+        path = path_command(filename)
+        
         try:
             with open(path, 'r') as file:
                 data = json.load(file)
-                return cls(data)
+                repo = cls(data)
+                repo.path = path
+                return repo
         except FileNotFoundError:
             logging.error(f"File not found: {filename}")
         except json.JSONDecodeError as err:
@@ -66,18 +68,13 @@ class Repo:
         except ConnectionError as err:
             logging.error(err)
 
-    def _get_file_path(self) -> Path:
-        filename = f"{self.name}.json"
-        return Path(os.getcwd()) / "public" / "projects" / filename
+    def save(self, path_command: Callable[[], Path] = Paths.projects_hidden):
+        path = path_command(self.name)
 
-    def save(self):
-        path = self._get_file_path()
-        path.parent.mkdir(parents=True, exist_ok=True)
-        
         with open(path, 'w') as file:
             logging.info(f"Saving {path}")
             print(self.to_dict())
             json.dump(self.to_dict(), file, indent=4)
 
     def exists(self) -> bool:
-        return self._get_file_path().exists()
+        return self.path.exists()
