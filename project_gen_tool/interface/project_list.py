@@ -49,8 +49,8 @@ class ProjectList:
         for listbox in self.listboxes:
             options.append(listbox.name.capitalize())
 
-        self.move_target = tk.StringVar()
-        self.move_target.set(options[0])
+        self.move_target = tk.StringVar(self.frame)
+        self.move_target.set("Move Project")
         self.move_project = tk.OptionMenu(self.frame, self.move_target, *options, command=lambda _: self._move_project())
         self.move_project.pack(pady=(0, 5), fill=tk.X)
 
