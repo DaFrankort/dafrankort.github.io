@@ -1,31 +1,47 @@
+import logging
+import os
 import requests
-import dotenv
+from dotenv import get_key, load_dotenv
 
-dotenv.load_dotenv()
+env_path = os.path.join(os.getcwd(), '.env')
+load_dotenv(env_path)
+print(env_path)
 
 class GitHub:
     @staticmethod
     def get_headers() -> object:
-        token = dotenv.get_key(dotenv_path=None, key_to_get="GH_TOKEN")
+        token = get_key(env_path, "GH_TOKEN")
         return {
             'Authorization': f'token {token}'
         }
     
     @staticmethod
     def get_username() -> str:
-        return dotenv.get_key(dotenv_path=None, key_to_get="GH_USERNAME")
+        return get_key(env_path, "GH_USERNAME")
     
     @staticmethod
     def get_projects() -> object:
-        username = GitHub.get_username()
-        url = f"https://api.github.com/users/{username}/repos"
+        from utils.repo import Repo
+
+        url = f"https://api.github.com/user/repos"
         headers = GitHub.get_headers()
         response = requests.get(url, headers=headers)
 
         if response.status_code != 200:
             raise ConnectionError(f"Request \'{url}\' failed with status code {response.status_code}")
+        
+        repos = response.json()
+        logging.info(f"Received {len(repos)} projects from GitHub")
+        projects = []
+        for repo in repos:
+            project = Repo(repo)
+            if project.exists():
+                continue
 
-        return response.json()
+            projects.append(project)
+            project.save()
+
+        return projects
     
     @staticmethod
     def get_project_readme(project_name: str) -> str:

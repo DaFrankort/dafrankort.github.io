@@ -3,6 +3,7 @@ import os
 import tkinter as tk
 from utils.repo import Repo
 import time
+from utils.github import GitHub
 
 
 class ProjectList:
@@ -11,8 +12,8 @@ class ProjectList:
 
     frame: tk.Frame
     listbox: tk.Listbox
-    edit_btn: tk.Button
-    new_btn: tk.Button
+    btn_new: tk.Button
+    btn_fetch_github: tk.Button
 
     def __init__(self, root: tk.Tk, bg_color: str):
         self.selected_index = -1
@@ -23,23 +24,35 @@ class ProjectList:
         self.listbox = tk.Listbox(self.frame, width=40, height=20)
         self.listbox.pack(pady=10)
 
-        self.edit_btn = tk.Button(
-            self.frame, 
-            text="Edit", 
-            #command=lambda: on_edit_click(projects, listbox, name_entry, desc_entry)
-            )
-        self.edit_btn.pack(pady=(0, 5), fill=tk.X)
-
-        self.new_btn = tk.Button(
+        self.btn_new = tk.Button(
             self.frame, 
             text="New",
             command=lambda: self._new_project()
             )
-        self.new_btn.pack(pady=(0, 5), fill=tk.X)
+        self.btn_new.pack(pady=(0, 5), fill=tk.X)
+
+        self.btn_fetch_github = tk.Button(
+            self.frame,
+            text="Generate from Github",
+            command=self._generate_from_github
+        )
+        self.btn_fetch_github.pack(pady=(0, 5), fill=tk.X)
 
     def _new_project(self):
         Repo({'name': int(time.time()), 'display_name': 'New Project'}).save()
         self.update_list()
+
+    def _generate_from_github(self):
+        self.btn_fetch_github.config(text='Generating..', state=tk.DISABLED)
+        self.frame.config(cursor="watch")
+        self.frame.update_idletasks()
+
+        try:
+            GitHub.get_projects()
+            self.update_list()
+        finally:
+            self.frame.config(cursor="")
+            self.btn_fetch_github.config(text="Generate from Github", state=tk.NORMAL)
 
     def _load_projects(self) -> list[Repo]:
         PROJECTS_FOLDER = os.path.join(os.getcwd(), "public", "projects")

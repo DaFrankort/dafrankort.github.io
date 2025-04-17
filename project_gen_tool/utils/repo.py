@@ -1,3 +1,4 @@
+from pathlib import Path
 from utils.github import GitHub
 import json
 import os
@@ -65,12 +66,18 @@ class Repo:
         except ConnectionError as err:
             logging.error(err)
 
-    def save(self):
+    def _get_file_path(self) -> Path:
         filename = f"{self.name}.json"
-        path = os.path.join(os.getcwd(), "public", "projects", filename)
+        return Path(os.getcwd()) / "public" / "projects" / filename
 
+    def save(self):
+        path = self._get_file_path()
+        path.parent.mkdir(parents=True, exist_ok=True)
+        
         with open(path, 'w') as file:
             logging.info(f"Saving {path}")
             print(self.to_dict())
             json.dump(self.to_dict(), file, indent=4)
 
+    def exists(self) -> bool:
+        return self._get_file_path().exists()
