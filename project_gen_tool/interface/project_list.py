@@ -27,9 +27,12 @@ class ProjectList:
         self.frame.pack(side=tk.LEFT, fill=tk.Y, padx=10, pady=10)
 
         self.list_frame = tk.Frame(self.frame, bg=bg_color)
-        self.list_frame.pack(side=tk.LEFT, fill=tk.Y, padx=0, pady=0)
+        self.list_frame.pack(side=tk.LEFT, fill=tk.Y, padx=10, pady=0)
         self.listboxes = []
         self.update_list() # Create listboxes
+
+        btn_frame = tk.Frame(self.frame, bg=bg_color)
+        btn_frame.pack(side=tk.RIGHT, fill=tk.BOTH, padx=0, pady=0)
 
         self.btn_new = tk.Button(
             self.frame, 
