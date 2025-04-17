@@ -11,7 +11,6 @@ logging.basicConfig(
 # Select a project to edit
 def on_project_select(event, lb: _Listbox, p_edit: ProjectEditor):
     try:
-        print('yipie')
         index = lb.listbox.curselection()[0]
         selected_project = lb.projects[index]
         logging.info(f"Selected {selected_project.name}")
