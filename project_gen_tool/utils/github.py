@@ -20,13 +20,13 @@ class GitHub:
     
     @staticmethod
     def generate_new_projects() -> list[object]:
-        from utils.repo import Repo
+        from utils.content import Content # Imported late to prevent circle-import
 
         repos = GitHub._get_projects_json()
         
         projects = []
         for repo in repos:
-            project = Repo(repo)
+            project = Content(repo)
             if project.exists():
                 continue
 

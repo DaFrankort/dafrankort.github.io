@@ -7,14 +7,14 @@ import tkinter.messagebox as messagebox
 from tkinter import simpledialog
 from typing import Callable
 from utils.paths import Paths
-from utils.repo import Repo
+from utils.content import Content
 from utils.github import GitHub
 
 class _Listbox:
     get_path: Callable[[], Path]
     name: str
     listbox: tk.Listbox
-    projects: list[Repo]
+    projects: list[Content]
 
     def __init__(self, get_path: Callable[[], Path], frame: tk.Frame):
         self.get_path = get_path
@@ -43,14 +43,14 @@ class _Listbox:
 
         for filename in os.listdir(self.get_path()):
             if filename.endswith(".json"):
-                project = Repo.load(filename, self.get_path)
+                project = Content.load(filename, self.get_path)
                 if project != None:
                     projects.append(project)
 
         logging.info(f"Found {len(projects)} files in {self.get_path()}.")
         self.projects = projects
 class ProjectList:
-    projects: list[Repo]
+    projects: list[Content]
 
     frame: tk.Frame
     list_frame: tk.Frame
@@ -98,7 +98,7 @@ class ProjectList:
 
         display_name = user_input.strip()
 
-        Repo({'name': safe_name, 'display_name': display_name}).save()
+        Content({'name': safe_name, 'display_name': display_name}).save()
         self.update_list()
 
     def _generate_from_github(self):

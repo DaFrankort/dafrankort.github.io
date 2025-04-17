@@ -5,7 +5,7 @@ from utils.github import GitHub
 import json
 import logging
 
-class Repo:
+class Content:
     path: Path
     name: str
     display_name: str

@@ -1,9 +1,9 @@
 import tkinter as tk
-from utils.repo import Repo
+from utils.content import Content
 
 class ProjectEditor:
-    project: Repo
-    data: Repo
+    project: Content
+    data: Content
 
     frame: tk.Frame
     private: tk.BooleanVar
@@ -13,7 +13,7 @@ class ProjectEditor:
     save_btn: tk.Button
 
     def __init__(self, root: tk.Tk, bg_color: str):
-        self.data = Repo({'name': 'init', 'display_name': 'NO PROJECT SELECTED'})
+        self.data = Content({'name': 'init', 'display_name': 'NO PROJECT SELECTED'})
 
         outer_frame = tk.Frame(root, bg=bg_color)
         outer_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=0, pady=0)
@@ -56,9 +56,9 @@ class ProjectEditor:
         self.project = self.data
         self.project.save()
 
-    def open_project(self, project: Repo):
+    def open_project(self, project: Content):
         self.project = project
-        self.data = Repo(project.to_dict())
+        self.data = Content(project.to_dict())
 
         self.name.delete(0, tk.END)
         self.name.insert(0, project.display_name)
