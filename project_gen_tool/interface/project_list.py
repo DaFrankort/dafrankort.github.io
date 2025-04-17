@@ -1,6 +1,7 @@
 import logging
 import os
 import tkinter as tk
+import tkinter.messagebox as messagebox
 from utils.repo import Repo
 import time
 from utils.github import GitHub
@@ -48,7 +49,14 @@ class ProjectList:
         self.frame.update_idletasks()
 
         try:
-            GitHub.get_projects()
+            new_projects = GitHub.generate_new_projects()
+
+            if len(new_projects) == 1:
+                messagebox.showinfo("New project generated!", f"Generated {len(new_projects)} new project:\n{new_projects[0].name}")
+            elif len(new_projects) > 1:
+                project_names = ", ".join([project.name for project in new_projects])
+                messagebox.showinfo("New projects generated!", f"Generated {len(new_projects)} new projects:\n{project_names}")
+
             self.update_list()
         finally:
             self.frame.config(cursor="")
@@ -66,9 +74,7 @@ class ProjectList:
                 continue
 
             if filename.endswith(".json"):
-                print(f"- {filename}")
                 repo = Repo.load(filename)
-
                 if repo == None:
                     continue
 

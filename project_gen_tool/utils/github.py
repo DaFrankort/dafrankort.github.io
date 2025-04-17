@@ -20,18 +20,11 @@ class GitHub:
         return get_key(env_path, "GH_USERNAME")
     
     @staticmethod
-    def get_projects() -> object:
+    def generate_new_projects() -> list[object]:
         from utils.repo import Repo
 
-        url = f"https://api.github.com/user/repos"
-        headers = GitHub.get_headers()
-        response = requests.get(url, headers=headers)
-
-        if response.status_code != 200:
-            raise ConnectionError(f"Request \'{url}\' failed with status code {response.status_code}")
+        repos = GitHub._get_projects_json()
         
-        repos = response.json()
-        logging.info(f"Received {len(repos)} projects from GitHub")
         projects = []
         for repo in repos:
             project = Repo(repo)
@@ -41,7 +34,34 @@ class GitHub:
             projects.append(project)
             project.save()
 
+        logging.info(f"{len(projects)} New projects generated!")
         return projects
+    
+    @staticmethod
+    def _get_projects_json() -> dict:
+        all_repos = []
+        page = 1
+        per_page = 50
+
+        while True:
+            username = GitHub.get_username()
+            headers = GitHub.get_headers()
+
+            url = f"https://api.github.com/user/repos?per_page={per_page}&page={page}"
+            response = requests.get(url, headers=headers)
+
+            if response.status_code != 200:
+                raise ConnectionError(f"Request '{url}' failed with status code {response.status_code}")
+
+            repos = response.json()
+            if not repos:
+                break  # No more pages
+
+            all_repos.extend(repos)
+            page += 1
+
+        logging.info(f"Received {len(all_repos)} projects from GitHub")
+        return all_repos
     
     @staticmethod
     def get_project_readme(project_name: str) -> str:
