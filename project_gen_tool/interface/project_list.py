@@ -46,6 +46,14 @@ class ProjectList:
 
         safe_name = user_input.strip().replace(" ", "_").lower()
         safe_name = re.sub(r'[^a-z0-9_-]', '', safe_name)
+
+        if safe_name == '':
+            if user_input.strip() == '':
+                messagebox.showerror('Invalid Name', 'Sorry! That project name is invalid.\nName cannot be empty!')
+            else:
+                messagebox.showerror('Invalid Name', 'Sorry! That project name is invalid.\nPlease avoid using special characters.')
+            return
+
         display_name = user_input.strip()
 
         Repo({'name': safe_name, 'display_name': display_name}).save()
