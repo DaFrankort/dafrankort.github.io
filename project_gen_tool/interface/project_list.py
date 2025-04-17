@@ -1,7 +1,9 @@
 import logging
 import os
+import re
 import tkinter as tk
 import tkinter.messagebox as messagebox
+from tkinter import simpledialog
 from utils.repo import Repo
 import time
 from utils.github import GitHub
@@ -40,7 +42,13 @@ class ProjectList:
         self.btn_fetch_github.pack(pady=(0, 5), fill=tk.X)
 
     def _new_project(self):
-        Repo({'name': int(time.time()), 'display_name': 'New Project'}).save()
+        user_input = simpledialog.askstring("Please provide a name for your project:", "My Project")
+
+        safe_name = user_input.strip().replace(" ", "_").lower()
+        safe_name = re.sub(r'[^a-z0-9_-]', '', safe_name)
+        display_name = user_input.strip()
+
+        Repo({'name': safe_name, 'display_name': display_name}).save()
         self.update_list()
 
     def _generate_from_github(self):
@@ -88,7 +96,7 @@ class ProjectList:
 
         self.listbox.delete(0, tk.END)
         for i, project in enumerate(self.projects):
-            display_name = project.name
+            display_name = project.display_name
             if project.private:
                 display_name = f"🔒 {display_name}"
 
