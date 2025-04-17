@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Callable
 import tkinter as tk
 
-from utils import Content
+from utils.content import Content
 
 class _Listbox:
     get_path: Callable[[], Path]

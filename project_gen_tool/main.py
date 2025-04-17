@@ -2,7 +2,7 @@ import tkinter as tk
 import logging
 from interface.project_editor import ProjectEditor
 from interface.project_list import ProjectList
-from interface.helper.listbox import _Listbox
+from interface.utils.listbox import _Listbox
 
 logging.basicConfig(
     level=logging.DEBUG,
