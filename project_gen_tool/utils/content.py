@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import shutil
 from typing import Callable
@@ -76,6 +77,11 @@ class Content:
             logging.info(f"Saving {path}")
             print(self.to_dict())
             json.dump(self.to_dict(), file, indent=4)
+
+    def remove(self):
+        os.remove(self.path)
+        logging.info(f"Removed {self.path}")
+        self.path = None
 
     def move_to(self, path_cmd: Callable[[], Path]):
         dest = path_cmd(self.name)
