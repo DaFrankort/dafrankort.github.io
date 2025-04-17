@@ -27,7 +27,7 @@ class _Listbox:
         self._load_projects()
 
         self.listbox.delete(0, tk.END)
-        for i, project in enumerate(self.projects):
+        for project in self.projects:
             display_name = project.display_name
             if project.private:
                 display_name = f"🔒 {display_name}"
