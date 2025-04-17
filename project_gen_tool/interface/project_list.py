@@ -14,8 +14,11 @@ class ProjectList:
     frame: tk.Frame
     list_frame: tk.Frame
     listboxes: list[_Listbox]
+
     btn_new: tk.Button
     btn_fetch_github: tk.Button
+    move_target = tk.StringVar
+    move_project: tk.OptionMenu
 
     def __init__(self, root: tk.Tk, bg_color: str):
         self.projects = []
@@ -41,6 +44,28 @@ class ProjectList:
             command=self._generate_from_github
         )
         self.btn_fetch_github.pack(pady=(0, 5), fill=tk.X)
+
+        options = []
+        for listbox in self.listboxes:
+            options.append(listbox.name.capitalize())
+
+        self.move_target = tk.StringVar()
+        self.move_target.set(options[0])
+        self.move_project = tk.OptionMenu(self.frame, self.move_target, *options, command=lambda _: self._move_project())
+        self.move_project.pack(pady=(0, 5), fill=tk.X)
+
+    def _move_project(self):
+        for lb in self.listboxes:
+            selection = lb.listbox.curselection()
+            if selection:
+                i = selection[0]
+                project = lb.projects[i]
+                
+                for target_lb in self.listboxes:
+                    if target_lb.name.lower() == self.move_target.get().lower():
+                        project.move_to(target_lb.get_path)
+                        self.update_list()
+                        return
 
     def _new_project(self):
         user_input = simpledialog.askstring("Please provide a name for your project:", "My Project")

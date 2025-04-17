@@ -1,4 +1,5 @@
 from pathlib import Path
+import shutil
 from typing import Callable
 from utils.paths import Paths
 from utils.github import GitHub
@@ -40,8 +41,8 @@ class Content:
         self.hidden = json.get('hidden', True)
 
     @classmethod
-    def load(cls, filename: str, path_command: Callable[[], Path]):
-        path = path_command(filename)
+    def load(cls, filename: str, path_cmd: Callable[[], Path]):
+        path = path_cmd(filename)
         
         try:
             with open(path, 'r') as file:
@@ -68,13 +69,20 @@ class Content:
         except ConnectionError as err:
             logging.error(err)
 
-    def save(self, path_command: Callable[[], Path] = Paths.projects_hidden):
-        path = path_command(self.name)
+    def save(self, path_cmd: Callable[[], Path] = Paths.projects_hidden):
+        path = path_cmd(self.name)
 
         with open(path, 'w') as file:
             logging.info(f"Saving {path}")
             print(self.to_dict())
             json.dump(self.to_dict(), file, indent=4)
+
+    def move_to(self, path_cmd: Callable[[], Path]):
+        dest = path_cmd(self.name)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+
+        shutil.move(str(self.path), str(dest))
+        self.path = dest
 
     def exists(self) -> bool:
         for path_cmd in Paths.listbox_commands():
