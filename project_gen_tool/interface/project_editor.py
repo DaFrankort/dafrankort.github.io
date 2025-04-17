@@ -23,25 +23,24 @@ class ProjectEditor:
 
         tk.Label(self.frame, text="Name:").pack(anchor="w")
         self.name = tk.Entry(self.frame, width=50)
-        self.name.pack(pady=5, anchor="w")
+        self.name.pack(pady=5, anchor="w", fill=tk.X)
 
         url_frame = tk.Frame(self.frame)
-        url_frame.pack(anchor='w', pady=5)
+        url_frame.pack(anchor='w', pady=5, fill=tk.X)
         tk.Label(url_frame, text="URL:").pack(side='left')
         self.private = tk.BooleanVar(value=False)
-        tk.Checkbutton(url_frame, text="Private", variable=self.private).pack(side="left", padx=10)
+        tk.Checkbutton(url_frame, text="Private", variable=self.private).pack(side="right", padx=10)
 
         self.url = tk.Entry(self.frame, width=50)
-        self.url.pack(pady=5, anchor="w")
-
+        self.url.pack(pady=5, anchor="w", fill=tk.X)
 
         tk.Label(self.frame, text="Excerpt:").pack(anchor="w")
         self.excerpt = tk.Text(self.frame, width=50, height=4)
-        self.excerpt.pack(pady=5, anchor="w")
+        self.excerpt.pack(pady=5, anchor="w", fill=tk.X)
 
         tk.Label(self.frame, text="Description:").pack(anchor="w")
         self.description = tk.Text(self.frame, width=50, height=10)
-        self.description.pack(pady=5, anchor="w")
+        self.description.pack(pady=5, anchor="w", fill=tk.X)
 
         self.save_btn = tk.Button(self.frame, text="Save Changes")
         self.save_btn.pack(pady=(0, 5), fill=tk.X)
