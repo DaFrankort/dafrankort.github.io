@@ -24,6 +24,10 @@ def on_project_select(event, p_list: ProjectList, p_edit: ProjectEditor):
     except:
         pass  # No project selected
 
+def on_save_project(event, p_list: ProjectList, p_edit: ProjectEditor):
+    p_edit.save_changes()
+    p_list.update_list()
+
 # Set up the main window
 def main():
     accent_clr = "#aca8cc"
@@ -39,8 +43,8 @@ def main():
 
     p_edit = ProjectEditor(root, gray_clr)
     
-    p_list.listbox.bind("<<ListboxSelect>>", lambda event: on_project_select(event, p_list, p_edit))
-    p_edit.save_btn.bind("<ButtonRelease-1>", lambda e: p_list.update_list())
+    p_list.listbox.bind("<<ListboxSelect>>", lambda e: on_project_select(e, p_list, p_edit))
+    p_edit.save_btn.bind("<ButtonRelease-1>", lambda e: on_save_project(e, p_list, p_edit))
 
     root.mainloop()
 

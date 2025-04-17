@@ -1,5 +1,4 @@
 import tkinter as tk
-
 from utils.repo import Repo
 
 class ProjectEditor:
@@ -45,14 +44,10 @@ class ProjectEditor:
         self.description = tk.Text(self.frame, width=50, height=10)
         self.description.pack(pady=5, anchor="w")
 
-        self.save_btn = tk.Button(
-            self.frame, 
-            text="Save Changes",
-            command=self._save_changes
-            )
+        self.save_btn = tk.Button(self.frame, text="Save Changes")
         self.save_btn.pack(pady=(0, 5), fill=tk.X)
 
-    def _save_changes(self):
+    def save_changes(self):
         self.data.display_name = self.name.get()
         self.data.url = self.url.get()
         self.data.excerpt = self.excerpt.get("1.0", tk.END).strip()
