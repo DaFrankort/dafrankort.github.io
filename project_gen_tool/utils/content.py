@@ -29,10 +29,10 @@ class Content:
             'hidden': self.hidden
         }
 
-    def __init__(self, json: dict):
+    def __init__(self, json: dict, path: Path | None = None):
         self.name = json.get('name', '')
         self.display_name = json.get('display_name', self.name if self.name != '' else 'Untitled')
-        self.path = Paths.projects_hidden(self.name)
+        self.path = path if path else Paths.projects_hidden(self.name)
 
         self.description = json.get('description', '')
         self.excerpt = json.get('excerpt', self.description)
@@ -48,9 +48,7 @@ class Content:
         try:
             with open(path, 'r') as file:
                 data = json.load(file)
-                repo = cls(data)
-                repo.path = path
-                return repo
+                return cls(data, path)
         except FileNotFoundError:
             logging.error(f"File not found: {filename}")
         except json.JSONDecodeError as err:
@@ -71,10 +69,11 @@ class Content:
             logging.error(err)
 
     def save(self, path_cmd: Callable[[], Path] = Paths.projects_hidden):
-        path = path_cmd(self.name)
+        if not self.path:
+            self.path = path_cmd(self.name)
 
-        with open(path, 'w') as file:
-            logging.info(f"Saving {path}")
+        with open(self.path, 'w') as file:
+            logging.info(f"Saving {self.path}")
             print(self.to_dict())
             json.dump(self.to_dict(), file, indent=4)
 
@@ -87,8 +86,12 @@ class Content:
         dest = path_cmd(self.name)
         dest.parent.mkdir(parents=True, exist_ok=True)
 
-        shutil.move(str(self.path), str(dest))
-        self.path = dest
+        try:
+            shutil.move(str(self.path), str(dest))
+            logging.info(f"Moved {self.path} to {dest}")
+            self.path = dest
+        except Exception as e:
+            logging.error(f"Failed to move {self.path} to {dest}: {e}")
 
     def exists(self) -> bool:
         for path_cmd in Paths.listbox_commands():

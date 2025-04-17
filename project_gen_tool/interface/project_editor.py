@@ -58,7 +58,7 @@ class ProjectEditor:
 
     def open_project(self, project: Content):
         self.project = project
-        self.data = Content(project.to_dict())
+        self.data = Content(project.to_dict(), self.project.path)
 
         self.name.delete(0, tk.END)
         self.name.insert(0, project.display_name)
