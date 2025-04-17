@@ -2,6 +2,14 @@ from pathlib import Path
 
 class Paths:
     @staticmethod
+    def listbox_commands():
+        """Define the commands tied to a listbox here."""
+        return [
+            Paths.projects_repos,
+            Paths.projects_hidden
+        ]
+    
+    @staticmethod
     def _format_filename(filename: str) -> str:
         if not filename.endswith('.json'):
             filename += '.json'

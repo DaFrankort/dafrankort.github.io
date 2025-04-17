@@ -77,4 +77,9 @@ class Repo:
             json.dump(self.to_dict(), file, indent=4)
 
     def exists(self) -> bool:
-        return self.path.exists()
+        for path_cmd in Paths.listbox_commands():
+            path = path_cmd(self.name)
+            if path.exists():
+                return True
+            
+        return False

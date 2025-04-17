@@ -118,14 +118,9 @@ class ProjectList:
             self.btn_fetch_github.config(text="Generate from Github", state=tk.NORMAL)
 
     def update_list(self):
-        paths = [
-            Paths.projects_repos,
-            Paths.projects_hidden
-        ]
-
         if not self.listboxes: # First time setup: create _Listbox instances
             self.listboxes = []
-            for path in paths:
+            for path in Paths.listbox_commands():
                 listbox = _Listbox(path, self.list_frame)
                 self.listboxes.append(listbox)
             return
