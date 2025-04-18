@@ -1,0 +1,79 @@
+/* BACKGROUND BLOBS */
+#blob-1,
+#blob-2,
+#blob-3 {
+  opacity: 0.5;
+}
+
+#blob-1 {
+  @apply text-primary-900 md:text-accent-800;
+  animation: moveBlob1 20s ease-in-out 2 alternate forwards;
+}
+
+@keyframes moveBlob1 {
+  0% {
+    transform: translate(0, 0) scale(1, 1) rotate(0deg);
+  }
+  50% {
+    transform: translate(50%, -40%) scale(0.7, 1.3) rotate(15deg);
+  }
+  100% {
+    transform: translate(-50%, 40%) scale(1.3, 0.7) rotate(-10deg);
+  }
+}
+
+#blob-2 {
+  @apply md:scale-50 text-secondary-700;
+  animation: moveBlob2 22s ease-in-out 2 alternate forwards;
+}
+
+@keyframes moveBlob2 {
+  0% {
+    transform: translate(0, 0) scale(1, 1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-40%, 10%) scale(1.3, 0.8) rotate(25deg);
+  }
+  100% {
+    transform: translate(0, 30%) scale(0.8, 1.2) rotate(-15deg);
+  }
+}
+
+#blob-3 {
+  @apply md:scale-50 text-primary-700;
+  animation: moveBlob3 25s ease-in-out 2 alternate forwards;
+}
+
+@keyframes moveBlob3 {
+  0% {
+    transform: translate(0, 0) scale(1, 1) rotate(0deg);
+  }
+  50% {
+    transform: translate(20%, -30%) scale(1.1, 1.4) rotate(20deg);
+  }
+  100% {
+    transform: translate(40%, -10%) scale(0.7, 1.3) rotate(-10deg);
+  }
+}
+
+/* HERO CONTENT */
+#hero-content {
+  @apply text-left h-fit;
+  @apply w-[90ch];
+  @apply mx-4 lg:mx-0;
+}
+
+#hero-content > h1 {
+  @apply mb-0 text-5xl;
+  @apply md:text-7xl;
+}
+
+#hero-content > h2 {
+  @apply text-transparent bg-clip-text bg-gradient-to-l from-primary-500 to-primary-200;
+  @apply mb-2 text-lg;
+  @apply md:mb-2 md:text-2xl;
+}
+
+#hero-content > p {
+  @apply w-full lg:w-[85ch];
+}

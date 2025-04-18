@@ -3,20 +3,12 @@ import Card from "../../components/Card";
 import Button from "../../components/Button";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
-type Project = {
-  name: string;
-  display_name: string;
-  excerpt: string;
-  description: string;
-  html_url: string;
-  private: boolean;
-  hidden: boolean;
-};
+import Hero from "./partials/Hero";
+import { Project } from "../../interfaces";
 
 function ProjectDetail() {
   const { projectId } = useParams();
-  const [projectData, setProjectData] = useState<Project | null>(null);
+  const [project, setProjectData] = useState<Project | null>(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -30,24 +22,17 @@ function ProjectDetail() {
   }, [projectId]);
 
   if (error) return <div>Error: {error}</div>;
-  if (!projectData) return <div>Loading...</div>;
+  if (!project) return <div>Loading...</div>;
 
   return (
-    <div className="px-4 text-center">
-      <div className="max-w-3xl mx-auto space-y-8">
-        <section className="container">
-          <Card title={projectData.display_name} content={projectData.excerpt}>
-            <div className="my-4 text-sm text-left">
-              <p>{projectData.description}</p>
-            </div>
-            {!projectData.private && (
-              <div className="flex flex-wrap justify-center gap-4 mt-6 button-list">
-                <Button href={projectData.html_url}>View on GitHub</Button>
-              </div>
-            )}
-          </Card>
-        </section>
-      </div>
+    <div className="text-center">
+      <Hero project={project} />
+
+      <section className="container">
+        <Card title="About" content={project.description}>
+          {!project.private && <Button href={project.html_url}>View on GitHub</Button>}
+        </Card>
+      </section>
     </div>
   );
 }
