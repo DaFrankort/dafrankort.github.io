@@ -1,11 +1,21 @@
 import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
+import Projects from "./pages/project/Projects";
+import ProjectDetail from "./pages/project/ProjectDetail";
 
 function App() {
   return (
-    <div className="mb-[10rem]">
-      <Home />
-    </div>
+    <BrowserRouter>
+      <div className="mb-[10rem]">
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="project" element={<Projects />} />
+          <Route path="project/:projectId" element={<ProjectDetail />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
