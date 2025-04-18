@@ -1,4 +1,5 @@
 import re
+import threading
 import tkinter as tk
 import tkinter.messagebox as messagebox
 
@@ -112,5 +113,8 @@ class ProjectList:
                 self.listboxes.append(listbox)
             return
 
-        for listbox in self.listboxes:
-            listbox.update_list()
+        def run():
+            for listbox in self.listboxes:
+                listbox.update_list()
+
+        threading.Thread(target=run).start()
