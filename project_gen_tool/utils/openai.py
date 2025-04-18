@@ -1,0 +1,41 @@
+from openai import OpenAI
+from dotenv import get_key, load_dotenv
+import openai
+from utils.paths import Paths
+
+load_dotenv(Paths.env())
+
+class ChatGPT:
+    _client = OpenAI(
+        api_key=get_key(Paths.env(), "OPENAI_API_KEY")
+    )
+    _model = "gpt-4o"
+
+    @staticmethod
+    def _get_response(instructions: str, input_text: str):
+        return ChatGPT._client.responses.create(
+            model=ChatGPT._model,
+            instructions=instructions,
+            input=input_text
+        )
+
+    @staticmethod
+    def create_description_from_readme(readme_text: str) -> str:
+        return ChatGPT._get_response(
+            "You will be fed README.MD content from GitHub repositories, transform them into a HTML div and make the content be just a description of the project. Retain important information like links by using appropriate HTML elements.",
+            readme_text
+        ).output_text
+
+    @staticmethod
+    def create_excerpt_from_description(description: str) -> str:
+        return ChatGPT._get_response(
+            "You will be given a description of a project, make a concise text to use in an excerpt. Avoid any sort of HTML, formatting or links.",
+            description
+        ).output_text
+    
+    @staticmethod
+    def prompt_ai(prompt: str, text_to_alter: str) -> str:
+        return ChatGPT._get_response(
+            f"Alter the user's text to the following specifications: {prompt}",
+            text_to_alter
+        ).output_text

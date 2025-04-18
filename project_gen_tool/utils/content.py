@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 import shutil
 from typing import Callable
+from utils.openai import ChatGPT
 from utils.paths import Paths
 from utils.github import GitHub
 import json
@@ -62,8 +63,11 @@ class Content:
             if readme == None:
                 return
             
-            # TODO -> Run readme.md through ai
-            self.description = readme
+            ai_description = ChatGPT.create_description_from_readme(readme)
+            if ai_description:
+                self.description = ai_description
+            else:
+                self.description = readme
 
         except ConnectionError as err:
             logging.error(err)
