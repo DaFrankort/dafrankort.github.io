@@ -9,7 +9,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ title, content, image, children }) => {
   return (
-    <div className="w-full h-full overflow-hidden shadow-md bg-background-900 bg-gradient-to-tr from-secondary-900 to-primary-800 rounded-2xl group">
+    <div className="w-full h-full overflow-hidden shadow-md bg-background-900 bg-gradient-to-tr from-secondary-900 to-primary-800 rounded-3xl group">
       {image && (
         <div className="relative w-full h-48">
           <img src={image} alt="Card" className="object-cover w-full h-full" />
