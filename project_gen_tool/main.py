@@ -5,7 +5,7 @@ from interface.project_list import ProjectList
 from interface.utils.listbox import _Listbox
 
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.ERROR,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
