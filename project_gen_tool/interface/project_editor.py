@@ -1,3 +1,4 @@
+import logging
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import simpledialog
@@ -18,6 +19,7 @@ class ProjectEditor:
 
     def __init__(self, root: tk.Tk, bg_color: str):
         self.data = Content({'name': 'init', 'display_name': 'NO PROJECT SELECTED'})
+        self.project = None
 
         outer_frame = tk.Frame(root, bg=bg_color)
         outer_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=0, pady=0)
@@ -145,6 +147,8 @@ class ProjectEditor:
         self.private.set(project.private)
         self._toggle_url_state()
 
+        logging.info(f"Opened {self.project.name}")
+        
     def _toggle_url_state(self):
         if self.private.get():
             self.url.config(state='disabled')

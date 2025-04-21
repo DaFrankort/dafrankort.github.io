@@ -5,7 +5,7 @@ from interface.project_list import ProjectList
 from interface.widgets.listbox import _Listbox
 
 logging.basicConfig(
-    level=logging.ERROR,
+    level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
@@ -13,10 +13,13 @@ def on_project_select(event, lb: _Listbox, p_edit: ProjectEditor):
     try:
         index = lb.listbox.curselection()[0]
         selected_project = lb.projects[index]
-        logging.info(f"Selected {selected_project.name}")
 
+        if p_edit.project and selected_project == p_edit.project:
+            return # Project already open
+        
         p_edit.open_project(selected_project)
-    except:
+    except Exception as e:
+        logging.error(f"Error selecting project: {e}")
         pass # No project selected
 
 def main():
