@@ -39,7 +39,7 @@ def main():
     
     for lb in p_list.listboxes:
         lb.listbox.bind("<<ListboxSelect>>", lambda e, lb=lb: on_project_select(e, lb, p_edit))
-    p_edit.save_btn.bind("<ButtonRelease-1>", lambda e: on_save_project(e, p_list, p_edit))
+    p_edit.save_btn.btn.bind("<ButtonRelease-1>", lambda e: on_save_project(e, p_list, p_edit))
 
     root.mainloop()
 

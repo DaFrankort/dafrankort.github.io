@@ -5,6 +5,7 @@ import tkinter.messagebox as messagebox
 
 from tkinter import simpledialog
 from interface.widgets.listbox import _Listbox
+from interface.widgets.button import _Button
 from utils.paths import Paths
 from utils.content import Content
 from utils.github import GitHub
@@ -16,8 +17,6 @@ class ProjectList:
     list_frame: tk.Frame
     listboxes: list[_Listbox]
 
-    btn_new: tk.Button
-    btn_fetch_github: tk.Button
     move_target = tk.StringVar
     move_project: tk.OptionMenu
 
@@ -35,19 +34,11 @@ class ProjectList:
         btn_frame = tk.Frame(self.frame, bg=bg_color)
         btn_frame.pack(side=tk.RIGHT, fill=tk.BOTH, padx=0, pady=0)
 
-        self.btn_new = tk.Button(
-            self.frame, 
-            text="New",
-            command=lambda: self._new_project()
-            )
-        self.btn_new.pack(pady=(0, 5), fill=tk.X)
+        btn_new = _Button(self.frame, "New", busy_text="Creating...", command=lambda: self._new_project())
+        btn_new.btn.pack(pady=(0, 5), fill=tk.X)
 
-        self.btn_fetch_github = tk.Button(
-            self.frame,
-            text="Generate from Github",
-            command=self._generate_from_github
-        )
-        self.btn_fetch_github.pack(pady=(0, 5), fill=tk.X)
+        btn_fetch_github = _Button(self.frame, "Generate from GitHub", command=self._generate_from_github)
+        btn_fetch_github.btn.pack(pady=(0, 5), fill=tk.X)
 
         options = []
         for listbox in self.listboxes:
@@ -90,20 +81,12 @@ class ProjectList:
         self.update_list()
 
     def _generate_from_github(self):
-        self.btn_fetch_github.config(text='Generating..', state=tk.DISABLED)
-        self.frame.config(cursor="watch")
-        self.frame.update_idletasks()
+        new_projects = GitHub.generate_new_projects()
+        if new_projects:
+            names = ", ".join(p.name for p in new_projects)
+            messagebox.showinfo("Projects generated!", f"Generated {len(new_projects)} project(s):\n{names}")
 
-        try:
-            new_projects = GitHub.generate_new_projects()
-            if new_projects:
-                names = ", ".join(p.name for p in new_projects)
-                messagebox.showinfo("Projects generated!", f"Generated {len(new_projects)} project(s):\n{names}")
-
-            self.update_list()
-        finally:
-            self.frame.config(cursor="")
-            self.btn_fetch_github.config(text="Generate from Github", state=tk.NORMAL)
+        self.update_list()
 
     def update_list(self):
         if not self.listboxes: # First time setup: create _Listbox instances
