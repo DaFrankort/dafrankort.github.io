@@ -43,7 +43,7 @@ class ProjectEditor:
         self.url = tk.Entry(self.frame, width=50)
         self.url.pack(pady=5, anchor="w", fill=tk.X)
 
-        self.excerpt = LabeledTextBox(self.frame, "Excerpt")
+        self.excerpt = LabeledTextBox(self.frame, "Excerpt", height=4)
         self.excerpt.add_buttons(_Button(None, "AI-Generate from Description", command=lambda: self._generate_excerpt_from_description()))
 
         self.description = LabeledTextBox(self.frame, "Description")

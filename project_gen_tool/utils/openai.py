@@ -29,7 +29,7 @@ class ChatGPT:
     @staticmethod
     def create_excerpt_from_description(description: str) -> str:
         return ChatGPT._get_response(
-            "You will be given a description of a project, make a concise text to use in an excerpt. Avoid any sort of HTML, formatting or links.",
+            "You will be given a description of a project, make a concise text to use in an excerpt. Avoid any sort of HTML, formatting or links. Keep it short, roughly 2 lines.",
             description
         ).output_text
     
