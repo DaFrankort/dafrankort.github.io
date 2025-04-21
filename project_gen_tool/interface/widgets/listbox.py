@@ -1,9 +1,10 @@
 import logging
 import os
+import threading
+import tkinter as tk
 from pathlib import Path
 from typing import Callable
-import tkinter as tk
-
+from utils.folder_watcher import FolderWatcher
 from utils.content import Content
 
 class _Listbox:
@@ -22,7 +23,13 @@ class _Listbox:
         self.listbox.pack(pady=10)
 
         self.update_list()
+        self._start_watcher()
     
+    def _start_watcher(self):
+        self.watcher = FolderWatcher(self.get_path(), on_update=self.update_list)
+        self.listbox.after(100, self.update_list)
+        self.watcher.start()
+
     def update_list(self):
         self._load_projects()
 

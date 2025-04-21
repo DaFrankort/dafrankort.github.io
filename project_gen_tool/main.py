@@ -9,7 +9,6 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-# Select a project to edit
 def on_project_select(event, lb: _Listbox, p_edit: ProjectEditor):
     try:
         index = lb.listbox.curselection()[0]
@@ -20,11 +19,6 @@ def on_project_select(event, lb: _Listbox, p_edit: ProjectEditor):
     except:
         pass # No project selected
 
-def on_save_project(event, p_list: ProjectList, p_edit: ProjectEditor):
-    p_edit.save_changes()
-    p_list.update_list()
-
-# Set up the main window
 def main():
     accent_clr = "#aca8cc"
     gray_clr = "#f7f7f7"
@@ -39,7 +33,6 @@ def main():
     
     for lb in p_list.listboxes:
         lb.listbox.bind("<<ListboxSelect>>", lambda e, lb=lb: on_project_select(e, lb, p_edit))
-    p_edit.save_btn.btn.bind("<ButtonRelease-1>", lambda e: on_save_project(e, p_list, p_edit))
 
     root.mainloop()
 

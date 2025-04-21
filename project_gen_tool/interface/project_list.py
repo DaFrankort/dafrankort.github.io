@@ -29,7 +29,9 @@ class ProjectList:
         self.list_frame = tk.Frame(self.frame, bg=bg_color)
         self.list_frame.pack(side=tk.LEFT, fill=tk.Y, padx=10, pady=0)
         self.listboxes = []
-        self.update_list() # Create listboxes
+        for path in Paths.listbox_commands():
+            listbox = _Listbox(path, self.list_frame)
+            self.listboxes.append(listbox)
 
         btn_frame = tk.Frame(self.frame, bg=bg_color)
         btn_frame.pack(side=tk.RIGHT, fill=tk.BOTH, padx=0, pady=0)
@@ -59,7 +61,6 @@ class ProjectList:
                 for target_lb in self.listboxes:
                     if target_lb.name.lower() == self.move_target.get().lower():
                         project.move_to(target_lb.get_path)
-                        self.update_list()
                         return
 
     def _new_project(self):
@@ -78,26 +79,9 @@ class ProjectList:
         display_name = user_input.strip()
 
         Content({'name': safe_name, 'display_name': display_name}).save()
-        self.update_list()
 
     def _generate_from_github(self):
         new_projects = GitHub.generate_new_projects()
         if new_projects:
             names = ", ".join(p.name for p in new_projects)
             messagebox.showinfo("Projects generated!", f"Generated {len(new_projects)} project(s):\n{names}")
-
-        self.update_list()
-
-    def update_list(self):
-        if not self.listboxes: # First time setup: create _Listbox instances
-            self.listboxes = []
-            for path in Paths.listbox_commands():
-                listbox = _Listbox(path, self.list_frame)
-                self.listboxes.append(listbox)
-            return
-
-        def run():
-            for listbox in self.listboxes:
-                listbox.update_list()
-
-        threading.Thread(target=run).start()

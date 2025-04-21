@@ -67,7 +67,7 @@ class ProjectEditor:
         btn_desc_prompt.btn.pack(side="right", padx=10)
 
         # SAVE BUTTON
-        self.save_btn = _Button(self.frame, "Save Changes", busy_text="Saving...")
+        self.save_btn = _Button(self.frame, "Save Changes", busy_text="Saving...", command=lambda: self._save_changes())
         self.save_btn.btn.pack(pady=(0, 5), fill=tk.X)
 
     def _prompt_through_ai(self, text_widget: tk.Text):
@@ -114,7 +114,7 @@ class ProjectEditor:
         self.description.delete("1.0", tk.END)
         self.description.insert("1.0", self.data.description)
 
-    def save_changes(self):
+    def _save_changes(self):
         self.data.display_name = self.name.get()
         self.data.url = self.url.get()
         self.data.excerpt = self.excerpt.get("1.0", tk.END).strip()
