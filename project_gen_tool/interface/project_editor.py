@@ -44,32 +44,14 @@ class ProjectEditor:
         self.url.pack(pady=5, anchor="w", fill=tk.X)
 
         self.excerpt = LabeledTextBox(self.frame, "Excerpt")
-        self.excerpt.add_buttons([
-            _Button(None, "AI-Generate from Description", command=lambda: self._generate_excerpt_from_description()),
-            _Button(None, "Prompt AI", busy_text="Prompting...", command=lambda: self._prompt_through_ai(self.excerpt))
-        ])
+        self.excerpt.add_buttons(_Button(None, "AI-Generate from Description", command=lambda: self._generate_excerpt_from_description()))
 
         self.description = LabeledTextBox(self.frame, "Description")
-        self.description.add_buttons([
-            _Button(None, "AI-Generate from README.md", command=lambda: self._generate_description_from_readme()),
-            _Button(None, "Prompt AI", busy_text="Prompting...", command=lambda: self._prompt_through_ai(self.description))
-        ])
+        self.description.add_buttons(_Button(None, "AI-Generate from README.md", command=lambda: self._generate_description_from_readme()))
 
         # SAVE BUTTON
         self.save_btn = _Button(self.frame, "Save Changes", busy_text="Saving...", command=lambda: self._save_changes())
         self.save_btn.btn.pack(anchor="w", pady=(10, 5), fill=tk.X)
-
-    def _prompt_through_ai(self, textbox: LabeledTextBox):
-        prompt = simpledialog.askstring('Specify prompt for AI', 'Prompt')
-
-        if not prompt or prompt.strip() == '':
-            messagebox.showerror('Invalid prompt', 'Prompt cannot be empty!')
-            return
-
-        result = ChatGPT.prompt_ai(prompt, textbox.get_text())
-    
-        if result:
-            textbox.set_text(result)
 
     def _generate_excerpt_from_description(self):
         if self.excerpt.get_text() != '':
