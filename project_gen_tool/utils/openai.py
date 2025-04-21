@@ -9,7 +9,7 @@ class ChatGPT:
     _client = OpenAI(
         api_key=get_key(Paths.env(), "OPENAI_API_KEY")
     )
-    _model = "gpt-4o"
+    _model = "gpt-3.5-turbo"
 
     @staticmethod
     def _get_response(instructions: str, input_text: str):
