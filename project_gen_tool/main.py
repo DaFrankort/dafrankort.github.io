@@ -3,6 +3,7 @@ import logging
 from interface.project_editor import ProjectEditor
 from interface.project_list import ProjectList
 from interface.widgets.listbox import _Listbox
+from utils.index_generator import IndexGenerator
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -37,6 +38,8 @@ def main():
     for lb in p_list.listboxes:
         lb.listbox.bind("<<ListboxSelect>>", lambda e, lb=lb: on_project_select(e, lb, p_edit))
 
+    IndexGenerator.get_instance()
+    IndexGenerator.generate()
     root.mainloop()
 
 if __name__ == "__main__":

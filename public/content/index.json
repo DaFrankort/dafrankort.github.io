@@ -1,0 +1,10 @@
+{
+    "repos": [
+        {
+            "dafrankort.github.io.json": "This portfolio website highlights various projects. It features a tool that integrates with GitHub and an AI platform to seamlessly create project pages."
+        },
+        {
+            "discord-movienight.json": "A Java Discord bot named Adam Sandler uses Javacord and Maven to organize movie nights on a server. It fetches movie data from the OMDB API, stores it in .json files, and incorporates ChatGPT using sashirestela's simple-openai library to generate personalized comments on planned movies."
+        }
+    ]
+}
