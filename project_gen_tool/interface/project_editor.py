@@ -35,7 +35,7 @@ class ProjectEditor:
         url_frame.pack(anchor='w', pady=5, fill=tk.X)
         tk.Label(url_frame, text="URL:").pack(side='left')
         self.private = tk.BooleanVar(value=False)
-        tk.Checkbutton(url_frame, text="Private", variable=self.private).pack(side="right", padx=10)
+        tk.Checkbutton(url_frame, text="Private", variable=self.private, command=self._toggle_url_state).pack(side="right", padx=10)
 
         self.url = tk.Entry(self.frame, width=50)
         self.url.pack(pady=5, anchor="w", fill=tk.X)
@@ -134,8 +134,10 @@ class ProjectEditor:
         self.name.delete(0, tk.END)
         self.name.insert(0, project.display_name)
 
+        self.private.set(project.private)
         self.url.delete(0, tk.END)
         self.url.insert(0, project.url)
+        self._toggle_url_state()
 
         self.excerpt.delete("1.0", tk.END)
         self.excerpt.insert("1.0", project.excerpt)
@@ -144,4 +146,10 @@ class ProjectEditor:
         self.description.insert("1.0", project.description)
 
         self.private.set(project.private)
-        self.hidden.set(project.hidden)
+        self._toggle_url_state()
+
+    def _toggle_url_state(self):
+        if self.private.get():
+            self.url.config(state='disabled')
+        else:
+            self.url.config(state='normal')
