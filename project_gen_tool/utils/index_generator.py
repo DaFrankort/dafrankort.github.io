@@ -53,7 +53,11 @@ class IndexGenerator:
             if filename.endswith(".json"):
                 file_data = Content.load(filename, lambda fname: path / fname)
                 if file_data:  # Skip files that couldn't be loaded
-                    data.append({filename: file_data.excerpt})
+                    data.append({
+                        'file': filename,
+                        'display_name': file_data.display_name,
+                        'excerpt': file_data.excerpt
+                        })
         return data
 
     @staticmethod
