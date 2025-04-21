@@ -1,0 +1,8 @@
+{
+    "name": "discord-movienight",
+    "display_name": "Discord Movienight",
+    "excerpt": "A Discord bot in Java that manages a 'to-watch' list of movies, fetching data from the OMDB API and integrating ChatGPT for user interactions and generating remarks about planned movies.",
+    "description": "<h3>Discord Movienight</h3>\n<p>A discord bot written in Java, using <a href=\"https://github.com/Javacord/Javacord\">Javacord</a> & <a href=\"https://maven.apache.org/index.html\">Maven</a>.<br>Bot that keeps 'to-watch' list of movies that a discord server wants to watch.<br>Movie-data is received from the <a href=\"https://www.omdbapi.com/\">OMDB Api</a> and stored in .json files, both per server and in a cache file for recently called movie-data.</p>\n<p>ChatGPT integration using <a href=\"https://github.com/sashirestela/simple-openai\">sashirestela's simple-openai library</a> to allow users to talk to the bot, who pretends to be Adam Sandler. Also used to generate some custom remarks about planned movies & etc.</p>",
+    "html_url": "https://github.com/DaFrankort/Angular-Examen",
+    "private": true
+}
