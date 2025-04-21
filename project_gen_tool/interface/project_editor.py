@@ -128,9 +128,6 @@ class ProjectEditor:
         self.project = project
         self.data = Content(project.to_dict(), self.project.path)
 
-        print(self.project.to_dict())
-        print(self.data.to_dict())
-
         self.name.delete(0, tk.END)
         self.name.insert(0, project.display_name)
 
