@@ -27,7 +27,7 @@ class IndexGenerator:
     @staticmethod
     def generate():
         def run():
-            print('Generating new index.json')
+            logging.info('Updating index.json')
             
             index_data = {}
             for get_path in Paths.listbox_commands():
