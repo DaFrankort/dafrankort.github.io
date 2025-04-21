@@ -1,6 +1,5 @@
 import logging
 import os
-import threading
 import tkinter as tk
 from pathlib import Path
 from typing import Callable
