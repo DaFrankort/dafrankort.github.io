@@ -4,7 +4,7 @@ import tkinter as tk
 import tkinter.messagebox as messagebox
 
 from tkinter import simpledialog
-from interface.abstract.listbox import _Listbox
+from interface.widgets.listbox import _Listbox
 from utils.paths import Paths
 from utils.content import Content
 from utils.github import GitHub
