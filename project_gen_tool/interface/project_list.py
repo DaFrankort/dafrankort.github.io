@@ -36,16 +36,17 @@ class ProjectList:
         btn_frame = tk.Frame(self.frame, bg=bg_color)
         btn_frame.pack(side=tk.RIGHT, fill=tk.BOTH, padx=0, pady=0)
 
-        btn_new = _Button(self.frame, "New", busy_text="Creating...", command=lambda: self._new_project())
-        btn_new.btn.pack(pady=(0, 5), fill=tk.X)
+        top_buttons = [
+            _Button(self.frame, "New", busy_text="Creating...", command=lambda: self._new_project()),
+            _Button(self.frame, "Generate from GitHub", command=self._generate_from_github)
+        ]
+        for btn in top_buttons:
+            btn.btn.pack(pady=(0, 5), fill=tk.X)
 
-        btn_fetch_github = _Button(self.frame, "Generate from GitHub", command=self._generate_from_github)
-        btn_fetch_github.btn.pack(pady=(0, 5), fill=tk.X)
-
+        # Move OptionMenu
         options = []
         for listbox in self.listboxes:
             options.append(listbox.name.capitalize())
-
         self.move_target = tk.StringVar(self.frame)
         self.move_target.set("Move Project")
         self.move_project = tk.OptionMenu(self.frame, self.move_target, *options, command=lambda _: self._move_project())
