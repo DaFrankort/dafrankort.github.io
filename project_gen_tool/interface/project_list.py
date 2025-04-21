@@ -50,7 +50,7 @@ class ProjectList:
         self.move_target = tk.StringVar(self.frame)
         self.move_target.set("Move Project")
         self.move_project = tk.OptionMenu(self.frame, self.move_target, *options, command=lambda _: self._move_project())
-        self.move_project.pack(pady=(0, 5), fill=tk.X)
+        self.move_project.pack(pady=10, fill=tk.X)
 
     def _move_project(self):
         for lb in self.listboxes:
@@ -66,6 +66,9 @@ class ProjectList:
 
     def _new_project(self):
         user_input = simpledialog.askstring("Please provide a name for your project:", "My Project")
+
+        if not user_input:
+            return
 
         safe_name = user_input.strip().replace(" ", "_").lower()
         safe_name = re.sub(r'[^a-z0-9_-]', '', safe_name)
