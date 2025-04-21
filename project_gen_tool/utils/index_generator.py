@@ -63,7 +63,6 @@ class IndexGenerator:
     @staticmethod
     def _save(data):
         path = Paths.projects() / 'index.json'
-        print(data)
         with open(path, 'w') as file:
             logging.info(f"Saving {path}")
             json.dump(data, file, indent=4)
