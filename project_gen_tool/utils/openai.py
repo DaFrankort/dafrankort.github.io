@@ -22,7 +22,7 @@ class ChatGPT:
     @staticmethod
     def create_description_from_readme(readme_text: str) -> str:
         return ChatGPT._get_response(
-            "You will be fed README.MD content from GitHub repositories, transform them into a HTML div and make the content be just a description of the project. Retain important information like links by using appropriate HTML elements.",
+            "You will be fed README.MD content from GitHub repositories, transform any markdown notation to HTML, using <strong> instead of **, <i> instead of *, and <a> instead of [link](url)",
             readme_text
         ).output_text
 
