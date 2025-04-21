@@ -1,8 +1,8 @@
 {
     "name": "dafrankort.github.io",
     "display_name": "Portfolio Website",
-    "excerpt": "This portfolio website highlights various projects. It features a tool that integrates with GitHub and an AI platform to seamlessly create project pages.",
-    "description": "I'm developing a portfolio website using React and TypeScript for the frontend. The site is designed for user interaction, allowing them to view my projects dynamically. The project's data is managed via a specialized tool I created in Python, which interfaces with the GitHub API and the OpenAI API to gather and process information into JSON files, organizing the data efficiently. It includes a project editor screen with AI capabilities, enabling easy creation of descriptions, and can even generate basic descriptions from a project's README.md file. The frontend reads these JSON files to build project views, providing detailed and current project information. I'm creating this site to allow people to see my projects. The tool I made with Python pulls information from GitHub and OpenAI, organizing the details into easy-to-read files. \n\nIt helps create project descriptions and can even write ones based on existing content, showcasing all about my projects.",
-    "html_url": "https://github.com/pipieter/Alchemy",
-    "private": false
+    "excerpt": "Explore a portfolio showcasing projects developed with React and Typescript, supported by a bespoke Python tool to manage project data and integrate with GitHub and OpenAI APIs.",
+    "description": "<p>A portfolio website showcasing the projects I have worked on and created. The website is developed using React and Typescript for the front-end. A convenient Python tool was also devised to simplify the process of updating project data and creating new project pages, with the added functionality of integrating with the GitHub and OpenAI APIs.</p>",
+    "html_url": "https://github.com/DaFrankort/dafrankort.github.io",
+    "private": true
 }

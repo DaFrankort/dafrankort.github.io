@@ -1,14 +1,19 @@
 {
     "repos": [
         {
+            "file": "chrome-extension-bingeflix.json",
+            "display_name": "chrome-extension-bingeflix",
+            "excerpt": ""
+        },
+        {
             "file": "dafrankort.github.io.json",
-            "display_name": "Portfolio Website",
-            "excerpt": "This portfolio website highlights various projects. It features a tool that integrates with GitHub and an AI platform to seamlessly create project pages."
+            "display_name": "dafrankort.github.io",
+            "excerpt": "Portfolio"
         },
         {
             "file": "discord-movienight.json",
-            "display_name": "Discord Movienight",
-            "excerpt": "A Discord bot in Java that manages a 'to-watch' list of movies, fetching data from the OMDB API and integrating ChatGPT for user interactions and generating remarks about planned movies."
+            "display_name": "discord-movienight",
+            "excerpt": ""
         }
     ]
 }
