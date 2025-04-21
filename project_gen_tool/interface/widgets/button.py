@@ -10,11 +10,16 @@ class _Button:
     command: Callable
 
     def __init__(self, frame: tk.Frame, text: str, command: Callable = None, busy_text: str = "Generating..."):
-        self._frame = frame
         self._text = text
         self._busy_text = busy_text
         self.command = command
 
+        if frame != None:
+            self.set_frame(frame)
+        
+    def set_frame(self, frame):
+        """Used when frame is NONE on init"""
+        self._frame = frame
         self.btn = tk.Button(self._frame, text=self._text, command=self._on_press)
 
     def _on_press(self):
