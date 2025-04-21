@@ -20,8 +20,9 @@ class _Button:
         
     def set_frame(self, frame):
         """Used when frame is NONE on init"""
+        max_width = max(len(self._text), len(self._busy_text))
         self._frame = frame
-        self.btn = tk.Button(self._frame, text=self._text, command=self._on_press)
+        self.btn = tk.Button(self._frame, text=self._text, command=self._on_press, width=max_width)
 
     def _on_press(self):
         if not self.command:
