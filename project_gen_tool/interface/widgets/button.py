@@ -9,7 +9,8 @@ class _Button:
     _busy_text: str
     command: Callable
 
-    def __init__(self, frame: tk.Frame, text: str, command: Callable = None, busy_text: str = "Generating..."):
+    def __init__(self, frame: tk.Frame | None, text: str, command: Callable = None, busy_text: str = "Generating..."):
+        """Set frame to None and use set_frame() if you need to define the frame later."""
         self._text = text
         self._busy_text = busy_text
         self.command = command
