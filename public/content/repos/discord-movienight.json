@@ -1,6 +1,6 @@
 {
     "name": "discord-movienight",
-    "display_name": "Movienight - Discord Bot",
+    "display_name": "Movienight Bot",
     "excerpt": "Experience Discord Movienight with a Java bot using Javacord & Maven, managing movie lists and data from OMDB API. Integrate ChatGPT for engaging conversations and Adam Sandler-style interactions.",
     "description": "<h3>Discord Movienight</h3>\n<p>A discord bot written in Java, using <a href=\"https://github.com/Javacord/Javacord\">Javacord</a> & <a href=\"https://maven.apache.org/index.html\">Maven</a>.</p>\n<p>Bot that keeps 'to-watch' list of movies that a discord server wants to watch. Movie-data is received from the <a href=\"https://www.omdbapi.com/\">OMDB Api</a> and stored in .json files, both per server and in a cache file for recently called movie-data.</p>\n<p>ChatGPT integration using <a href=\"https://github.com/sashirestela/simple-openai\">sashirestela's simple-openai library</a> to allow users to talk to the bot, who pretends to be Adam Sandler. Also used to generate some custom remarks about planned movies & etc.</p>",
     "html_url": "https://github.com/DaFrankort/discord-movienight",

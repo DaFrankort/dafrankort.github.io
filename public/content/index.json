@@ -12,7 +12,7 @@
         },
         {
             "file": "discord-movienight.json",
-            "display_name": "Movienight - Discord Bot",
+            "display_name": "Movienight Bot",
             "excerpt": "Experience Discord Movienight with a Java bot using Javacord & Maven, managing movie lists and data from OMDB API. Integrate ChatGPT for engaging conversations and Adam Sandler-style interactions."
         }
     ]
