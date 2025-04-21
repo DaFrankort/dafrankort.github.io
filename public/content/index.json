@@ -2,18 +2,18 @@
     "repos": [
         {
             "file": "chrome-extension-bingeflix.json",
-            "display_name": "chrome-extension-bingeflix",
-            "excerpt": ""
+            "display_name": "BingeFlix",
+            "excerpt": "Introducing BingeFlix: The essential Google Chrome extension for optimizing your Netflix binge-watching sessions. Skip intros and effortlessly transition between episodes with personalized settings for the ultimate viewing convenience."
         },
         {
             "file": "dafrankort.github.io.json",
-            "display_name": "dafrankort.github.io",
-            "excerpt": "Portfolio"
+            "display_name": "Portfolio Website",
+            "excerpt": "Explore a portfolio showcasing projects developed with React and Typescript, supported by a bespoke Python tool to manage project data and integrate with GitHub and OpenAI APIs."
         },
         {
             "file": "discord-movienight.json",
-            "display_name": "discord-movienight",
-            "excerpt": ""
+            "display_name": "Movienight - Discord Bot",
+            "excerpt": "Experience Discord Movienight with a Java bot using Javacord & Maven, managing movie lists and data from OMDB API. Integrate ChatGPT for engaging conversations and Adam Sandler-style interactions."
         }
     ]
 }

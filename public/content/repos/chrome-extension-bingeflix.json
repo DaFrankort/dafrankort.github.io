@@ -3,6 +3,6 @@
     "display_name": "BingeFlix",
     "excerpt": "Introducing BingeFlix: The essential Google Chrome extension for optimizing your Netflix binge-watching sessions. Skip intros and effortlessly transition between episodes with personalized settings for the ultimate viewing convenience.",
     "description": "<h3>BingeFlix: The Ultimate Netflix Binge-Watching Companion</h3>\n\n<p>BingeFlix is a user-friendly Google Chrome extension designed to enhance your Netflix viewing experience. This powerful tool eliminates the need to sit through those repetitive intros and effortlessly progresses to the next episode, allowing you to seamlessly binge-watch your favorite shows.</p>\n\n<p>With BingeFlix, convenience is key. The extension features a customizable settings menu that enables you to personalize your viewing preferences and even disable specific plugin functions based on your individual preferences. Whether you want to skip intros, change playback settings, or fine-tune other features, BingeFlix puts you in control of your binge-watching experience.</p>",
-    "html_url": "https://github.com/DaFrankort/dafrankort.github.io",
+    "html_url": "https://github.com/DaFrankort/chrome-extension-bingeflix",
     "private": false
 }

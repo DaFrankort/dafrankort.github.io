@@ -98,6 +98,7 @@ class ProjectEditor:
         self.name.insert(0, project.display_name)
 
         self.private.set(project.private)
+        self.url.config(state='normal')
         self.url.delete(0, tk.END)
         self.url.insert(0, project.url)
         self._toggle_url_state()
