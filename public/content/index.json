@@ -3,7 +3,7 @@
         {
             "file": "chrome-extension-bingeflix.json",
             "display_name": "BingeFlix",
-            "excerpt": "Introducing BingeFlix: The essential Google Chrome extension for optimizing your Netflix binge-watching sessions. Skip intros and effortlessly transition between episodes with personalized settings for the ultimate viewing convenience."
+            "excerpt": "Enhance your Netflix binge-watching with BingeFlix, a Chrome extension that lets you skip intros and seamlessly move to the next episode for uninterrupted viewing pleasure."
         },
         {
             "file": "dafrankort.github.io.json",
@@ -12,7 +12,7 @@
         },
         {
             "file": "discord-movienight.json",
-            "display_name": "Movienight Bot",
+            "display_name": "Discord Movienight",
             "excerpt": "Experience Discord Movienight with a Java bot using Javacord & Maven, managing movie lists and data from OMDB API. Integrate ChatGPT for engaging conversations and Adam Sandler-style interactions."
         }
     ]
