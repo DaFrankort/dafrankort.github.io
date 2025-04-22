@@ -1,13 +1,15 @@
 import React, { ReactNode } from "react";
+import { modifyAnchorTags } from "../functions/ModifyAnchorTags";
+import "./Card.css";
 
 type CardProps = {
   title: string;
-  content: string;
   image?: string;
-  children?: ReactNode;
+  content: ReactNode | string;
+  buttons?: ReactNode;
 };
 
-const Card: React.FC<CardProps> = ({ title, content, image, children }) => {
+const Card: React.FC<CardProps> = ({ title, image, content, buttons }) => {
   return (
     <div className="w-full h-full overflow-hidden shadow-md bg-background-900 bg-gradient-to-tr from-secondary-900 to-primary-800 rounded-3xl group">
       {image && (
@@ -19,8 +21,12 @@ const Card: React.FC<CardProps> = ({ title, content, image, children }) => {
 
       <div className="p-5 text-left">
         {title && <h2 className="mb-4 text-xl">{title}</h2>}
-        <p className="mb-4 text-base">{content}</p>
-        {children && <div className="text-sm text-right">{children}</div>}
+        {typeof content === "string" ? (
+          <div className="content" dangerouslySetInnerHTML={{ __html: modifyAnchorTags(content) }} />
+        ) : (
+          <div className="mb-4 text-base">{content}</div>
+        )}
+        {buttons && <div className="buttons">{buttons}</div>}
       </div>
     </div>
   );

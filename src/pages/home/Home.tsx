@@ -13,11 +13,12 @@ function Home() {
           <Card
             title="Check out my projects!"
             content="I have many projects you can see on this website, feel free to take a look around!"
-          >
-            <div className="button-list">
-              <Button href="/project">My Projects</Button>
-            </div>
-          </Card>
+            buttons={
+              <div className="button-list">
+                <Button href="/project">My Projects</Button>
+              </div>
+            }
+          />
         </section>
 
         <section className="container grid-lg">
@@ -36,9 +37,8 @@ function Home() {
           <Card
             title="Card 2"
             content="Here is another card with some different content. You can pass any content here."
-          >
-            <Button href="https://github.com/DaFrankort">Visit my super cool site!</Button>
-          </Card>
+            buttons={<Button href="https://github.com/DaFrankort">Visit my super cool site!</Button>}
+          />
         </section>
       </div>
     </div>

@@ -1,12 +1,7 @@
 import React from "react";
 import "./Hero.css";
-import { Project } from "../../../interfaces";
 
-interface HeroProps {
-  project: Project;
-}
-
-const Hero: React.FC<HeroProps> = ({ project }) => {
+const Hero: React.FC = () => {
   return (
     <section className="w-full -mb-24 py-16 overflow-hidden h-[40vh]">
       {/* Background */}
@@ -29,9 +24,8 @@ const Hero: React.FC<HeroProps> = ({ project }) => {
       {/* Content */}
       <div className="container flex items-center justify-between h-full -mt-8">
         <div id="hero-content">
-          <h1>{project.display_name}</h1>
-          <h2>{project.name}</h2>
-          <p>{project.excerpt}</p>
+          <h1>Personal Projects</h1>
+          <h2>Programming projects I've developped</h2>
         </div>
       </div>
     </section>
