@@ -10,8 +10,10 @@ const Button: React.FC<ButtonProps> = ({ children, href }) => {
   const content = children || "Click Me!";
 
   if (href) {
+    const target = href.startsWith("/") ? "_self" : "_blank";
+
     return (
-      <a target="_blank" rel="noopener noreferrer" href={href} className="button">
+      <a target={target} rel="noopener noreferrer" href={href} className="button">
         {content}
       </a>
     );

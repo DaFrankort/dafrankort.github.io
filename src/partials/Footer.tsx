@@ -36,6 +36,11 @@ const Footer: React.FC<FooterProps> = ({}) => {
               Home
             </a>
           </li>
+          <li>
+            <a href="/project" rel="noopener noreferrer">
+              Projects
+            </a>
+          </li>
         </ul>
       </div>
     </footer>

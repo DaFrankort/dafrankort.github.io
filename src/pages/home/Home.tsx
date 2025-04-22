@@ -15,9 +15,7 @@ function Home() {
             content="I have many projects you can see on this website, feel free to take a look around!"
           >
             <div className="button-list">
-              <Button href="https://github.com/DaFrankort">Java</Button>
-              <Button href="https://github.com/DaFrankort">Python</Button>
-              <Button href="https://github.com/DaFrankort">Typescript</Button>
+              <Button href="/project">My Projects</Button>
             </div>
           </Card>
         </section>

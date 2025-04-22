@@ -35,7 +35,7 @@ function Projects() {
                 // Loop through the projects and create a button for each
                 projects.map((project) => (
                   <div key={project.file} className="project-item">
-                    <Button href={`project/${project.file.replace(".json", "")}`}>{project.display_name}</Button>
+                    <Button href={`/project/${project.file.replace(".json", "")}`}>{project.display_name}</Button>
                     <p>{project.excerpt}</p>
                   </div>
                 ))
