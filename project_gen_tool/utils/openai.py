@@ -1,6 +1,5 @@
 from openai import OpenAI
 from dotenv import get_key, load_dotenv
-import openai
 from utils.paths import Paths
 
 load_dotenv(Paths.env())
