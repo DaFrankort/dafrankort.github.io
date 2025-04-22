@@ -12,6 +12,7 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "dafrankort.github.io": "file:",
+    "fuse.js": "^7.1.0",
     "kute.js": "^2.2.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
