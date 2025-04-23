@@ -1,14 +1,19 @@
-.content {
+.card {
+  @apply w-full h-full overflow-hidden shadow-md rounded-3xl;
+  @apply bg-background-900 bg-gradient-to-tr from-secondary-900 to-primary-800;
+}
+
+.card-content {
   @apply mb-4 text-base;
 }
 
-.content > * > a {
+.card-content > * > a {
   @apply relative inline-block transition-colors;
   @apply text-accent-100 hover:text-secondary-200;
   @apply italic;
 }
 
-.content > * > a::before {
+.card-content > * > a::before {
   content: "";
   position: absolute;
   bottom: 2px; /* or try bottom: -1px / -2px for fine tuning */
@@ -19,7 +24,7 @@
   transition: width 0.3s ease;
 }
 
-.content > * > a:hover::before {
+.card-content > * > a:hover::before {
   width: 100%;
 }
 

@@ -11,7 +11,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ title, image, content, buttons }) => {
   return (
-    <div className="w-full h-full overflow-hidden shadow-md bg-background-900 bg-gradient-to-tr from-secondary-900 to-primary-800 rounded-3xl group">
+    <div className="card group">
       {image && (
         <div className="relative w-full h-48">
           <img src={image} alt="Card" className="object-cover w-full h-full" />
@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({ title, image, content, buttons }) => {
       <div className="p-5 text-left">
         {title && <h2 className="mb-4 text-xl">{title}</h2>}
         {typeof content === "string" ? (
-          <div className="content" dangerouslySetInnerHTML={{ __html: modifyAnchorTags(content) }} />
+          <div className="card-content" dangerouslySetInnerHTML={{ __html: modifyAnchorTags(content) }} />
         ) : (
           <div className="mb-4 text-base">{content}</div>
         )}
