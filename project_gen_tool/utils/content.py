@@ -73,7 +73,10 @@ class Content:
             logging.error(err)
 
     def generate_techstack(self):
-        self.techstack = GitHub.get_project_languages()
+        try:
+            self.techstack = GitHub.get_project_languages(self.name)
+        except:
+            self.techstack = self.techstack
 
     def save(self, path_cmd: Callable[[], Path] = Paths.projects_hidden):
         if not self.path:

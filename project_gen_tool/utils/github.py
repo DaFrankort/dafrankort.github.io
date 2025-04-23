@@ -1,4 +1,5 @@
 import logging
+import threading
 import requests
 from dotenv import get_key, load_dotenv
 
@@ -23,15 +24,23 @@ class GitHub:
         from utils.content import Content # Imported late to prevent circle-import
 
         repos = GitHub._get_projects_json()
-        
         projects = []
+        threads = []
         for repo in repos:
             project = Content(repo)
             if project.exists():
                 continue
 
-            projects.append(project)
-            project.save()
+            def run(p=project):
+                p.generate_techstack()
+                projects.append(p)
+                p.save()
+            thread = threading.Thread(target=run)
+            thread.start()
+            threads.append(thread)
+
+        for thread in threads:
+            thread.join()
 
         logging.info(f"{len(projects)} New projects generated!")
         return projects
