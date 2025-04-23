@@ -23,19 +23,29 @@ function Projects() {
       <section className="container">
         <Card
           title="Check out my projects!"
-          content="I have many projects you can see on this website, feel free to take a look around!"
-          buttons={
-            <div className="button-list">
-              {projects.length > 0 ? (
-                projects.map((project) => (
-                  <div key={project.file} className="space-y-2 text-left project-item">
-                    <Button href={`/project/${project.file.replace(".json", "")}`}>{project.display_name}</Button>
-                    <p>{project.excerpt}</p>
-                  </div>
-                ))
-              ) : (
-                <p>Loading projects...</p>
-              )}
+          content={
+            <div>
+              <p className="mb-4">
+                I have some projects you can read a little more about, although information is a little bit dated as for
+                now!
+              </p>
+              <div className="button-list">
+                {projects.length > 0 ? (
+                  projects.map((project) => (
+                    <Card
+                      title={project.display_name}
+                      content={<p>{project.excerpt}</p>}
+                      buttons={
+                        <Button href={`/project/${project.file.replace(".json", "")}`}>
+                          View {project.display_name}
+                        </Button>
+                      }
+                    />
+                  ))
+                ) : (
+                  <p>Loading projects...</p>
+                )}
+              </div>
             </div>
           }
         />
