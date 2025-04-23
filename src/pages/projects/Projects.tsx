@@ -36,7 +36,7 @@ function Projects() {
                       title={project.display_name}
                       content={<p>{project.excerpt}</p>}
                       buttons={
-                        <Button href={`/project/${project.file.replace(".json", "")}`}>
+                        <Button href={`/#/project/${project.file.replace(".json", "")}`}>
                           View {project.display_name}
                         </Button>
                       }

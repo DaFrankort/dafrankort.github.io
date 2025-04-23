@@ -37,7 +37,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
             </a>
           </li>
           <li>
-            <a href="/project" rel="noopener noreferrer">
+            <a href="/#/project" rel="noopener noreferrer">
               Projects
             </a>
           </li>

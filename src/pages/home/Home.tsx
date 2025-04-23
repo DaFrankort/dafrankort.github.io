@@ -1,6 +1,5 @@
 import Card from "../../components/Card";
 import Button from "../../components/Button";
-
 import Hero from "./partials/Hero";
 
 function Home() {
@@ -15,7 +14,7 @@ function Home() {
             content="This website is currently a work-in-progress, however I have a few basic projects that can be seen here."
             buttons={
               <div className="button-list">
-                <Button href="/project">My Projects</Button>
+                <Button href="/#/project">My Projects</Button>
               </div>
             }
           />
