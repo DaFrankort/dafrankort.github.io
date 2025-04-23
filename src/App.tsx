@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
-import Projects from "./pages/project/Projects";
-import ProjectDetail from "./pages/project/ProjectDetail";
+import Projects from "./pages/projects/Projects";
+import ProjectDetail from "./pages/project-details/ProjectDetail";
 
 function App() {
   return (

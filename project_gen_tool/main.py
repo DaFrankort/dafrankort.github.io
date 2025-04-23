@@ -2,29 +2,27 @@ import tkinter as tk
 import logging
 from interface.project_editor import ProjectEditor
 from interface.project_list import ProjectList
-from interface.utils.listbox import _Listbox
+from interface.widgets.listbox import _Listbox
+from utils.index_generator import IndexGenerator
 
 logging.basicConfig(
-    level=logging.ERROR,
+    level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-# Select a project to edit
 def on_project_select(event, lb: _Listbox, p_edit: ProjectEditor):
     try:
         index = lb.listbox.curselection()[0]
         selected_project = lb.projects[index]
-        logging.info(f"Selected {selected_project.name}")
 
+        if p_edit.project and selected_project == p_edit.project:
+            return # Project already open
+        
         p_edit.open_project(selected_project)
-    except:
+    except Exception as e:
+        logging.error(f"Error selecting project: {e}")
         pass # No project selected
 
-def on_save_project(event, p_list: ProjectList, p_edit: ProjectEditor):
-    p_edit.save_changes()
-    p_list.update_list()
-
-# Set up the main window
 def main():
     accent_clr = "#aca8cc"
     gray_clr = "#f7f7f7"
@@ -39,8 +37,9 @@ def main():
     
     for lb in p_list.listboxes:
         lb.listbox.bind("<<ListboxSelect>>", lambda e, lb=lb: on_project_select(e, lb, p_edit))
-    p_edit.save_btn.bind("<ButtonRelease-1>", lambda e: on_save_project(e, p_list, p_edit))
 
+    IndexGenerator.get_instance()
+    IndexGenerator.generate()
     root.mainloop()
 
 if __name__ == "__main__":

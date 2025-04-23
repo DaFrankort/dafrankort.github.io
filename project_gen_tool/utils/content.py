@@ -17,7 +17,6 @@ class Content:
     
     url: str
     private: bool
-    hidden = bool
 
     def to_dict(self):
         return {
@@ -27,7 +26,6 @@ class Content:
             'description': self.description,
             'html_url': self.url,
             'private': self.private,
-            'hidden': self.hidden
         }
 
     def __init__(self, json: dict, path: Path | None = None):
@@ -35,12 +33,11 @@ class Content:
         self.display_name = json.get('display_name', self.name if self.name != '' else 'Untitled')
         self.path = path if path else Paths.projects_hidden(self.name)
 
-        self.description = json.get('description', '')
-        self.excerpt = json.get('excerpt', self.description)
+        self.description = json.get('description') or ''
+        self.excerpt = json.get('excerpt') or self.description
 
         self.url = json.get('html_url', '')
         self.private = json.get('private', True)
-        self.hidden = json.get('hidden', True)
 
     @classmethod
     def load(cls, filename: str, path_cmd: Callable[[], Path]):

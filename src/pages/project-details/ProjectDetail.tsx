@@ -3,20 +3,24 @@ import Button from "../../components/Button";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Hero from "./partials/Hero";
-import { Project } from "../../interfaces";
+import { fetchProjectDetail, Project } from "../../functions/FetchProjectDetails";
 
 function ProjectDetail() {
   const { projectId } = useParams();
   const [project, setProjectData] = useState<Project | null>(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch(`/content/repos/${projectId}.json`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Project not found");
-        return res.json();
+    if (!projectId) return;
+
+    fetchProjectDetail(projectId)
+      .then((data) => {
+        if (!data) {
+          setError("Project not found");
+        } else {
+          setProjectData(data);
+        }
       })
-      .then((data) => setProjectData(data))
       .catch((err) => setError(err.message));
   }, [projectId]);
 
@@ -28,9 +32,11 @@ function ProjectDetail() {
       <Hero project={project} />
 
       <section className="container">
-        <Card title="About" content={project.description}>
-          {!project.private && <Button href={project.html_url}>View on GitHub</Button>}
-        </Card>
+        <Card
+          title="About"
+          content={project.description}
+          buttons={!project.private && <Button href={project.html_url}>View on GitHub</Button>}
+        />
       </section>
     </div>
   );
