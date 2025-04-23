@@ -12,6 +12,7 @@ class Content:
     path: Path
     name: str
     display_name: str
+    techstack: list[str]
     excerpt: str
     description: str
     
@@ -22,6 +23,7 @@ class Content:
         return {
             'name': self.name,
             'display_name': self.display_name,
+            'techstack': self.techstack,
             'excerpt': self.excerpt,
             'description': self.description,
             'html_url': self.url,
@@ -32,6 +34,7 @@ class Content:
         self.name = json.get('name', '')
         self.display_name = json.get('display_name', self.name if self.name != '' else 'Untitled')
         self.path = path if path else Paths.projects_hidden(self.name)
+        self.techstack = json.get('techstack', '')
 
         self.description = json.get('description') or ''
         self.excerpt = json.get('excerpt') or self.description
@@ -68,6 +71,9 @@ class Content:
 
         except ConnectionError as err:
             logging.error(err)
+
+    def generate_techstack(self):
+        self.techstack = GitHub.get_project_languages()
 
     def save(self, path_cmd: Callable[[], Path] = Paths.projects_hidden):
         if not self.path:

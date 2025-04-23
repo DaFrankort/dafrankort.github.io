@@ -1,9 +1,9 @@
 import logging
 import tkinter as tk
 from tkinter import messagebox
-from tkinter import simpledialog
 from interface.widgets.button import _Button
 from interface.widgets.labeled_textbox import LabeledTextBox
+from utils.github import GitHub
 from utils.openai import ChatGPT
 from utils.content import Content
 
@@ -14,6 +14,8 @@ class ProjectEditor:
     frame: tk.Frame
     private: tk.BooleanVar
     name: tk.Entry
+    url: tk.Entry
+    techstack: tk.Entry
     excerpt: LabeledTextBox
     description: LabeledTextBox
     save_btn: _Button
@@ -39,9 +41,16 @@ class ProjectEditor:
         tk.Label(url_frame, text="URL:").pack(side='left')
         self.private = tk.BooleanVar(value=False)
         tk.Checkbutton(url_frame, text="Private", variable=self.private, command=self._toggle_url_state).pack(side="right", padx=10)
-
         self.url = tk.Entry(self.frame, width=50)
         self.url.pack(pady=5, anchor="w", fill=tk.X)
+
+        techstack_frame = tk.Frame(self.frame)
+        techstack_frame.pack(anchor="w", pady=5, fill=tk.X)
+        tk.Label(techstack_frame, text="Tech Stack (seperate by semicolon;)").pack(side='left')
+        techstack_gen_btn = _Button(techstack_frame, "Generate from GitHub", command=lambda: self._get_techstack_from_github())
+        techstack_gen_btn.btn.pack(side="right", padx=10)
+        self.techstack = tk.Entry(self.frame, width=50)
+        self.techstack.pack(pady=5, anchor="w", fill=tk.X)
 
         self.excerpt = LabeledTextBox(self.frame, "Excerpt", height=4)
         self.excerpt.add_buttons(_Button(None, "AI-Generate from Description", command=lambda: self._generate_excerpt_from_description()))
@@ -52,6 +61,18 @@ class ProjectEditor:
         # SAVE BUTTON
         self.save_btn = _Button(self.frame, "Save Changes", busy_text="Saving...", command=lambda: self._save_changes())
         self.save_btn.btn.pack(anchor="w", pady=(10, 5), fill=tk.X)
+
+    def _get_techstack_from_github(self):
+        if self.techstack.get() != '':
+            confirm = messagebox.askyesno("Confirm", "This will overwrite the current tech-stack, are you sure?")
+            if not confirm:
+                return
+            
+        languages = GitHub.get_project_languages(self.project.name)
+        lang_text = '; '.join(languages)
+
+        self.techstack.delete(0, tk.END)
+        self.techstack.insert(0, lang_text) # TODO actually save this and add it to Content class
 
     def _generate_excerpt_from_description(self):
         if self.excerpt.get_text() != '':
@@ -83,6 +104,8 @@ class ProjectEditor:
     def _save_changes(self):
         self.data.display_name = self.name.get()
         self.data.url = self.url.get()
+        techstack_list = [t.strip() for t in self.techstack.get().split(';') if t.strip()]
+        self.data.techstack = techstack_list
         self.data.excerpt = self.excerpt.get_text()
         self.data.description = self.description.get_text()
         self.data.private = self.private.get()
@@ -102,6 +125,9 @@ class ProjectEditor:
         self.url.delete(0, tk.END)
         self.url.insert(0, project.url)
         self._toggle_url_state()
+
+        self.techstack.delete(0, tk.END)
+        self.techstack.insert(0, '; '.join(project.techstack))
 
         self.excerpt.set_text(project.excerpt)
         self.description.set_text(project.description)
