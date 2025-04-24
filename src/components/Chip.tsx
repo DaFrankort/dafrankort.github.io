@@ -29,7 +29,6 @@ const Chip: React.FC<ChipProps> = ({ text }) => {
   ];
   const colorIndex = hashStringToNumber(content) % colorClasses.length;
   const colorClass = colorClasses[colorIndex];
-  console.log(colorClass);
 
   return <div className={`chip ${colorClass}`}>{text}</div>;
 };
