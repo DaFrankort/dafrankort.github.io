@@ -1,6 +1,7 @@
 import React from "react";
 import "./Hero.css";
 import { Project } from "../../../functions/FetchProjectDetails";
+import Chip from "../../../components/Chip";
 
 interface HeroProps {
   project: Project;
@@ -31,7 +32,12 @@ const Hero: React.FC<HeroProps> = ({ project }) => {
         <div id="hero-content">
           <h1>{project.display_name}</h1>
           <h2>{project.name}</h2>
-          <p>{project.excerpt}</p>
+          <div className="flex gap-2 mt-2">
+            {project.techstack.map((techstack) => (
+              <Chip text={techstack} />
+            ))}
+          </div>
+          {/* <p>{project.excerpt}</p> */}
         </div>
       </div>
     </section>
