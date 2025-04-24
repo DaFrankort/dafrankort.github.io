@@ -1,20 +1,13 @@
 import React, { ReactNode } from "react";
 import "./Chip.css";
+import { returnRandomFromSeed } from "../functions/ReturnRandomFromSeed";
 
 type ChipProps = {
   text: string;
 };
 
 const Chip: React.FC<ChipProps> = ({ text }) => {
-  const content = text || "Info!";
-  const hashStringToNumber = (str: string): number => {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    return Math.abs(hash);
-  };
-  const colorClasses = [
+  const colorClass = returnRandomFromSeed(text, [
     "from-primary-700 text-primary-100",
     "from-secondary-700 text-secondary-100",
     "from-accent-700 text-accent-100",
@@ -26,9 +19,7 @@ const Chip: React.FC<ChipProps> = ({ text }) => {
     "from-pink-700 text-pink-100",
     "from-indigo-700 text-indigo-100",
     "from-teal-700 text-teal-100",
-  ];
-  const colorIndex = hashStringToNumber(content) % colorClasses.length;
-  const colorClass = colorClasses[colorIndex];
+  ]);
 
   return <div className={`chip ${colorClass}`}>{text}</div>;
 };
