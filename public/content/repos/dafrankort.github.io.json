@@ -9,10 +9,10 @@
         "HTML",
         "Batchfile",
         "React",
-        "tKinter"
+        "TKinter"
     ],
-    "excerpt": "Explore a portfolio showcasing projects developed with React and Typescript, supported by a bespoke Python tool to manage project data and integrate with GitHub and OpenAI APIs.",
-    "description": "<p>A portfolio website showcasing the projects I have worked on and created. The website is developed using React and Typescript for the front-end. A convenient Python tool was also devised to simplify the process of updating project data and creating new project pages, with the added functionality of integrating with the GitHub and OpenAI APIs.</p>",
+    "excerpt": "Portfolio website built with React and Typescript showcasing my projects, with a Python tool for easy data updates and new project page generation.",
+    "description": "<p>This <strong>portfolio</strong> is a showcase of my skills and projects, developed using <em>React</em> and <em>Typescript</em> for front-end development. The website offers a visually appealing design and ensures a smooth user experience. Additionally, a <em>Python</em> tool was created to streamline the process of updating project data and generating new project pages. This tool integrates with GitHub's and OpenAI's API, allowing for nearly automatic generation of new project pages on the website.</p>",
     "html_url": "https://github.com/DaFrankort/dafrankort.github.io",
     "private": true
 }

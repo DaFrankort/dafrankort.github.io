@@ -8,12 +8,12 @@
         {
             "file": "dafrankort.github.io.json",
             "display_name": "Portfolio Website",
-            "excerpt": "Explore a portfolio showcasing projects developed with React and Typescript, supported by a bespoke Python tool to manage project data and integrate with GitHub and OpenAI APIs."
+ ,           "excerpt": "Portfolio website built with React and Typescript showcasing my projects, with a Python tool for easy data updates and new project page generation."
         },
         {
             "file": "discord-movienight.json",
             "display_name": "Discord Movienight",
-            "excerpt": "Experience Discord Movienight with a Java bot using Javacord & Maven, managing movie lists and data from OMDB API. Integrate ChatGPT for engaging conversations and Adam Sandler-style interactions."
+            "excerpt": "This Discord bot keeps track of movies to watch for groups, using the OMDB API to save and show movie information. It also uses ChatGPT to have fun conversations and make comments like Adam Sandler."
         }
     ]
 }

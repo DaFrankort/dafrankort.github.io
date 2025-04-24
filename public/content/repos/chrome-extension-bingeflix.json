@@ -7,7 +7,7 @@
         "HTML"
     ],
     "excerpt": "Enhance your Netflix binge-watching with BingeFlix, a Chrome extension that lets you skip intros and seamlessly move to the next episode for uninterrupted viewing pleasure.",
-    "description": "<h3>BingeFlix</h3>\n\n<p>Introducing BingeFlix, a user-friendly Google Chrome extension designed to enhance your Netflix viewing experience. This innovative tool allows you to effortlessly skip Netflix intros and seamlessly transition to the next episode with just a click. With its intuitive settings menu, you can easily customize and fine-tune the plugin to suit your preferences, giving you complete control over your binge-watching sessions. Say goodbye to wasted time on repetitive intros and hello to uninterrupted viewing pleasure with BingeFlix!</p>",
+    "description": "<p><strong>BingeFlix</strong> is a Google Chrome extension designed to automatically press the 'Skip Intro' and 'Next Episode' buttons which appear whilst watching <strong>Netflix</strong>, allowing you to binge-watch uninterupted. Additionally, it has a simple settings menu, where you can control which buttons the plugin should automatically press.</p>",
     "html_url": "https://github.com/DaFrankort/chrome-extension-bingeflix",
     "private": false
 }
