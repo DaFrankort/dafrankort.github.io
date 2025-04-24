@@ -20,8 +20,9 @@ const Chip: React.FC<ChipProps> = ({ text }) => {
     "from-indigo-700 text-indigo-100",
     "from-teal-700 text-teal-100",
   ]);
+  const rotateClass = returnRandomFromSeed(text, ["hover:rotate-2", "hover:-rotate-2"]);
 
-  return <div className={`chip ${colorClass}`}>{text}</div>;
+  return <div className={`chip ${colorClass} ${rotateClass}`}>{text}</div>;
 };
 
 export default Chip;
