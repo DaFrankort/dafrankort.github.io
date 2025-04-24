@@ -8,7 +8,7 @@
         {
             "file": "dafrankort.github.io.json",
             "display_name": "Portfolio Website",
-            "excerpt": "Explore a portfolio showcasing projects developed with React and Typescript, supported by a bespoke Python tool to manage project data and integrate with GitHub and OpenAI APIs."
+            "excerpt": "Portfolio website built with React and Typescript showcasing my projects, with a Python tool for easy data updates and new project page generation."
         },
         {
             "file": "discord-movienight.json",
