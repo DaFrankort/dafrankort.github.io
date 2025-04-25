@@ -3,15 +3,17 @@ import { modifyAnchorTags } from "../functions/ModifyAnchorTags";
 import "./Card.css";
 
 type CardProps = {
-  title: string;
+  title?: string;
   image?: string;
   content: ReactNode | string;
   buttons?: ReactNode;
+  isInner?: boolean;
 };
 
-const Card: React.FC<CardProps> = ({ title, image, content, buttons }) => {
+const Card: React.FC<CardProps> = ({ title, image, content, buttons, isInner = false }) => {
+  const cardClass = isInner ? "inner-card" : "card";
   return (
-    <div className="card group">
+    <div className={`${cardClass} group`}>
       {image && (
         <div className="relative w-full h-48">
           <img src={image} alt="Card" className="object-cover w-full h-full" />
