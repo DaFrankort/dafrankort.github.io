@@ -1,59 +1,12 @@
-/* BACKGROUND BLOBS */
-#blob-1,
-#blob-2,
-#blob-3 {
-  opacity: 0.5;
+.h-hero-lg {
+  /* Hero height */
+  @apply h-[520px] md:h-[640px] lg:h-[960px];
+  @apply transition-all;
 }
 
-#blob-1 {
-  @apply text-primary-900 md:text-accent-800;
-  animation: moveBlob1 30s ease-in-out 2 alternate forwards;
-}
-
-@keyframes moveBlob1 {
-  0% {
-    transform: translate(0, 0) scale(1, 1) rotate(0deg);
-  }
-  50% {
-    transform: translate(50%, -40%) scale(0.7, 1.3) rotate(15deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(0.6, 0.9) rotate(-10deg);
-  }
-}
-
-#blob-2 {
-  @apply md:scale-50 text-secondary-700;
-  animation: moveBlob2 32s ease-in-out 2 alternate forwards;
-}
-
-@keyframes moveBlob2 {
-  0% {
-    transform: translate(0, 0) scale(1, 1) rotate(0deg);
-  }
-  50% {
-    transform: translate(-40%, 10%) scale(1.3, 0.8) rotate(25deg);
-  }
-  100% {
-    transform: translate(0, 30%) scale(0.8, 1.2) rotate(-15deg);
-  }
-}
-
-#blob-3 {
-  @apply md:scale-50 text-primary-700;
-  animation: moveBlob3 35s ease-in-out 2 alternate forwards;
-}
-
-@keyframes moveBlob3 {
-  0% {
-    transform: translate(0, 0) scale(1, 1) rotate(0deg);
-  }
-  50% {
-    transform: translate(-30%, -30%) scale(1.1, 1.4) rotate(20deg);
-  }
-  100% {
-    transform: translate(40%, -10%) scale(0.7, 1.3) rotate(-10deg);
-  }
+.hero-container {
+  @apply flex items-center justify-between h-full;
+  @apply -mt-8 sm:-mt-6 md:-mt-8 lg:-mt-20;
 }
 
 /* HERO CONTENT */
@@ -72,4 +25,69 @@
   @apply text-transparent bg-clip-text bg-gradient-to-l from-primary-500 to-primary-200;
   @apply mb-10 text-3xl;
   @apply lg:mb-8 lg:text-5xl;
+}
+
+#hero-content > p {
+  @apply text-sm md:text-base;
+}
+
+/* BACKGROUND BLOBS */
+.hero-blobs {
+  @apply absolute top-0 left-0 right-0 -z-10;
+  @apply flex justify-center overflow-hidden;
+  @apply opacity-25 bg-gradient-to-tr from-black to-background-800;
+}
+
+#blob-1 {
+  @apply text-primary-900 md:text-accent-800;
+  animation: moveBlob1 30s ease-in-out 2 alternate forwards;
+  opacity: 0.5;
+}
+
+@keyframes moveBlob1 {
+  0% {
+    transform: translate(0, 0) scale(1, 1) rotate(0deg);
+  }
+  50% {
+    transform: translate(50%, -40%) scale(1.3, 1.3) rotate(15deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.6, 0.9) rotate(-10deg);
+  }
+}
+
+#blob-2 {
+  @apply md:scale-50 text-secondary-700;
+  animation: moveBlob2 32s ease-in-out 2 alternate forwards;
+  opacity: 0.6;
+}
+
+@keyframes moveBlob2 {
+  0% {
+    transform: translate(0, 0) scale(1, 1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-40%, 10%) scale(1.3, 0.8) rotate(25deg);
+  }
+  100% {
+    transform: translate(0, 30%) scale(0.8, 1.2) rotate(-15deg);
+  }
+}
+
+#blob-3 {
+  @apply md:scale-50 text-primary-700;
+  animation: moveBlob3 35s ease-in-out 2 alternate forwards;
+  opacity: 0.5;
+}
+
+@keyframes moveBlob3 {
+  0% {
+    transform: translate(0, 0) scale(1, 1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-30%, -30%) scale(1.1, 1.4) rotate(20deg);
+  }
+  100% {
+    transform: translate(40%, -10%) scale(0.7, 1.3) rotate(-10deg);
+  }
 }

@@ -3,26 +3,26 @@ import "./Hero.css";
 
 const Hero: React.FC = ({}) => {
   return (
-    <section className="w-full -mb-20 py-16 overflow-hidden h-[960px]">
+    <section className="w-full py-16 -mb-20 overflow-hidden h-hero-lg">
       {/* Background */}
-      <div className="absolute top-0 left-0 right-0 flex justify-center overflow-hidden bg-gradient-to-tr from-black to-background-800 opacity-20 -z-10">
+      <div className="hero-blobs">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          className="w-full h-[960px] will-change-transform"
+          className="w-full h-hero-lg will-change-transform"
           viewBox="0 0 500 250"
           preserveAspectRatio="xMidYMid slice"
         >
           <g>
-            <circle id="blob-1" cx="250" cy="280" r="250" fill="currentColor" />
-            <circle id="blob-2" cx="500" cy="140" r="250" fill="currentColor" />
-            <circle id="blob-3" cx="0" cy="140" r="250" fill="currentColor" />
+            <circle id="blob-1" cx="325" cy="280" r="250" fill="currentColor" />
+            <circle id="blob-2" cx="550" cy="140" r="250" fill="currentColor" />
+            <circle id="blob-3" cx="50" cy="140" r="250" fill="currentColor" />
           </g>
         </svg>
       </div>
 
       {/* Content */}
-      <div className="container flex items-center justify-between h-full -mt-20">
+      <div className="container hero-container">
         <div id="hero-content">
           <h1>Full-Stack Developer</h1>
           <h2>Daniël Frankort</h2>
