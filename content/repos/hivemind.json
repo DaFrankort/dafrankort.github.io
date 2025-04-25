@@ -1,0 +1,12 @@
+{
+    "name": "hivemind",
+    "display_name": "Hivemind Game",
+    "techstack": [
+        "C#",
+        "MonoGame"
+    ],
+    "excerpt": "\"Hivemind\" is a game project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
+    "description": "<h3>Hivemind</h3>\n<p>This project is a simple game made with the <a href=\"https://monogame.net/\">MonoGame framework</a> (C#) where robots collect ores in a procedurally generated world. The game showcases basic mechanics of world generation and robot behaviors, though it is still in its early stages of development. And most development time has been put into 'engine' tools such as audio & sprite managers.</p>\n<br>\n<h3>Features:</h3>\n<ul>\n  <li><strong>World Generation:</strong> The game creates a basic world for robots to gather ores.</li>\n  <li><strong>Robots:</strong> When the player selects ores, robots will fly towards them to gather resource, clumsily pathfinding towards the ore, possibly crashing into eachother. They then bring these ores back to their 'home base'.</li>\n</ul>\n<br>\n<h3>Future Development:</h3>\n<p>As the game is still in its early stages, potential future developments include:</p>\n<ul>\n  <li><strong>Robot Upgrades:</strong> Allowing players to enhance their robots' efficiency in collecting ores, making them less clumsy.</li>\n  <li><strong>Improved World Generation:</strong> Enhancing the procedural world generation with diverse terrains, biomes, and more interactive elements.</li>\n  <li><strong>UI & Controls:</strong> Implementing a user interface for managing the robots and displaying stats like collected ores, health, and energy.</li>\n</ul>",
+    "html_url": "https://github.com/DaFrankort/hivemind",
+    "private": true
+}

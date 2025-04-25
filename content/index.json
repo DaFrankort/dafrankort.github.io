@@ -1,9 +1,14 @@
 {
   "repos": [
     {
+      "file": "bup-cli.json",
+      "display_name": "Backup CLI Tool",
+      "excerpt": "bUp is a CLI tool for Windows to back up folders as zip files. Includes commands for adding, removing, and managing backups."
+    },
+    {
       "file": "chrome-extension-bingeflix.json",
       "display_name": "BingeFlix",
-      "excerpt": "Enhance your Netflix binge-watching with BingeFlix, a Chrome extension that lets you skip intros and seamlessly move to the next episode for uninterrupted viewing pleasure."
+      "excerpt": "BingeFlix is a Google Chrome extension automating 'Skip Intro' and 'Next Episode' buttons on Netflix, for seamless binge-watching. Customizable settings menu included."
     },
     {
       "file": "dafrankort.github.io.json",
@@ -13,7 +18,17 @@
     {
       "file": "discord-movienight.json",
       "display_name": "Discord Movienight",
-      "excerpt": "This Discord bot keeps track of movies to watch for groups, using the OMDB API to save and show movie information. It also uses ChatGPT to have fun conversations and make comments like Adam Sandler."
+      "excerpt": "Discord bot which keeps track of movies to watch for groups, using the OMDB API to save and show movie information. It also uses ChatGPT to have fun conversations and make comments like Adam Sandler."
+    },
+    {
+      "file": "hivemind.json",
+      "display_name": "Hivemind Game",
+      "excerpt": "\"Hivemind\" is a game project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world."
+    },
+    {
+      "file": "scrappy-linkedin.json",
+      "display_name": "LinkedIn Scraper",
+      "excerpt": "Scrappy is a Python bot that scrapes job postings from LinkedIn, filtering out irrelevant ones and sending job details via Telegram messages. It simulates human browsing behavior to avoid detection."
     }
   ]
 }
