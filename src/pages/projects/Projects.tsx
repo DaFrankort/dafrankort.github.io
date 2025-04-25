@@ -29,7 +29,7 @@ function Projects() {
                 I have some projects you can read a little more about, although information is a little bit dated as for
                 now!
               </p>
-              <div className="h-full button-list">
+              <div className="card-list">
                 {projects.length > 0 ? (
                   projects.map((project) => (
                     <Card

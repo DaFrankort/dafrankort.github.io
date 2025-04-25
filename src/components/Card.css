@@ -1,3 +1,8 @@
+.card-list {
+  @apply grid h-full gap-4;
+  @apply md:grid-cols-3;
+}
+
 .card {
   @apply w-full h-full overflow-hidden shadow-md rounded-3xl;
   @apply bg-background-900 bg-gradient-to-tr from-secondary-900 to-primary-800;

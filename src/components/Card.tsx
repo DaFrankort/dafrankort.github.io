@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({ title, image, content, buttons, isInner = f
         </div>
       )}
 
-      <div className="p-5 text-left">
+      <div className="h-full p-5 text-left">
         {title && <h2 className="mb-4 text-xl">{title}</h2>}
         {typeof content === "string" ? (
           <div className="card-content" dangerouslySetInnerHTML={{ __html: modifyAnchorTags(content) }} />
