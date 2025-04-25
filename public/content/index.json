@@ -3,12 +3,12 @@
         {
             "file": "bup-cli.json",
             "display_name": "Backup CLI Tool",
-            "excerpt": "<h3>bUp - CLI</h3>\n\n<p>A basic CLI tool to back up folders as zip files on your Windows PC.</p>\n\n<strong>Note:</strong> This is a personal project and may not cover all edge cases. Use at your own risk.\n\n<h3>CLI Commands</h3>\n<p><code>bUp</code> provides several terminal commands to manage folder backups. Each command can be invoked using its full name or its first letter.</p>\n<ul>\n<li><code>bup add <path></code> OR <code>bup a <path></code></li>\n<li><code>bup del</code> OR <code>bup d</code></li>\n<li><code>bup list</code> OR <code>bup l</code></li>\n<li><code>bup set</code> OR <code>bup s</code></li>\n<li><code>bup run</code> OR <code>bup r</code></li>\n</ul>"
+ ,           "excerpt": "bUp is a CLI tool for Windows to back up folders as zip files. Includes commands for adding, removing, and managing backups."
         },
         {
             "file": "chrome-extension-bingeflix.json",
             "display_name": "BingeFlix",
-            "excerpt": "Enhance your Netflix binge-watching with BingeFlix, a Chrome extension that lets you skip intros and seamlessly move to the next episode for uninterrupted viewing pleasure."
+            "excerpt": "BingeFlix is a Google Chrome extension automating 'Skip Intro' and 'Next Episode' buttons on Netflix, for seamless binge-watching. Customizable settings menu included."
         },
         {
             "file": "dafrankort.github.io.json",
@@ -18,7 +18,7 @@
         {
             "file": "discord-movienight.json",
             "display_name": "Discord Movienight",
-            "excerpt": "This Discord bot keeps track of movies to watch for groups, using the OMDB API to save and show movie information. It also uses ChatGPT to have fun conversations and make comments like Adam Sandler."
+            "excerpt": "Discord bot which keeps track of movies to watch for groups, using the OMDB API to save and show movie information. It also uses ChatGPT to have fun conversations and make comments like Adam Sandler."
         },
         {
             "file": "hivemind.json",
