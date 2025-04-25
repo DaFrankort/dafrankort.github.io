@@ -21,13 +21,15 @@ const Card: React.FC<CardProps> = ({ title, image, content, buttons, isInner = f
         </div>
       )}
 
-      <div className="h-full p-5 text-left">
-        {title && <h2 className="mb-4 text-xl">{title}</h2>}
-        {typeof content === "string" ? (
-          <div className="card-content" dangerouslySetInnerHTML={{ __html: modifyAnchorTags(content) }} />
-        ) : (
-          <div className="mb-4 text-base">{content}</div>
-        )}
+      <div className="flex flex-col justify-between h-full p-5 text-left">
+        <div>
+          {title && <h2 className="mb-4 text-xl">{title}</h2>}
+          {typeof content === "string" ? (
+            <div className="card-content" dangerouslySetInnerHTML={{ __html: modifyAnchorTags(content) }} />
+          ) : (
+            <div className="mb-4 text-base">{content}</div>
+          )}
+        </div>
         {buttons && <div className="buttons">{buttons}</div>}
       </div>
     </div>
