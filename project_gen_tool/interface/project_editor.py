@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import messagebox
 from interface.widgets.button import _Button
 from interface.widgets.labeled_textbox import LabeledTextBox
+from utils.index_generator import IndexGenerator
 from utils.github import GitHub
 from utils.openai import ChatGPT
 from utils.content import Content
@@ -112,6 +113,8 @@ class ProjectEditor:
 
         self.project = self.data
         self.project.save()
+
+        IndexGenerator.generate()
 
     def open_project(self, project: Content):
         self.project = project
