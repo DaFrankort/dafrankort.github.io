@@ -6,7 +6,7 @@
         "CSS",
         "HTML"
     ],
-    "excerpt": "BingeFlix is a Google Chrome extension automating 'Skip Intro' and 'Next Episode' buttons on Netflix, for seamless binge-watching. Customizable settings menu included.",
+    "excerpt": "Google Chrome extension automating 'Skip Intro' and 'Next Episode' buttons on Netflix, for seamless binge-watching.",
     "description": "<p><strong>BingeFlix</strong> is a Google Chrome extension designed to automatically press the 'Skip Intro' and 'Next Episode' buttons which appear whilst watching <strong>Netflix</strong>, allowing you to binge-watch uninterupted. Additionally, it has a simple settings menu, where you can control which buttons the plugin should automatically press.</p>",
     "html_url": "https://github.com/DaFrankort/chrome-extension-bingeflix",
     "private": false
