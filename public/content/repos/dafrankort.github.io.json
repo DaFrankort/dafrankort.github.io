@@ -3,14 +3,12 @@
     "display_name": "Portfolio Website",
     "techstack": [
         "Python",
-        "TKinter",
         "TypeScript",
-        "TailwindCSS",
-        "React",
-        "OpenAI API"
+        "Tailwind",
+        "React"
     ],
     "excerpt": "Portfolio website built with React and Typescript showcasing my projects, with a Python tool for easy data updates and new project page generation.",
     "description": "<p>This <strong>portfolio</strong> is a showcase of my skills and projects, developed using <em>React</em> and <em>Typescript</em> for front-end development. The website offers a visually appealing design and ensures a smooth user experience. Additionally, a <em>Python</em> tool was created to streamline the process of updating project data and generating new project pages. This tool integrates with GitHub's and OpenAI's API, allowing for nearly automatic generation of new project pages on the website.</p>",
     "html_url": "https://github.com/DaFrankort/dafrankort.github.io",
-    "private": true
+    "private": false
 }

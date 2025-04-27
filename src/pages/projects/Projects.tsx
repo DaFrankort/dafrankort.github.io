@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../../components/Card";
-import Button from "../../components/Button";
 import Hero from "./partials/Hero";
-import { fetchIndex } from "../../functions/FetchIndex";
-
-export interface Project {
-  file: string;
-  display_name: string;
-  excerpt: string;
-}
+import { fetchIndex, IndexProject } from "../../functions/FetchIndex";
+import ProjectCard from "./partials/ProjectCard";
 
 function Projects() {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<IndexProject[]>([]);
 
   useEffect(() => {
     fetchIndex().then(setProjects);
@@ -31,18 +25,7 @@ function Projects() {
               </p>
               <div className="card-list">
                 {projects.length > 0 ? (
-                  projects.map((project) => (
-                    <Card
-                      title={project.display_name}
-                      content={<p>{project.excerpt}</p>}
-                      buttons={
-                        <Button href={`/#/project/${project.file.replace(".json", "")}`}>
-                          View {project.display_name}
-                        </Button>
-                      }
-                      isInner={true}
-                    />
-                  ))
+                  projects.map((project) => <ProjectCard project={project} />)
                 ) : (
                   <p>Loading projects...</p>
                 )}

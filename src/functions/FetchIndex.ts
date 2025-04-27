@@ -8,6 +8,8 @@ export interface IndexProject {
   display_name: string;
   /** Short summary of the project */
   excerpt: string;
+  /** List of languages & technologies used */
+  techstack: string[];
 }
 
 /**

@@ -4,9 +4,10 @@ import { returnRandomFromSeed } from "../functions/ReturnRandomFromSeed";
 
 type ChipProps = {
   text: string;
+  className?: string;
 };
 
-const Chip: React.FC<ChipProps> = ({ text }) => {
+const Chip: React.FC<ChipProps> = ({ text, className }) => {
   const colorClass = returnRandomFromSeed(text, [
     "from-primary-700 text-primary-100",
     "from-secondary-700 text-secondary-100",
@@ -21,7 +22,7 @@ const Chip: React.FC<ChipProps> = ({ text }) => {
     "from-teal-700 text-teal-100",
   ]);
 
-  return <div className={`chip ${colorClass}`}>{text}</div>;
+  return <div className={`chip ${colorClass} ${className}`}>{text}</div>;
 };
 
 export default Chip;
