@@ -2,16 +2,12 @@ import React, { useEffect, useState } from "react";
 import Card from "../../components/Card";
 import Button from "../../components/Button";
 import Hero from "./partials/Hero";
-import { fetchIndex } from "../../functions/FetchIndex";
-
-export interface Project {
-  file: string;
-  display_name: string;
-  excerpt: string;
-}
+import { fetchIndex, IndexProject } from "../../functions/FetchIndex";
+import Chip from "../../components/Chip";
 
 function Projects() {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<IndexProject[]>([]);
+  const maxChipCount = 3;
 
   useEffect(() => {
     fetchIndex().then(setProjects);
@@ -34,7 +30,25 @@ function Projects() {
                   projects.map((project) => (
                     <Card
                       title={project.display_name}
-                      content={<p>{project.excerpt}</p>}
+                      content={
+                        <div>
+                          <div className="mb-1 -mt-3 chip-list-sm">
+                            {project.techstack.slice(0, maxChipCount).map((techstack, index) => (
+                              <Chip key={index} text={techstack} className="opacity-90" />
+                            ))}
+                            {project.techstack.length > maxChipCount && (
+                              <Chip
+                                key={"more"}
+                                text={`+ ${project.techstack.length - maxChipCount} ${
+                                  project.techstack.length - maxChipCount === 1 ? "other" : "others"
+                                }...`}
+                                className="opacity-60"
+                              />
+                            )}
+                          </div>
+                          <p>{project.excerpt}</p>
+                        </div>
+                      }
                       buttons={
                         <Button href={`/#/project/${project.file.replace(".json", "")}`}>
                           View {project.display_name}

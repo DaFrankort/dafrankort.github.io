@@ -3,3 +3,11 @@
   @apply w-fit rounded-2xl px-4 py-0.5 text-sm italic shadow-sm;
   @apply cursor-default;
 }
+
+.chip-list-sm {
+  @apply flex flex-wrap gap-1;
+}
+.chip-list-sm > .chip {
+  @apply px-2 py-0 text-xs bg-opacity-70;
+  @apply transition-all hover:bg-opacity-100;
+}
