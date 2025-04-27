@@ -56,7 +56,8 @@ class IndexGenerator:
                     data.append({
                         'file': filename,
                         'display_name': file_data.display_name,
-                        'excerpt': file_data.excerpt
+                        'excerpt': file_data.excerpt,
+                        'techstack': file_data.techstack
                         })
         return data
 
