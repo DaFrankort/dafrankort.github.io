@@ -24,11 +24,9 @@
             "excerpt": "Portfolio website built with React and Typescript showcasing my projects, with a Python tool for easy data updates and new project page generation.",
             "techstack": [
                 "Python",
-                "TKinter",
                 "TypeScript",
-                "TailwindCSS",
-                "React",
-                "OpenAI API"
+                "Tailwind",
+                "React"
             ]
         },
         {
