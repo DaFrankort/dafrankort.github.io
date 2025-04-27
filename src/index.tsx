@@ -2,9 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import Footer from "./partials/Footer";
 import reportWebVitals from "./reportWebVitals";
-import Nav from "./partials/Nav";
 
 const container = document.getElementById("root");
 

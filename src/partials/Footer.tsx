@@ -11,12 +11,12 @@ const Footer: React.FC = ({}) => {
           </li>
           <li>
             <a href="https://github.com/DaFrankort" target="_blank" rel="noopener noreferrer">
-              GitHub
+              <i className="mr-1 fa-brands fa-github"></i>GitHub
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/daniel-frankort/" target="_blank" rel="noopener noreferrer">
-              LinkedIn
+              <i className="mr-1 fa-brands fa-linkedin"></i>LinkedIn
             </a>
           </li>
         </ul>
@@ -31,12 +31,12 @@ const Footer: React.FC = ({}) => {
           </li>
           <li>
             <a href="/" rel="noopener noreferrer">
-              Home
+              Home<i className="ml-1 fa-solid fa-house"></i>
             </a>
           </li>
           <li>
             <a href="/#/project" rel="noopener noreferrer">
-              Projects
+              Projects<i className="ml-1 fa-solid fa-folder-tree"></i>
             </a>
           </li>
         </ul>

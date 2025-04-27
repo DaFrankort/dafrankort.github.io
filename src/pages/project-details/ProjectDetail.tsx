@@ -35,7 +35,14 @@ function ProjectDetail() {
         <Card
           title="About"
           content={project.description}
-          buttons={!project.private && <Button href={project.html_url}>View on GitHub</Button>}
+          buttons={
+            !project.private && (
+              <Button href={project.html_url}>
+                <i className="mr-1 fa-brands fa-github"></i>
+                View on GitHub
+              </Button>
+            )
+          }
         />
       </section>
     </div>
