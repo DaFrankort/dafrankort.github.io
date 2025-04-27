@@ -20,7 +20,7 @@ li > a {
 li > a::before {
   content: "";
   position: absolute;
-  bottom: 2px; /* or try bottom: -1px / -2px for fine tuning */
+  bottom: 2px;
   left: 0;
   width: 0;
   height: 1px;
