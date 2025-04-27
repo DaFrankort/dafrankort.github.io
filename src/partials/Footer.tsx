@@ -1,9 +1,7 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import "./Footer.css";
 
-type FooterProps = {};
-
-const Footer: React.FC<FooterProps> = ({}) => {
+const Footer: React.FC = ({}) => {
   return (
     <footer>
       <div className="container footer-content">
