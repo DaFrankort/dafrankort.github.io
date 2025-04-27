@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
       <div className="container flex items-center justify-between h-full -mt-8">
         <div id="hero-content">
           <h1>Personal Projects</h1>
-          <h2>Programming projects I've developed</h2>
+          <h2>Programming projects I've created</h2>
         </div>
       </div>
     </section>
