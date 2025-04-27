@@ -6,7 +6,7 @@ const Nav: React.FC = ({}) => {
   const buttons: string[] = ["home", ...location.pathname.split("/").filter(Boolean)];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 h-16 transition-all bg-black bg-opacity-5 hover:bg-opacity-50">
+    <nav className="fixed top-0 left-0 right-0 h-16 transition-all bg-gradient-to-b from-black to-transparent">
       <div className="flex items-center h-full gap-1 px-4 mx-auto sm:px-6 lg:px-8">
         {buttons.map((button, index) => (
           <React.Fragment key={index}>
