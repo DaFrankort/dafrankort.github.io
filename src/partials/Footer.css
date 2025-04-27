@@ -1,5 +1,19 @@
+footer {
+  @apply hidden md:flex;
+  @apply bg-gradient-to-tr from-black to-background-950 text-background-600;
+}
+
+.footer-content {
+  @apply flex justify-between pt-4 pb-4 text-sm;
+}
+
+li {
+  height: 24px; /* 24px minimum for Accessibility */
+  min-height: 24px;
+}
+
 li > a {
-  @apply relative inline-block transition-colors;
+  @apply relative items-center inline-block transition-colors;
   @apply hover:text-primary-100;
 }
 
