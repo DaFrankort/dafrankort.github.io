@@ -57,7 +57,8 @@ class IndexGenerator:
                         'file': filename,
                         'display_name': file_data.display_name,
                         'excerpt': file_data.excerpt,
-                        'techstack': file_data.techstack
+                        'techstack': file_data.techstack,
+                        'private': file_data.private
                         })
         return data
 

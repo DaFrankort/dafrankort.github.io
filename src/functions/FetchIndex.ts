@@ -10,6 +10,8 @@ export interface IndexProject {
   excerpt: string;
   /** List of languages & technologies used */
   techstack: string[];
+  /** Whether or not the included link is private or not */
+  private: boolean;
 }
 
 /**
