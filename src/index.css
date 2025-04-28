@@ -50,3 +50,23 @@ code {
   @apply sm:gap-8;
   @apply lg:gap-16;
 }
+
+.ul-fancy {
+  @apply relative inline-block transition-colors;
+  @apply hover:text-primary-100 text-primary-200 focus:text-secondary-200;
+}
+
+.ul-fancy::before {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.ul-fancy:hover::before {
+  width: 100%;
+}

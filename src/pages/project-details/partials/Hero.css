@@ -63,17 +63,17 @@
   @apply mx-4 lg:mx-0;
 }
 
-#hero-content > h1 {
+#hero-content > * > h1 {
   @apply mb-0 text-5xl;
   @apply md:text-7xl;
 }
 
-#hero-content > h2 {
+#hero-content > * > h2 {
   @apply text-transparent bg-clip-text bg-gradient-to-l from-primary-500 to-primary-200;
   @apply mb-2 text-lg;
   @apply md:mb-2 md:text-2xl;
 }
 
-#hero-content > p {
+#hero-content > * > p {
   @apply w-full lg:w-[85ch];
 }

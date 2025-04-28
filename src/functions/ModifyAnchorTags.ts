@@ -15,6 +15,7 @@ export function modifyAnchorTags(html: string): string {
   links.forEach((link) => {
     link.setAttribute("target", "_blank");
     link.setAttribute("rel", "noopener noreferrer");
+    link.setAttribute("class", "ul-fancy"); // Apply fancy underline effect
   });
 
   return div.innerHTML;

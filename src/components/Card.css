@@ -22,24 +22,8 @@
 }
 
 .card-content > * > a {
-  @apply relative inline-block transition-colors;
-  @apply text-accent-100 hover:text-secondary-200;
+  @apply text-primary-50;
   @apply italic;
-}
-
-.card-content > * > a::before {
-  content: "";
-  position: absolute;
-  bottom: 2px; /* or try bottom: -1px / -2px for fine tuning */
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: currentColor;
-  transition: width 0.3s ease;
-}
-
-.card-content > * > a:hover::before {
-  width: 100%;
 }
 
 .buttons {
