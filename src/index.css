@@ -4,18 +4,12 @@
 
 @import url("https://fonts.googleapis.com/css?family=Righteous:700|Righteous:400");
 
-html,
-body,
-#root {
-  height: 100%;
-  min-height: 100%;
-}
-
 body {
   @apply bg-background-950 bg-gradient-to-tr from-background-950 to-primary-900;
   @apply text-text-200;
 
   width: 100%;
+  height: fit-content;
   margin: 0;
   font-family: "Carlito", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,6 +19,9 @@ body {
 #root {
   display: flex;
   flex-direction: column;
+
+  height: 100%;
+  min-height: 100vh;
 }
 
 h1,
