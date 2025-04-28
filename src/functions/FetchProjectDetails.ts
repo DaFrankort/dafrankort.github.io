@@ -1,4 +1,4 @@
-import { fetchIndex, IndexProject } from "./FetchIndex";
+import { fetchIndex } from "./FetchIndex";
 import Fuse from "fuse.js";
 
 /**
@@ -27,13 +27,11 @@ export async function fetchProjectDetail(projectName: string): Promise<Project |
 
   const similarName = await _findSimilarProjectName(projectName);
   if (!similarName) {
-    console.error(`No similar project found for: ${projectName}`);
     return null;
   }
 
   const fallback = await _tryFetchProject(similarName);
   if (!fallback) {
-    console.error(`Failed to fetch fallback project: ${similarName}`);
     return null;
   }
 
@@ -82,6 +80,5 @@ async function _findSimilarProjectName(projectName: string): Promise<string | nu
   }
 
   const similarFile = match.item.file;
-  console.log(`Did you mean: ${similarFile}?`);
   return similarFile;
 }
