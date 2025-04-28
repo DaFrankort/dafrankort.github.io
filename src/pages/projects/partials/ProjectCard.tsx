@@ -1,14 +1,13 @@
 import Card from "../../../components/Card";
 import { IndexProject } from "../../../functions/FetchIndex";
 import Chip from "../../../components/Chip";
-import { useIsMediumScreen } from "../../../functions/UseMediaQuery";
 
 type ProjectCardProps = {
   project: IndexProject;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const maxChipCount = useIsMediumScreen() ? 6 : 4;
+  const maxChipCount = 4;
 
   return (
     <Card
