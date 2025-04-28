@@ -22,8 +22,8 @@ export type Project = {
  * @returns {Promise<Project | null>} The project details or null if not found.
  */
 export async function fetchProjectDetail(projectName: string): Promise<Project | null> {
-  const initial = await _tryFetchProject(projectName);
-  if (initial) return initial;
+  const details = await _tryFetchProject(projectName);
+  if (details) return details;
 
   const similarName = await _findSimilarProjectName(projectName);
   if (!similarName) {
