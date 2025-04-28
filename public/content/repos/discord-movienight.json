@@ -4,7 +4,9 @@
     "techstack": [
         "Java",
         "Maven",
-        "OpenAI API"
+        "Docker",
+        "OpenAI API",
+        "OMDB API"
     ],
     "excerpt": "Discord bot for tracking movies for movienights, uses ChatGPT for fun Adam Sandler style comments.",
     "description": "<p>This is a Discord bot programmed in Java, utilizing the <a href=\"https://github.com/Javacord/Javacord\">Javacord</a> library and <a href=\"https://maven.apache.org/index.html\">Maven</a> for project management.</p>\n<p>The bot's main functionality is to maintain a 'to-watch' list of movies that a Discord server community is interested in watching.</p>\n<p>It fetches movie data from the <a href=\"https://www.omdbapi.com/\">OMDB API</a> and saves this information in .json files, storing data both per server and in a cache file for quick access to recently requested movie information.</p>\n<p>Incorporating ChatGPT through <a href=\"https://github.com/sashirestela/simple-openai\">sashirestela's simple-openai library</a>, the bot is capable of engaging in conversation, copying the personality of Adam Sandler. Additionally, this integration allows the bot to generate custom remarks regarding planned movie events and more.</p>",

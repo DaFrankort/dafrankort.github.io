@@ -31,13 +31,11 @@ const Hero: React.FC<HeroProps> = ({ project }) => {
       <div className="container flex items-center justify-between h-full -mt-8">
         <div id="hero-content">
           <h1>{project.display_name}</h1>
-          <h2>{project.name}</h2>
           <div className="flex gap-2 mt-2">
             {project.techstack.map((techstack) => (
               <Chip text={techstack} />
             ))}
           </div>
-          {/* <p>{project.excerpt}</p> */}
         </div>
       </div>
     </section>
