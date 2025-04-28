@@ -9,7 +9,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ project }) => {
   return (
-    <section className="w-full -mb-24 py-16 overflow-hidden h-[40vh]">
+    <section className="w-full -mb-16 py-16 overflow-hidden h-[40vh] mt-10 sm:mt-0 sm:-mb-24">
       {/* Background */}
       <div className="absolute top-0 left-0 right-0 flex justify-center overflow-hidden bg-gradient-to-tr from-black to-background-800 opacity-20 -z-10">
         <svg
@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ project }) => {
         <div id="hero-content">
           <h1>{project.display_name}</h1>
 
-          <div className="flex gap-2 mt-2">
+          <div className="flex flex-wrap gap-2 mt-2">
             {project.techstack.map((techstack) => (
               <Chip text={techstack} />
             ))}

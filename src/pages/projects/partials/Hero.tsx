@@ -3,7 +3,7 @@ import "./Hero.css";
 
 const Hero: React.FC = () => {
   return (
-    <section className="w-full -mb-24 py-16 overflow-hidden h-[40vh]">
+    <section className="w-full -mb-24 py-16 overflow-hidden h-[40vh] mt-10 sm:mt-0">
       {/* Background */}
       <div className="absolute top-0 left-0 right-0 flex justify-center overflow-hidden bg-gradient-to-tr from-black to-background-800 opacity-20 -z-10">
         <svg
