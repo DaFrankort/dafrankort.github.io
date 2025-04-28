@@ -8,9 +8,13 @@
   @apply bg-background-900 bg-gradient-to-tr from-secondary-900 to-primary-800;
 }
 
-.inner-card {
+.clickable-card {
   @apply w-full h-full overflow-hidden shadow-inner rounded-3xl;
   @apply bg-opacity-30 bg-primary-950;
+
+  @apply transition-all;
+  @apply hover:-translate-y-[1px] hover:shadow-lg;
+  @apply hover:bg-gradient-to-tr hover:from-secondary-900 hover:to-primary-700;
 }
 
 .card-content {

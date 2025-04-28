@@ -16,7 +16,7 @@ function Projects() {
       <Hero />
       <section className="container">
         <Card
-          title="Check out my projects!"
+          title="GitHub Projects"
           content={
             <div>
               <p className="mb-4">
