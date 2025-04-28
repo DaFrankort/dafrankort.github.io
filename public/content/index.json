@@ -22,13 +22,15 @@
         },
         {
             "file": "dafrankort.github.io.json",
-            "display_name": "Portfolio Website",
+            "display_name": "Portfolio Site",
             "excerpt": "Website built with React and Typescript showcasing my projects, with a Python tool for easy data updates and new project page generation.",
             "techstack": [
                 "Python",
                 "TypeScript",
-                "Tailwind",
-                "React"
+                "TailwindCSS",
+                "React",
+                "OpenAI API",
+                "GitHub API"
             ],
             "private": false
         },
@@ -39,7 +41,9 @@
             "techstack": [
                 "Java",
                 "Maven",
-                "OpenAI API"
+                "Docker",
+                "OpenAI API",
+                "OMDB API"
             ],
             "private": true
         },
@@ -49,7 +53,8 @@
             "excerpt": "Video-game project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
             "techstack": [
                 "C#",
-                "MonoGame"
+                "MonoGame",
+                ".NET"
             ],
             "private": true
         },
