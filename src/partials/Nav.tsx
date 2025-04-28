@@ -1,23 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import "./Nav.css";
 
 const Nav: React.FC = ({}) => {
   const location = useLocation();
   const buttons: string[] = ["home", ...location.pathname.split("/").filter(Boolean)];
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 25) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 h-16 transition-all bg-gradient-to-b from-black to-transparent">
-      <div className="flex items-center h-full gap-1 px-4 mx-auto sm:px-6 lg:px-8">
+    <nav className={`${isScrolled ? "nav-scrolled" : "nav-top"}`}>
+      {" "}
+      <div className="nav-content">
         {buttons.map((button, index) => (
           <React.Fragment key={index}>
-            {index !== 0 && <span className="font-bold text-white select-none">/</span>}
+            {index !== 0 && (
+              <span className="nav-divider">
+                <i className="scale-75 fa-solid fa-chevron-right"></i>
+              </span>
+            )}
             <div className="flex items-center uppercase">
               {index === buttons.length - 1 ? (
                 <strong className="text-text-100">{button}</strong>
               ) : (
                 <a
                   href={button === "home" ? "#/" : `#/${buttons.slice(1, index + 1).join("/")}`}
-                  className="transition-colors text-text-200 hover:text-text-50 hover:underline"
+                  className="ul-fancy nav-button"
                 >
                   {button}
                 </a>

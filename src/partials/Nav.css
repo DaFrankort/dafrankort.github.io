@@ -1,0 +1,26 @@
+nav {
+  @apply fixed top-0 left-0 right-0 z-50 h-16 transition-all bg-gradient-to-b;
+}
+
+.nav-top {
+  @apply from-accent-950 md:from-black to-transparent;
+}
+
+.nav-scrolled {
+  @apply shadow-md from-accent-950 to-primary-900;
+}
+
+.nav-content {
+  @apply flex items-center gap-1;
+  @apply h-full px-4 mx-auto;
+  @apply sm:px-6 lg:px-8;
+}
+
+.nav-divider {
+  @apply font-bold text-white select-none;
+}
+
+.nav-button {
+  @apply transition-colors text-text-200 hover:text-text-50;
+  @apply hover:-translate-y-[1px] hover:rotate-1 transition-transform;
+}
