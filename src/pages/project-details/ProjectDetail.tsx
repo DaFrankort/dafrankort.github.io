@@ -43,20 +43,42 @@ function ProjectDetail() {
     <div className="text-center">
       <Hero project={project} />
 
-      <section className="container">
-        <Card
-          title="About"
-          content={project.description}
-          buttons={
-            !project.private && (
-              <Button href={project.html_url}>
-                <i className="mr-1 fa-brands fa-github"></i>
-                View on GitHub
-              </Button>
-            )
-          }
-        />
-      </section>
+      <div className="space-y-8">
+        <section className="container" id="about">
+          <Card
+            title="About"
+            content={project.description}
+            buttons={
+              !project.private && (
+                <Button href={project.html_url}>
+                  <i className="mr-1 fa-brands fa-github"></i>
+                  View on GitHub
+                </Button>
+              )
+            }
+          />
+        </section>
+
+        <section className="container" id="features">
+          <Card title="Features" content={<div>I have so many features!</div>} />
+        </section>
+
+        <section className="container" id="challenges-solutions">
+          <Card title="Challenges & Solutions" content={<div>I solve any problem!</div>} />
+        </section>
+
+        <section className="container" id="images">
+          <Card title="Images" content={<div>I solve any problem!</div>} />
+        </section>
+
+        <section className="container" id="lessons-learned">
+          <Card title="What did I learn?" content={<div>I learned everything!</div>} />
+        </section>
+
+        <section className="container" id="next-steps">
+          <Card title="What's next?" content={<div>It's already finished!</div>} />
+        </section>
+      </div>
     </div>
   );
 }
