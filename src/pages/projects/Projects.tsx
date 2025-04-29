@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import Card from "../../components/Card";
 import Hero from "./partials/Hero";
-import { fetchIndex, IndexProject } from "../../functions/FetchIndex";
+import { fetchIndexRepos, IndexProject } from "../../functions/FetchIndex";
 import ProjectCard from "./partials/ProjectCard";
 
 function Projects() {
   const [projects, setProjects] = useState<IndexProject[]>([]);
 
   useEffect(() => {
-    fetchIndex().then(setProjects);
+    fetchIndexRepos().then(setProjects);
   }, []);
 
   return (

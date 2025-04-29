@@ -2,15 +2,10 @@
  * Represents a brief version of a project from the index file.
  */
 export interface IndexProject {
-  /** Filename of the project JSON, e.g., "my-project.json" */
   file: string;
-  /** Human-readable name of the project */
   display_name: string;
-  /** Short summary of the project */
   excerpt: string;
-  /** List of languages & technologies used */
   techstack: string[];
-  /** Whether or not the included link is private or not */
   private: boolean;
 }
 
@@ -18,8 +13,24 @@ export interface IndexProject {
  * Structure of the data returned from the index JSON file.
  */
 interface ProjectData {
-  /** List of indexed projects */
   repos: IndexProject[];
+  techstacks: string[];
+}
+
+/**
+ * Private helper to fetch and parse the index data from `/content/index.json`.
+ */
+async function fetchIndexData(): Promise<ProjectData | null> {
+  try {
+    const response = await fetch("/content/index.json");
+    if (!response.ok) {
+      throw new Error("Failed to fetch index.json");
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching index data:", error);
+    return null;
+  }
 }
 
 /**
@@ -28,17 +39,18 @@ interface ProjectData {
  *
  * @returns {Promise<IndexProject[]>} A list of project summaries, or an empty array on failure.
  */
-export async function fetchIndex(): Promise<IndexProject[]> {
-  try {
-    const response = await fetch("/content/index.json");
-    if (!response.ok) {
-      throw new Error("Failed to fetch projects");
-    }
+export async function fetchIndexRepos(): Promise<IndexProject[]> {
+  const data = await fetchIndexData();
+  return data?.repos ?? [];
+}
 
-    const data: ProjectData = await response.json();
-    return data.repos;
-  } catch (error) {
-    console.error("Error fetching projects:", error);
-    return [];
-  }
+/**
+ * Fetches the techstacks from `/content/index.json`.
+ * Returns a list of techstacks, gathered from all showcased projects.
+ *
+ * @returns {Promise<string[]>} A list of techstacks
+ */
+export async function fetchIndexTechstacks(): Promise<string[]> {
+  const data = await fetchIndexData();
+  return data?.techstacks ?? [];
 }

@@ -1,4 +1,4 @@
-import { fetchIndex } from "./FetchIndex";
+import { fetchIndexRepos } from "./FetchIndex";
 import Fuse from "fuse.js";
 
 /**
@@ -67,7 +67,7 @@ async function _tryFetchProject(name: string): Promise<Project | null> {
  * @returns {Promise<string | null>} The name of the most similar project or null if none found.
  */
 async function _findSimilarProjectName(projectName: string): Promise<string | null> {
-  const projectIndex = await fetchIndex();
+  const projectIndex = await fetchIndexRepos();
 
   const fuse = new Fuse(projectIndex, {
     keys: ["file"],

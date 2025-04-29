@@ -1,8 +1,17 @@
 import Card from "../../components/Card";
 import Button from "../../components/Button";
 import Hero from "./partials/Hero";
+import { fetchIndexTechstacks } from "../../functions/FetchIndex";
+import Chip from "../../components/Chip";
+import { useEffect, useState } from "react";
 
 function Home() {
+  const [techstacks, setTechstacks] = useState<string[]>([]);
+
+  useEffect(() => {
+    fetchIndexTechstacks().then(setTechstacks);
+  }, []);
+
   return (
     <div className="text-center">
       <Hero />
@@ -43,15 +52,17 @@ function Home() {
                   I'm constantly looking to learn new languages and frameworks, here are frameworks I have actively
                   used.
                 </p>
-                <p>
-                  <strong>TODO: Pull this from index.json?</strong>
-                </p>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {techstacks.map((techstack) => (
+                    <Chip key={techstack} text={techstack} />
+                  ))}
+                </div>
               </div>
             }
           />
         </section>
 
-        <section className="container" id="tech-stacks">
+        <section className="container" id="featured-projects">
           <Card
             title="Featured Projects"
             content={
