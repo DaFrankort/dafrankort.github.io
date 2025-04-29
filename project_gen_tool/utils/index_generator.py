@@ -1,3 +1,4 @@
+import hashlib
 import json
 import logging
 import os
@@ -10,6 +11,7 @@ class IndexGenerator:
     """Generates an index.json file, used to show a quick overview of all available content"""
     
     _instance = None  # singleton storage
+    _lock = threading.Lock()
 
     def __init__(self):
         if IndexGenerator._instance is not None:
@@ -30,6 +32,7 @@ class IndexGenerator:
             logging.info('Updating index.json')
             
             index_data = {}
+            techstacks_dict = {}
             for get_path in Paths.listbox_commands():
                 path = get_path()
                 basename = os.path.basename(path)
@@ -37,10 +40,19 @@ class IndexGenerator:
                 if basename == "hidden":
                     continue
 
-                folder_data = IndexGenerator._gather_folder_data(path)
+                folder_data, folder_techstacks = IndexGenerator._gather_folder_data(path)
                 
                 if folder_data:
                     index_data[basename] = folder_data
+                    
+                for techstack in folder_techstacks:
+                    # Use a hash of the lowercase name to filter out any case sensitive issues.
+                    techstack_lower = techstack.lower()
+                    techstack_hash = hashlib.md5(techstack_lower.encode('utf-8')).hexdigest()
+
+                    if techstack_hash not in techstacks_dict:
+                        techstacks_dict[techstack_hash] = techstack
+            index_data["techstacks"] = list(techstacks_dict.values()) # Store only techstack names
             IndexGenerator._save(index_data)
 
         threading.Thread(target=run, daemon=True).start()
@@ -49,6 +61,8 @@ class IndexGenerator:
     def _gather_folder_data(path):
         """Gathers data for the given folder."""
         data = []
+        techstacks = set()
+
         for filename in os.listdir(path):
             if filename.endswith(".json"):
                 file_data = Content.load(filename, lambda fname: path / fname)
@@ -60,7 +74,9 @@ class IndexGenerator:
                         'techstack': file_data.techstack,
                         'private': file_data.private
                         })
-        return data
+                    
+                    techstacks.update(file_data.techstack)
+        return data, sorted(techstacks)
 
     @staticmethod
     def _save(data):

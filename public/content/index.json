@@ -68,5 +68,24 @@
             ],
             "private": true
         }
+    ],
+    "techstacks": [
+        ".NET",
+        "C#",
+        "CSS",
+        "Docker",
+        "GitHub API",
+        "HTML",
+        "Java",
+        "JavaScript",
+        "Maven",
+        "MonoGame",
+        "OMDB API",
+        "OpenAI API",
+        "Python",
+        "React",
+        "Selenium",
+        "TailwindCSS",
+        "TypeScript"
     ]
 }
