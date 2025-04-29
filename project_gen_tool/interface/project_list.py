@@ -49,10 +49,10 @@ class ProjectList:
             options.append(listbox.name.capitalize())
         self.move_target = tk.StringVar(self.frame)
         self.move_target.set("Move Project")
-        self.move_project = tk.OptionMenu(self.frame, self.move_target, *options, command=lambda _: self._move_project())
+        self.move_project = tk.OptionMenu(self.frame, self.move_target, *options)
         self.move_project.pack(pady=10, fill=tk.X)
 
-    def _move_project(self):
+    def move_project_to_target_folder(self) -> Content:
         for lb in self.listboxes:
             selection = lb.listbox.curselection()
             if selection:
@@ -62,7 +62,7 @@ class ProjectList:
                 for target_lb in self.listboxes:
                     if target_lb.name.lower() == self.move_target.get().lower():
                         project.move_to(target_lb.get_path)
-                        return
+                        return project
 
     def _new_project(self):
         user_input = simpledialog.askstring("Please provide a name for your project:", "My Project")
