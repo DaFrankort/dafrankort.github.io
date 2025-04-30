@@ -43,23 +43,18 @@ function Home() {
           />
         </section>
 
-        <section className="container" id="skills">
-          <Card
-            title="My skills"
-            content={
-              <div>
-                <p>
-                  I'm constantly looking to learn new languages and frameworks, here are frameworks I have actively
-                  used.
-                </p>
-                <div className="flex flex-wrap gap-2 mt-1">
-                  {techstacks.map((techstack) => (
-                    <Chip key={techstack} text={techstack} />
-                  ))}
-                </div>
-              </div>
-            }
-          />
+        <section
+          className="px-4 py-48 md:px-0 bg-gradient-to-t from-transparent via-background-950 to-transparent"
+          id="skills"
+        >
+          <div className="container text-left">
+            <h2 className="text-xl">My Skills</h2>
+            <div className="flex flex-wrap justify-center gap-2 mt-2">
+              {techstacks.map((techstack) => (
+                <Chip key={techstack} text={techstack} />
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="container" id="featured-projects">
