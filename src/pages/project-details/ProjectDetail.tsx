@@ -31,9 +31,10 @@ function ProjectDetail() {
   if (error)
     return (
       <div className="flex justify-center items-center w-full h-[50vh]">
-        <div className="space-y-4 text-center">
-          <p className="text-3xl text-accent-100">{error}</p>
-          <Button href="/#/project">Browse other Projects</Button>
+        <div className="container">
+          <p className="pb-2 text-3xl text-accent-100">{error}</p>
+          <Button href="/#">Back to homepage</Button>
+          {/* TODO: Add project-suggestions */}
         </div>
       </div>
     );
