@@ -1,72 +1,73 @@
 {
-    "repos": [
-        {
-            "file": "bup-cli.json",
-            "display_name": "Backup CLI Tool",
-            "excerpt": "CLI tool for Windows to back up folders as zip files. Includes commands for adding, removing, and managing backups.",
-            "techstack": [
-                "Python"
-            ],
-            "private": false
-        },
-        {
-            "file": "chrome-extension-bingeflix.json",
-            "display_name": "BingeFlix",
-            "excerpt": "Google Chrome extension automating 'Skip Intro' and 'Next Episode' buttons on Netflix, for seamless binge-watching.",
-            "techstack": [
-                "JavaScript",
-                "CSS",
-                "HTML"
-            ],
-            "private": false
-        },
-        {
-            "file": "dafrankort.github.io.json",
-            "display_name": "Portfolio Site",
-            "excerpt": "Website built with React and Typescript showcasing my projects, with a Python tool for easy data updates and new project page generation.",
-            "techstack": [
-                "Python",
-                "TypeScript",
-                "TailwindCSS",
-                "React",
-                "OpenAI API",
-                "GitHub API"
-            ],
-            "private": false
-        },
-        {
-            "file": "discord-movienight.json",
-            "display_name": "Discord Movienight",
-            "excerpt": "Discord bot for tracking movies for movienights, uses ChatGPT for fun Adam Sandler style comments.",
-            "techstack": [
-                "Java",
-                "Maven",
-                "Docker",
-                "OpenAI API",
-                "OMDB API"
-            ],
-            "private": true
-        },
-        {
-            "file": "hivemind.json",
-            "display_name": "Hivemind Game",
-            "excerpt": "Video-game project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
-            "techstack": [
-                "C#",
-                "MonoGame",
-                ".NET"
-            ],
-            "private": true
-        },
-        {
-            "file": "scrappy-linkedin.json",
-            "display_name": "LinkedIn Scraper",
-            "excerpt": "Bot that searches LinkedIn for relevant job postings, filters out irrelevant ones, and sends job details via Telegram.",
-            "techstack": [
-                "Python",
-                "Selenium"
-            ],
-            "private": true
-        }
-    ]
+  "repos": [
+    {
+      "file": "bup-cli.json",
+      "display_name": "Backup CLI Tool",
+      "excerpt": "CLI tool for Windows to back up folders as zip files. Includes commands for adding, removing, and managing backups.",
+      "techstack": ["Python"],
+      "private": false
+    },
+    {
+      "file": "chrome-extension-bingeflix.json",
+      "display_name": "BingeFlix",
+      "excerpt": "Google Chrome extension automating 'Skip Intro' and 'Next Episode' buttons on Netflix, for seamless binge-watching.",
+      "techstack": ["JavaScript", "CSS", "HTML"],
+      "private": false
+    },
+    {
+      "file": "dafrankort.github.io.json",
+      "display_name": "Portfolio Site",
+      "excerpt": "Website built with React and Typescript showcasing my projects, with a Python tool for easy data updates and new project page generation.",
+      "techstack": ["Python", "TypeScript", "TailwindCSS", "React", "OpenAI API", "GitHub API"],
+      "private": false
+    },
+    {
+      "file": "discord-movienight.json",
+      "display_name": "Discord Movienight",
+      "excerpt": "Discord bot for tracking movies for movienights, uses ChatGPT for fun Adam Sandler style comments.",
+      "techstack": ["Java", "Maven", "Docker", "OpenAI API", "OMDB API"],
+      "private": true
+    },
+    {
+      "file": "hivemind.json",
+      "display_name": "Hivemind Game",
+      "excerpt": "Video-game project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
+      "techstack": ["C#", "MonoGame", ".NET"],
+      "private": true
+    },
+    {
+      "file": "lenny-dnd-bot.json",
+      "display_name": "D&D Discord Bot",
+      "excerpt": "A Dungeons & Dragons Discord bot with dice rolling, data lookup, character stat generation, voice chat effects, and token-image creation. Powered by 5e.tools for up-to-date content.",
+      "techstack": ["Python", "Batchfile"],
+      "private": true
+    },
+    {
+      "file": "scrappy-linkedin.json",
+      "display_name": "LinkedIn Scraper",
+      "excerpt": "Bot that searches LinkedIn for relevant job postings, filters out irrelevant ones, and sends job details via Telegram.",
+      "techstack": ["Python", "Selenium"],
+      "private": true
+    }
+  ],
+  "techstacks": [
+    ".NET",
+    "Batchfile",
+    "C#",
+    "CSS",
+    "Docker",
+    "GitHub API",
+    "HTML",
+    "Java",
+    "JavaScript",
+    "Maven",
+    "MonoGame",
+    "OMDB API",
+    "OpenAI API",
+    "Python",
+    "React",
+    "Selenium",
+    "TailwindCSS",
+    "TypeScript"
+  ]
 }
