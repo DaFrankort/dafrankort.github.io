@@ -29,3 +29,8 @@
 .buttons {
   @apply text-sm text-right;
 }
+
+.card-content > ul > li {
+  @apply list-disc list-inside h-fit;
+  @apply pb-2 md:pb-0;
+}
