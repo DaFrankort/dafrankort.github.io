@@ -1,6 +1,6 @@
 {
     "name": "scrappy-linkedin",
-    "display_name": "LinkedIn Scraper",
+    "display_name": "LinkedIn Search Tool",
     "techstack": [
         "Python",
         "Selenium"
