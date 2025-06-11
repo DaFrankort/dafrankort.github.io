@@ -15,7 +15,7 @@ function Home() {
     <div className="text-center">
       <Hero />
 
-      <div className="space-y-8">
+      <div className="space-y-8 transition-transform translate-y-0 lg:-translate-y-4">
         <section className="container">
           <Card
             title="GitHub Projects"
@@ -29,7 +29,7 @@ function Home() {
                   {projects.length > 0 ? (
                     projects.map((project) => <ProjectCard project={project} />)
                   ) : (
-                    <Progress value={null} />
+                    <p>Loading Projects...</p>
                   )}
                 </div>
               </div>

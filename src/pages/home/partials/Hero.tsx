@@ -26,11 +26,9 @@ const Hero: React.FC = ({}) => {
         <div id="hero-content">
           <h1>Full-Stack Developer</h1>
           <h2>Daniël Frankort</h2>
-          <p>
-            A diligent programmer with a strong focus on self-growth and continuous improvement. My background in the
-            automation sector has provided me with valuable experience in solution-oriented thinking, project-basedwork,
-            meeting deadlines, and effective teamwork. My core values include clear communication, writing clean and
-            maintainable code, and fostering growth in both my skills and those of my team.
+          <p className="-mt-6">
+            Passionate programmer driven by constant growth and smart solutions. Experienced in automation, teamwork,
+            and delivering clean, maintainable code on time. Always pushing myself and my team to level up!
           </p>
         </div>
       </div>

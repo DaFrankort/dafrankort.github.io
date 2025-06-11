@@ -1,12 +1,12 @@
 .h-hero-lg {
   /* Hero height */
-  @apply h-[520px] md:h-[640px] lg:h-[960px];
+  @apply h-[520px] md:h-[520px] lg:h-[720px];
   @apply transition-all;
 }
 
 .hero-container {
   @apply flex items-center justify-between h-full;
-  @apply -mt-8 sm:-mt-6 md:-mt-8 lg:-mt-20;
+  @apply -mt-8 sm:-mt-6 md:-mt-8 lg:-mt-10;
 }
 
 /* HERO CONTENT */

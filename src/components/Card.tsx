@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({ title, image, content, buttons, href }) => 
 
       <div className="flex flex-col justify-between h-full p-5 text-left">
         <div>
-          {title && <h2 className="mb-4 text-xl">{title}</h2>}
+          {title && <h2 className="mb-2 text-xl">{title}</h2>}
           {typeof content === "string" ? (
             <div className="card-content" dangerouslySetInnerHTML={{ __html: modifyAnchorTags(content) }} />
           ) : (
