@@ -1,5 +1,5 @@
 footer {
-  @apply hidden md:flex;
+  @apply hidden md:flex md:mt-20;
   @apply bg-gradient-to-tr from-black to-background-950 text-background-600;
 }
 
