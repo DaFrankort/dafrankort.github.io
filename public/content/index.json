@@ -3,7 +3,7 @@
         {
             "file": "bup-cli.json",
             "display_name": "Backup CLI Tool",
-            "excerpt": "CLI tool for Windows to back up folders as zip files. Includes commands for adding, removing, and managing backups.",
+            "excerpt": "CLI tool for Windows that allows users to back up folders as zip files. It also provides terminal commands to easily assign folders for backup.",
             "techstack": [
                 "Python"
             ],
@@ -37,7 +37,7 @@
         {
             "file": "discord-movienight.json",
             "display_name": "Discord Movienight",
-            "excerpt": "Discord bot for tracking movies for movienights, uses ChatGPT for fun Adam Sandler style comments.",
+            "excerpt": "A Discord bot designed for movie night that not only tracks movies but also integrates AI to offer remarks about movies or participate in conversations, all while impersonating Adam Sandler.",
             "techstack": [
                 "Java",
                 "Maven",
@@ -50,7 +50,7 @@
         {
             "file": "hivemind.json",
             "display_name": "Hivemind Game",
-            "excerpt": "Video-game project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
+            "excerpt": "Videogame project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
             "techstack": [
                 "C#",
                 "MonoGame",
@@ -70,7 +70,7 @@
         },
         {
             "file": "scrappy-linkedin.json",
-            "display_name": "LinkedIn Scraper",
+            "display_name": "LinkedIn Search-tool",
             "excerpt": "Bot that searches LinkedIn for relevant job postings, filters out irrelevant ones, and sends job details via Telegram.",
             "techstack": [
                 "Python",
