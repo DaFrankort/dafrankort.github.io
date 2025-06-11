@@ -37,7 +37,7 @@ h6 {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-  @apply bg-opacity-80 bg-background-950;
+  @apply rounded-sm bg-opacity-30 bg-background-950 px-0.5;
 }
 
 .container {
