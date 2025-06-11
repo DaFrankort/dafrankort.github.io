@@ -10,7 +10,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-def on_project_select(event, lb: _Listbox, p_edit: ProjectEditor):
+def _on_project_select(event, lb: _Listbox, p_edit: ProjectEditor):
     try:
         index = lb.listbox.curselection()[0]
         selected_project = lb.projects[index]
@@ -22,6 +22,10 @@ def on_project_select(event, lb: _Listbox, p_edit: ProjectEditor):
     except Exception as e:
         logging.error(f"Error selecting project: {e}")
         pass # No project selected
+
+def _on_move_project(p_list: ProjectList, p_edit: ProjectEditor):
+    moved_project = p_list.move_project_to_target_folder()
+    p_edit.open_project(moved_project)
 
 def main():
     accent_clr = "#aca8cc"
@@ -36,7 +40,9 @@ def main():
     p_edit = ProjectEditor(root, gray_clr)
     
     for lb in p_list.listboxes:
-        lb.listbox.bind("<<ListboxSelect>>", lambda e, lb=lb: on_project_select(e, lb, p_edit))
+        lb.listbox.bind("<<ListboxSelect>>", lambda e, lb=lb: _on_project_select(e, lb, p_edit))
+
+    p_list.move_target.trace_add("write", lambda *args: _on_move_project(p_list, p_edit))
 
     IndexGenerator.get_instance()
     IndexGenerator.generate()

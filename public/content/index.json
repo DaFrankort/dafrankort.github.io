@@ -70,7 +70,7 @@
         },
         {
             "file": "scrappy-linkedin.json",
-            "display_name": "LinkedIn Search-tool",
+            "display_name": "LinkedIn Search Tool",
             "excerpt": "Bot that searches LinkedIn for relevant job postings, filters out irrelevant ones, and sends job details via Telegram.",
             "techstack": [
                 "Python",
