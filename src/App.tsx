@@ -12,8 +12,7 @@ function App() {
       <main className="flex-1">
         <Routes>
           <Route index element={<Home />} />
-          <Route path="project" element={<Projects />} />
-          <Route path="project/:projectId" element={<ProjectDetail />} />
+          <Route path="/:projectId" element={<ProjectDetail />} />
         </Routes>
       </main>
       <Footer />
