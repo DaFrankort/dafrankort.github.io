@@ -34,11 +34,6 @@ const Footer: React.FC = ({}) => {
               Home<i className="ml-1 fa-solid fa-house"></i>
             </a>
           </li>
-          <li>
-            <a href="/#/project" rel="noopener noreferrer">
-              Projects<i className="ml-1 fa-solid fa-folder-tree"></i>
-            </a>
-          </li>
         </ul>
       </div>
     </footer>
