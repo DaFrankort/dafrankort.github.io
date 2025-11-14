@@ -61,12 +61,12 @@
         {
             "file": "lenny-dnd-bot.json",
             "display_name": "D&D Discord Bot",
-            "excerpt": "A Dungeons & Dragons Discord bot with dice rolling, data lookup, character stat generation, voice chat effects, and token-image creation. Powered by 5e.tools for up-to-date content.",
+            "excerpt": "A Discord bot for D&D players with dice rolling, data lookup, homebrew support, char. stat generation, sound effects, and more.",
             "techstack": [
                 "Python",
                 "Typescript"
             ],
-            "private": true
+            "private": false
         },
         {
             "file": "scrappy-linkedin.json",
