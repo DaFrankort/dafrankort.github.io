@@ -21,20 +21,6 @@
             "private": false
         },
         {
-            "file": "dafrankort.github.io.json",
-            "display_name": "Portfolio Site",
-            "excerpt": "Website built with React and Typescript showcasing my projects, with a Python tool for easy data updates and new project page generation.",
-            "techstack": [
-                "Python",
-                "TypeScript",
-                "TailwindCSS",
-                "React",
-                "OpenAI API",
-                "GitHub API"
-            ],
-            "private": false
-        },
-        {
             "file": "discord-movienight.json",
             "display_name": "Discord Movienight",
             "excerpt": "A Discord bot designed for movie night that not only tracks movies but also integrates AI to offer remarks about movies or participate in conversations, all while impersonating Adam Sandler.",
