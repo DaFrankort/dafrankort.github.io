@@ -2,8 +2,8 @@
     "repos": [
         {
             "file": "bup-cli.json",
-            "display_name": "Backup CLI Tool",
-            "excerpt": "CLI tool for Windows that allows users to back up folders as zip files. It also provides terminal commands to easily assign folders for backup.",
+            "display_name": "Folder Backup Tool",
+            "excerpt": "A basic windows tool that backs up folders in .zip files.",
             "techstack": [
                 "Python"
             ],
@@ -12,7 +12,7 @@
         {
             "file": "chrome-extension-bingeflix.json",
             "display_name": "BingeFlix",
-            "excerpt": "Google Chrome extension automating 'Skip Intro' and 'Next Episode' buttons on Netflix, for seamless binge-watching.",
+            "excerpt": "A Google Chrome extension automating 'Skip Intro' and 'Next Episode' buttons on Netflix, for seamless binge-watching.",
             "techstack": [
                 "JavaScript",
                 "CSS",
@@ -22,8 +22,8 @@
         },
         {
             "file": "discord-movienight.json",
-            "display_name": "Discord Movienight",
-            "excerpt": "A Discord bot designed for movie night that not only tracks movies but also integrates AI to offer remarks about movies or participate in conversations, all while impersonating Adam Sandler.",
+            "display_name": "Discord Movienight Bot",
+            "excerpt": "A Discord bot designed for movie nights which tracks movies and integrates AI to offer remarks about movies or participate in conversations, all while impersonating Adam Sandler.",
             "techstack": [
                 "Java",
                 "Maven",
@@ -47,7 +47,7 @@
         {
             "file": "lenny-dnd-bot.json",
             "display_name": "D&D Discord Bot",
-            "excerpt": "A Discord bot for D&D players with dice rolling, data lookup, homebrew support, char. stat generation, sound effects, and more.",
+            "excerpt": "A Discord bot for Dungeons & Dragons with dice rolling, data lookup, homebrew support, character generation, sound effects, and more.",
             "techstack": [
                 "Python",
                 "Typescript"
