@@ -19,7 +19,7 @@ function Home() {
       <div className="space-y-8 transition-transform translate-y-0 lg:-translate-y-4">
         <section className="container space-y-12">
           <Card title="My Stack" content={
-            <div className="py-4 card-list">
+            <div className="py-4 square-card-list">
               <SquareCard title="C# / .NET" description="Backend architecture & Game dev" image="https://img.icons8.com/ios_filled/512/FFFFFF/c-sharp-logo.png" />
               <SquareCard title="Python" description="Automation & Rapid prototyping" image="https://img.icons8.com/ios_filled/512/FFFFFF/python.png" />
               <SquareCard title="Typescript" description="Type-safe web development" image="https://img.icons8.com/?size=100&id=cHBUT9SmrD2V&format=png&color=FFFFFF" />
