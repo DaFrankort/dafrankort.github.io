@@ -8,12 +8,12 @@
  * @throws {Error} If the options array is empty.
  */
 export function returnRandomFromSeed(seed: string, options: any[]): any {
-  if (options.length === 0) {
-    throw new Error("Options array must not be empty.");
-  }
+    if (options.length === 0) {
+        throw new Error('Options array must not be empty.');
+    }
 
-  const index = _hashStringToNumber(seed) % options.length;
-  return options[index];
+    const index = _hashStringToNumber(seed) % options.length;
+    return options[index];
 }
 
 /**
@@ -23,9 +23,9 @@ export function returnRandomFromSeed(seed: string, options: any[]): any {
  * @returns {number} - A non-negative integer hash of the input string.
  */
 function _hashStringToNumber(str: string): number {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  return Math.abs(hash);
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return Math.abs(hash);
 }

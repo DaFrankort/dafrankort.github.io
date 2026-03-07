@@ -8,15 +8,15 @@
  * @returns The modified HTML string with updated anchor tags.
  */
 export function modifyAnchorTags(html: string): string {
-  const div = document.createElement("div");
-  div.innerHTML = html;
+    const div = document.createElement('div');
+    div.innerHTML = html;
 
-  const links = div.querySelectorAll("a");
-  links.forEach((link) => {
-    link.setAttribute("target", "_blank");
-    link.setAttribute("rel", "noopener noreferrer");
-    link.setAttribute("class", "ul-fancy"); // Apply fancy underline effect
-  });
+    const links = div.querySelectorAll('a');
+    links.forEach((link) => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+        link.setAttribute('class', 'ul-fancy'); // Apply fancy underline effect
+    });
 
-  return div.innerHTML;
+    return div.innerHTML;
 }
