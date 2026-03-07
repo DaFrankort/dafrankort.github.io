@@ -4,13 +4,15 @@ import "./SquareCard.css";
 type CardProps = {
   title: string;
   description: string;
-  image?: string;
+  iconClasses: string;
 };
 
-const SquareCard: React.FC<CardProps> = ({ title, description, image }) => {
+const SquareCard: React.FC<CardProps> = ({ title, description, iconClasses }) => {
   const contentElement = (
     <div className="square-card">
-      <img src={image} alt={title} className="w-8 h-8 mb-2 drop-shadow-md" />
+      <div className="mb-1 text-4xl text-white drop-shadow-md">
+        <i className={iconClasses}></i>
+      </div>
       <b>{title}</b>
       <p>{description}</p>
     </div>

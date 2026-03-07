@@ -20,12 +20,12 @@ function Home() {
         <section className="container space-y-12">
           <Card title="My Stack" content={
             <div className="py-4 square-card-list">
-              <SquareCard title="C# / .NET" description="Backend architecture & Game dev" image="https://img.icons8.com/ios_filled/512/FFFFFF/c-sharp-logo.png" />
-              <SquareCard title="Python" description="Automation & Rapid prototyping" image="https://img.icons8.com/ios_filled/512/FFFFFF/python.png" />
-              <SquareCard title="Typescript" description="Type-safe web development" image="https://img.icons8.com/?size=100&id=cHBUT9SmrD2V&format=png&color=FFFFFF" />
-              <SquareCard title="TailwindCSS" description="Modern utility-first styling" image="https://img.icons8.com/?size=100&id=4uzTHMgfQhQq&format=png&color=FFFFFF" />
-              <SquareCard title="GitHub" description="Version control & CI/CD" image="https://img.icons8.com/?size=100&id=62856&format=png&color=FFFFFF" />
-              <SquareCard title="Docker" description="Containerization & Deployment" image="https://img.icons8.com/?size=100&id=22801&format=png&color=FFFFFF" />
+              <SquareCard title="C# / .NET" description="Backend architecture & Game dev" iconClasses="devicon-csharp-plain" />
+              <SquareCard title="Python" description="Automation & Rapid prototyping" iconClasses="devicon-python-plain" />
+              <SquareCard title="Typescript" description="Type-safe web development" iconClasses="devicon-typescript-plain" />
+              <SquareCard title="TailwindCSS" description="Modern utility-first styling" iconClasses="devicon-tailwindcss-original" />
+              <SquareCard title="GitHub" description="Version control & CI/CD" iconClasses="devicon-github-original" />
+              <SquareCard title="Docker" description="Containerization & Deployment" iconClasses="devicon-docker-plain" />
             </div>
           } />
 
