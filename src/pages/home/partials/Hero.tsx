@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.css";
 
-const Hero: React.FC = ({}) => {
+const Hero: React.FC = () => {
   return (
     <section className="w-full py-16 -mb-20 overflow-hidden h-hero-lg">
       {/* Background */}

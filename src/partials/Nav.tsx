@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./Nav.css";
 
-const Nav: React.FC = ({}) => {
+const Nav: React.FC = () => {
   const location = useLocation();
   const buttons: string[] = ["home", ...location.pathname.split("/").filter(Boolean)];
   const [isScrolled, setIsScrolled] = useState(false);
