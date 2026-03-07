@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
 const YouTubeEmbed: React.FC<{ youtubeUrl: string }> = ({ youtubeUrl }) => {
   return (
