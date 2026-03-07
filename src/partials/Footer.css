@@ -4,7 +4,7 @@ footer {
 }
 
 .footer-content {
-  @apply flex justify-between pt-4 pb-4 text-sm;
+  @apply flex justify-center pt-4 pb-4 text-sm;
 }
 
 li {

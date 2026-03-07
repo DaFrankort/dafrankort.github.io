@@ -3,7 +3,7 @@
         {
             "file": "bup-cli.json",
             "display_name": "Folder Backup Tool",
-            "excerpt": "A basic windows tool that backs up folders in .zip files.",
+            "excerpt": "A basic collection of terminal commands to back up folders as zip files on your Windows PC.",
             "techstack": [
                 "Python"
             ],
@@ -12,7 +12,7 @@
         {
             "file": "chrome-extension-bingeflix.json",
             "display_name": "BingeFlix",
-            "excerpt": "A Google Chrome extension automating 'Skip Intro' and 'Next Episode' buttons on Netflix, for seamless binge-watching.",
+            "excerpt": "A simple Google-Chrome extension that scans for buttons when watching Netflix and automatically presses them.",
             "techstack": [
                 "JavaScript",
                 "CSS",
@@ -46,7 +46,7 @@
         },
         {
             "file": "lenny-dnd-bot.json",
-            "display_name": "D&D Discord Bot",
+            "display_name": "Dungeons & Dragons - Discord Bot",
             "excerpt": "A Discord bot for Dungeons & Dragons with dice rolling, data lookup, homebrew support, character generation, sound effects, and more.",
             "techstack": [
                 "Python",

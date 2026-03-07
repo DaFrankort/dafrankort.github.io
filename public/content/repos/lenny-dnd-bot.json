@@ -1,6 +1,6 @@
 {
     "name": "lenny-dnd-bot",
-    "display_name": "D&D Discord Bot",
+    "display_name": "Dungeons & Dragons - Discord Bot",
     "techstack": [
         "Python",
         "Typescript"

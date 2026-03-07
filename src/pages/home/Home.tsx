@@ -3,6 +3,7 @@ import Hero from "./partials/Hero";
 import { useEffect, useState } from "react";
 import { fetchIndex, IndexProject } from "../../functions/FetchIndex";
 import ProjectCard from "./partials/ProjectCard";
+import SquareCard from "../../components/SquareCard";
 
 function Home() {
   const [projects, setProjects] = useState<IndexProject[]>([]);
@@ -16,9 +17,20 @@ function Home() {
       <Hero />
 
       <div className="space-y-8 transition-transform translate-y-0 lg:-translate-y-4">
-        <section className="container">
+        <section className="container space-y-16">
+          <Card title="My Go-To Stack" content={
+            <div className="py-4 square-card-list">
+              <SquareCard title="C# / .NET" description="Backend architecture & Game-dev" iconClasses="devicon-csharp-plain" />
+              <SquareCard title="Python" description="Automation & Rapid prototyping" iconClasses="devicon-python-plain" />
+              <SquareCard title="Typescript" description="Type-safe web development" iconClasses="devicon-typescript-plain" />
+              <SquareCard title="TailwindCSS" description="Fast & Clean responsive web-page styling" iconClasses="devicon-tailwindcss-original" />
+              <SquareCard title="GitHub" description="Version control, CI/CD & issue-tracking" iconClasses="devicon-github-original" />
+              <SquareCard title="Docker" description="Containerization & Deployment" iconClasses="devicon-docker-plain" />
+            </div>
+          } />
+
           <Card
-            title="GitHub Projects"
+            title="My GitHub Projects"
             content={
               <div>
                 <p className="mb-4">

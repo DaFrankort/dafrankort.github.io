@@ -5,36 +5,21 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <div className="container footer-content">
-        <ul id="footer-left">
-          <li>
-            <b className="text-background-500">Social</b>
-          </li>
-          <li>
-            <a href="https://github.com/DaFrankort" target="_blank" rel="noopener noreferrer">
-              <i className="mr-1 fa-brands fa-github"></i>GitHub
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/daniel-frankort/" target="_blank" rel="noopener noreferrer">
-              <i className="mr-1 fa-brands fa-linkedin"></i>LinkedIn
-            </a>
-          </li>
-        </ul>
-
-        <div id="footer-center">
-          <p className="">© 2025 Daniël Frankort. All rights reserved.</p>
+        <div id="footer-center flex">
+          <ul className="flex justify-center gap-4 text-background-300">
+            <li>
+              <a href="https://github.com/DaFrankort" target="_blank" rel="noopener noreferrer">
+                <i className="mr-1 fa-brands fa-github"></i>GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/daniel-frankort/" target="_blank" rel="noopener noreferrer">
+                <i className="mr-1 fa-brands fa-linkedin"></i>LinkedIn
+              </a>
+            </li>
+          </ul>
+          <p className="w-full text-xs text-center text-background-700">© {new Date().getFullYear()} Daniël Frankort.</p>
         </div>
-
-        <ul id="footer-right" className="text-right">
-          <li>
-            <b className="text-background-500">Navigate</b>
-          </li>
-          <li>
-            <a href="/" rel="noopener noreferrer">
-              Home<i className="ml-1 fa-solid fa-house"></i>
-            </a>
-          </li>
-        </ul>
       </div>
     </footer>
   );
