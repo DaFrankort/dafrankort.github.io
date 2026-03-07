@@ -1,6 +1,7 @@
 .square-card-list {
-  @apply grid h-full gap-4;
-  @apply md:grid-cols-6;
+  @apply grid h-full grid-cols-2 gap-4;
+  @apply md:grid-cols-3;
+  @apply lg:grid-cols-6;
 }
 
 .square-card {
