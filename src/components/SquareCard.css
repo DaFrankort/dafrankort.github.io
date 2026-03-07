@@ -19,8 +19,8 @@
     @apply h-full;
 }
 
-.square-card > * > b {
-    @apply text-transparent bg-clip-text bg-gradient-to-l text-text-50;
+.square-card > b {
+    @apply text-transparent bg-clip-text bg-gradient-to-l text-text-100;
 }
 
 .square-card > p {
