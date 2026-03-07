@@ -1,0 +1,29 @@
+.square-card-list {
+  @apply grid h-full grid-cols-2 gap-4;
+  @apply md:grid-cols-3;
+  @apply lg:grid-cols-6;
+}
+
+.square-card {
+    @apply flex w-full h-full p-4 overflow-hidden shadow-md rounded-3xl;
+    @apply flex-col items-center justify-start;
+    @apply bg-background-900 bg-gradient-to-tr to-secondary-900 from-primary-800;
+}
+
+.square-card > .left {
+    @apply flex items-center justify-center h-full pr-2;
+    
+}
+
+.square-card > .right {
+    @apply h-full;
+}
+
+.square-card > b {
+    @apply text-transparent bg-clip-text bg-gradient-to-l text-text-100;
+}
+
+.square-card > p {
+    @apply text-sm text-center text-text-200;
+}
+

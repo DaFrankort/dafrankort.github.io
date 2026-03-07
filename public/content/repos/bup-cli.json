@@ -4,7 +4,7 @@
     "techstack": [
         "Python"
     ],
-    "excerpt": "A basic windows tool that backs up folders in .zip files.",
+    "excerpt": "A basic collection of terminal commands to back up folders as zip files on your Windows PC.",
     "description": "<p>A basic CLI tool to back up folders as .zip files on your Windows PC.</p>\n</br>\n<h3>Commands</h3>\n<p>bUp provides several terminal commands to manage folder backups. Each command can be invoked using its full name or its first letter.</p>\n\n<ul>\n<li><code>bup add/a [path]</code> - Adds new folder to be backup up.</li>\n<li><code>bup del/d</code> - Remove a folder from being backed up.</li>\n<li><code>bup list/l</code> - Show a list of all folders that get backed up.</li>\n<li><code>bup set/s</code> - Sets directory where bUp stores its backups.</li>\n<li><code>bup run/r</code> - Runs the backup process.</li>\n</ul>",
     "html_url": "https://github.com/DaFrankort/bup-cli",
     "private": false

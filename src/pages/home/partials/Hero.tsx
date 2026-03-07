@@ -1,5 +1,6 @@
 import React from "react";
 import "./Hero.css";
+import Button from "../../../components/Button";
 
 const Hero: React.FC = ({}) => {
   return (
@@ -24,11 +25,10 @@ const Hero: React.FC = ({}) => {
       {/* Content */}
       <div className="container hero-container">
         <div id="hero-content">
-          <h1>Full-Stack Developer</h1>
-          <h2>Daniël Frankort</h2>
+          <h1>Daniël Frankort</h1>
+          <h2>Software Engineer</h2>
           <p className="-mt-6">
-            Passionate programmer driven by constant growth and smart solutions. Experienced in automation, teamwork,
-            and delivering clean, maintainable code on time. Always pushing myself and my team to level up!
+            Welcome to my portfolio! I'm a full-stack developer with a preference to back-end development. I value curiosity, teamwork, and clean and maintainable code. Always pushing myself and my team to level up!
           </p>
         </div>
       </div>
