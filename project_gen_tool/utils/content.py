@@ -8,6 +8,7 @@ from utils.github import GitHub
 import json
 import logging
 
+
 class Content:
     path: Path
     name: str
@@ -15,39 +16,41 @@ class Content:
     techstack: list[str]
     excerpt: str
     description: str
-    
+
     url: str
     private: bool
 
     def to_dict(self):
         return {
-            'name': self.name,
-            'display_name': self.display_name,
-            'techstack': self.techstack,
-            'excerpt': self.excerpt,
-            'description': self.description,
-            'html_url': self.url,
-            'private': self.private,
+            "name": self.name,
+            "display_name": self.display_name,
+            "techstack": self.techstack,
+            "excerpt": self.excerpt,
+            "description": self.description,
+            "html_url": self.url,
+            "private": self.private,
         }
 
     def __init__(self, json: dict, path: Path | None = None):
-        self.name = json.get('name', '')
-        self.display_name = json.get('display_name', self.name if self.name != '' else 'Untitled')
+        self.name = json.get("name", "")
+        self.display_name = json.get(
+            "display_name", self.name if self.name != "" else "Untitled"
+        )
         self.path = path if path else Paths.projects_hidden(self.name)
-        self.techstack = json.get('techstack', '')
+        self.techstack = json.get("techstack", "")
 
-        self.description = json.get('description') or ''
-        self.excerpt = json.get('excerpt') or self.description
+        self.description = json.get("description") or ""
+        self.excerpt = json.get("excerpt") or self.description
 
-        self.url = json.get('html_url', '')
-        self.private = json.get('private', True)
+        self.url = json.get("html_url", "")
+        self.private = json.get("private", True)
 
     @classmethod
     def load(cls, filename: str, path_cmd: Callable[[], Path]):
         path = path_cmd(filename)
-        
+
         try:
-            with open(path, 'r') as file:
+            with open(path, "r") as file:
                 data = json.load(file)
                 return cls(data, path)
         except FileNotFoundError:
@@ -62,7 +65,7 @@ class Content:
             readme = GitHub.get_project_readme(self.name)
             if readme == None:
                 return
-            
+
             ai_description = ChatGPT.create_description_from_readme(readme)
             if ai_description:
                 self.description = ai_description
@@ -82,7 +85,7 @@ class Content:
         if not self.path:
             self.path = path_cmd(self.name)
 
-        with open(self.path, 'w') as file:
+        with open(self.path, "w") as file:
             logging.info(f"Saving {self.path}")
             print(self.to_dict())
             json.dump(self.to_dict(), file, indent=4)
@@ -108,5 +111,5 @@ class Content:
             path = path_cmd(self.name)
             if path.exists():
                 return True
-            
+
         return False

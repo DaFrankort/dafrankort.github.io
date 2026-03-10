@@ -6,6 +6,7 @@ from typing import Callable
 from utils.folder_watcher import FolderWatcher
 from utils.content import Content
 
+
 class _Listbox:
     get_path: Callable[[], Path]
     name: str
@@ -23,7 +24,7 @@ class _Listbox:
 
         self.update_list()
         self._start_watcher()
-    
+
     def _start_watcher(self):
         self.watcher = FolderWatcher(self.get_path(), on_update=self.update_list)
         self.listbox.after(100, self.update_list)
