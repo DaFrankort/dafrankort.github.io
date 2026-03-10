@@ -10,6 +10,7 @@ from utils.paths import Paths
 from utils.content import Content
 from utils.github import GitHub
 
+
 class ProjectList:
     projects: list[Content]
 
@@ -37,8 +38,15 @@ class ProjectList:
         btn_frame.pack(side=tk.RIGHT, fill=tk.BOTH, padx=0, pady=0)
 
         top_buttons = [
-            _Button(self.frame, "New", busy_text="Creating...", command=lambda: self._new_project()),
-            _Button(self.frame, "Generate from GitHub", command=self._generate_from_github)
+            _Button(
+                self.frame,
+                "New",
+                busy_text="Creating...",
+                command=lambda: self._new_project(),
+            ),
+            _Button(
+                self.frame, "Generate from GitHub", command=self._generate_from_github
+            ),
         ]
         for btn in top_buttons:
             btn.btn.pack(pady=(0, 5), fill=tk.X)
@@ -65,27 +73,38 @@ class ProjectList:
                         return project
 
     def _new_project(self):
-        user_input = simpledialog.askstring("Please provide a name for your project:", "My Project")
+        user_input = simpledialog.askstring(
+            "Please provide a name for your project:", "My Project"
+        )
 
         if not user_input:
             return
 
         safe_name = user_input.strip().replace(" ", "_").lower()
-        safe_name = re.sub(r'[^a-z0-9_-]', '', safe_name)
+        safe_name = re.sub(r"[^a-z0-9_-]", "", safe_name)
 
-        if safe_name == '':
-            if user_input.strip() == '':
-                messagebox.showerror('Invalid Name', 'Sorry! That project name is invalid.\nName cannot be empty!')
+        if safe_name == "":
+            if user_input.strip() == "":
+                messagebox.showerror(
+                    "Invalid Name",
+                    "Sorry! That project name is invalid.\nName cannot be empty!",
+                )
             else:
-                messagebox.showerror('Invalid Name', 'Sorry! That project name is invalid.\nPlease avoid using special characters.')
+                messagebox.showerror(
+                    "Invalid Name",
+                    "Sorry! That project name is invalid.\nPlease avoid using special characters.",
+                )
             return
 
         display_name = user_input.strip()
 
-        Content({'name': safe_name, 'display_name': display_name}).save()
+        Content({"name": safe_name, "display_name": display_name}).save()
 
     def _generate_from_github(self):
         new_projects = GitHub.generate_new_projects()
         if new_projects:
             names = ", ".join(p.name for p in new_projects)
-            messagebox.showinfo("Projects generated!", f"Generated {len(new_projects)} project(s):\n{names}")
+            messagebox.showinfo(
+                "Projects generated!",
+                f"Generated {len(new_projects)} project(s):\n{names}",
+            )
