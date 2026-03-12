@@ -39,7 +39,7 @@ function Home() {
                 </p>
                 <div className="card-list">
                   {projects.length > 0 ? (
-                    projects.map((project) => <ProjectCard project={project} />)
+                    projects.map((project) => <ProjectCard key={project.display_name} project={project} />)
                   ) : (
                     <p>Loading Projects...</p>
                   )}

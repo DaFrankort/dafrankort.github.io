@@ -22,8 +22,9 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "predeploy": "mv public/content/hidden temp && npm run build && mv temp public/content/hidden",
+        "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
+        "windeploy": "mv public/content/hidden temp && npm run deploy && mv temp public/content/hidden",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
