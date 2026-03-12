@@ -1,5 +1,6 @@
 {
     "name": "bup-cli",
+    "priority": 0,
     "display_name": "Folder Backup Tool",
     "techstack": [
         "Python"

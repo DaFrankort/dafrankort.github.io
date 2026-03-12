@@ -3,6 +3,7 @@
         {
             "file": "bup-cli.json",
             "display_name": "Folder Backup Tool",
+            "priority": 0,
             "excerpt": "A basic collection of terminal commands to back up folders as zip files on your Windows PC.",
             "techstack": [
                 "Python"
@@ -12,6 +13,7 @@
         {
             "file": "chrome-extension-bingeflix.json",
             "display_name": "BingeFlix",
+            "priority": 0,
             "excerpt": "A simple Google-Chrome extension that scans for buttons when watching Netflix and automatically presses them.",
             "techstack": [
                 "JavaScript",
@@ -21,48 +23,56 @@
             "private": false
         },
         {
-            "file": "discord-movienight.json",
-            "display_name": "Discord Movienight Bot",
-            "excerpt": "A Discord bot designed for movie nights which tracks movies and integrates AI to offer remarks about movies or participate in conversations, all while impersonating Adam Sandler.",
+            "file": "demiplane.json",
+            "display_name": "Demiplane",
+            "priority": 3,
+            "excerpt": "Demiplane is an in-development tool where users can interact online through an online whiteboard. Intended to be used as a discord-activity.",
             "techstack": [
-                "Java",
-                "Maven",
-                "Docker",
-                "OpenAI API",
-                "OMDB API"
+                "C#",
+                "Typescript",
+                "CI/CD",
+                "HTML",
+                "CSS"
             ],
             "private": true
         },
         {
+            "file": "discord-movienight.json",
+            "display_name": "Discord Movienight",
+            "priority": 5,
+            "excerpt": "A Discord bot designed for movie nights which tracks movies and integrates AI to offer remarks about movies or participate in conversations, all while impersonating Adam Sandler.",
+            "techstack": [
+                "Java",
+                "Docker",
+                "OpenAI API",
+                "OMDB API",
+                "Maven"
+            ],
+            "private": false
+        },
+        {
             "file": "hivemind.json",
             "display_name": "Hivemind Game",
+            "priority": 1,
             "excerpt": "Videogame project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
             "techstack": [
                 "C#",
                 "MonoGame",
                 ".NET"
             ],
-            "private": true
-        },
-        {
-            "file": "lenny-dnd-bot.json",
-            "display_name": "Dungeons & Dragons - Discord Bot",
-            "excerpt": "A Discord bot for Dungeons & Dragons with dice rolling, data lookup, homebrew support, character generation, sound effects, and more.",
-            "techstack": [
-                "Python",
-                "Typescript"
-            ],
             "private": false
         },
         {
-            "file": "scrappy-linkedin.json",
-            "display_name": "LinkedIn Search Tool",
-            "excerpt": "Bot that searches LinkedIn for relevant job postings, filters out irrelevant ones, and sends job details via Telegram.",
+            "file": "lenny-dnd-bot.json",
+            "display_name": "Lenny D&D Bot",
+            "priority": 10,
+            "excerpt": "A Discord bot for Dungeons & Dragons with dice rolling, data lookup, homebrew support, character generation, sound effects, and more.",
             "techstack": [
                 "Python",
-                "Selenium"
+                "Typescript",
+                "CI/CD"
             ],
-            "private": true
+            "private": false
         }
     ]
 }

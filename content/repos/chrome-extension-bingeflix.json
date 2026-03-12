@@ -1,5 +1,6 @@
 {
     "name": "chrome-extension-bingeflix",
+    "priority": 0,
     "display_name": "BingeFlix",
     "techstack": [
         "JavaScript",
