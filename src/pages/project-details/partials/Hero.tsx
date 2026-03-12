@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ project }) => {
           </div>
 
           {!project.private && (
-            <a href={project.html_url} className="mt-1.5 ul-fancy" target="_blank">
+            <a href={project.html_url} className="mt-1.5 ul-fancy" target="_blank" rel="noopener noreferrer">
               <i className="ml-0.5 mr-1 fa-brands fa-github"></i>
               View on GitHub
             </a>
