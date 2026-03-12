@@ -60,6 +60,7 @@ class IndexGenerator:
                         {
                             "file": filename,
                             "display_name": file_data.display_name,
+                            "priority": file_data.priority,
                             "excerpt": file_data.excerpt,
                             "techstack": file_data.techstack,
                             "private": file_data.private,

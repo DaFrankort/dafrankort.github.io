@@ -4,6 +4,8 @@
 export interface IndexProject {
     /** Filename of the project JSON, e.g., "my-project.json" */
     file: string;
+    /** Priority order of the project */
+    priority: number;
     /** Human-readable name of the project */
     display_name: string;
     /** Short summary of the project */
@@ -36,7 +38,8 @@ export async function fetchIndex(): Promise<IndexProject[]> {
         }
 
         const data: ProjectData = await response.json();
-        return data.repos;
+        console.log(data);
+        return data.repos.sort((a, b) => b.priority - a.priority);
     } catch (error) {
         console.error('Error fetching projects:', error);
         return [];

@@ -12,6 +12,7 @@ import logging
 class Content:
     path: Path
     name: str
+    priority: int
     display_name: str
     techstack: list[str]
     excerpt: str
@@ -23,6 +24,7 @@ class Content:
     def to_dict(self):
         return {
             "name": self.name,
+            "priority": self.priority,
             "display_name": self.display_name,
             "techstack": self.techstack,
             "excerpt": self.excerpt,
@@ -33,6 +35,7 @@ class Content:
 
     def __init__(self, json: dict, path: Path | None = None):
         self.name = json.get("name", "")
+        self.priority = json.get("priority", 0)
         self.display_name = json.get(
             "display_name", self.name if self.name != "" else "Untitled"
         )

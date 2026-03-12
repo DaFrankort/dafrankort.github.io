@@ -16,6 +16,7 @@ class ProjectEditor:
     frame: tk.Frame
     private: tk.BooleanVar
     name: tk.Entry
+    priority: tk.Entry
     url: tk.Entry
     techstack: tk.Entry
     excerpt: LabeledTextBox
@@ -36,6 +37,9 @@ class ProjectEditor:
         tk.Label(self.frame, text="Name:").pack(anchor="w")
         self.name = tk.Entry(self.frame, width=50)
         self.name.pack(pady=5, anchor="w", fill=tk.X)
+        tk.Label(self.frame, text="Priority:").pack(anchor="w")
+        self.priority = tk.Entry(self.frame, width=50)
+        self.priority.pack(pady=5, anchor="w", fill=tk.X)
 
         # URL
         url_frame = tk.Frame(self.frame)
@@ -145,6 +149,7 @@ class ProjectEditor:
 
     def _save_changes(self):
         self.data.display_name = self.name.get()
+        self.data.priority = int(self.priority.get())
         self.data.url = self.url.get()
         techstack_list = [
             t.strip() for t in self.techstack.get().split(";") if t.strip()
@@ -165,6 +170,9 @@ class ProjectEditor:
 
         self.name.delete(0, tk.END)
         self.name.insert(0, project.display_name)
+
+        self.priority.delete(0, tk.END)
+        self.priority.insert(0, project.priority)
 
         self.private.set(project.private)
         self.url.config(state="normal")
