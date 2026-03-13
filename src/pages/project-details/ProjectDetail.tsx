@@ -26,7 +26,7 @@ function ProjectDetail() {
         setError(err.message);
         navigate("/#/project");
       });
-  }, [projectId]);
+  }, [projectId, navigate]);
 
   if (error)
     return (
