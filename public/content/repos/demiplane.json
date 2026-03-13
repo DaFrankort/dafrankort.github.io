@@ -9,8 +9,8 @@
         "HTML",
         "CSS"
     ],
-    "excerpt": "Demiplane is an in-development tool where users can interact online through an online whiteboard. Intended to be used as a discord-activity.",
+    "excerpt": "Demiplane is an interactive collaborative whiteboard tool designed to be used as a lightweight virtual tabletop environment. Users can move tokens around, set a grid, and apply a background. Currently still in heavy development.",
     "description": "<p>\n    <strong>Demiplane</strong> is a Dungeons & Dragons project featuring a \n    <strong>TypeScript</strong> front-end and a <strong>C#</strong> backend. \n    It utilizes webhooks to synchronize real-time movement between users on \n    a customizable, interactive whiteboard map.\n  </p>\n\n  <p>\n    The goal of this project is to use it in tandem with \n    <a href=\"/#/lenny-dnd-bot\" target=\"_self\">lenny-dnd-bot</a> \n    to ensure a fully customized D&D experience.\n  </p>",
-    "html_url": "",
-    "private": true
+    "html_url": "https://github.com/pipieter/demiplane",
+    "private": false
 }
