@@ -2,8 +2,17 @@
     "version": "0.2",
     "ignorePaths": [],
     "dictionaryDefinitions": [],
-    "dictionaries": ["html", "css","typescript", "python"],
+    "dictionaries": [
+        "html",
+        "css",
+        "typescript",
+        "python"
+    ],
     "words": [
+        "Carlito",
+        "Daniël",
+        "devicon",
+        "Frankort",
         "techstack"
     ],
     "ignoreWords": [],
