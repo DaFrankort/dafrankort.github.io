@@ -2,8 +2,10 @@
     "version": "0.2",
     "ignorePaths": [],
     "dictionaryDefinitions": [],
-    "dictionaries": [],
-    "words": [],
+    "dictionaries": ["html", "css","typescript", "python"],
+    "words": [
+        "techstack"
+    ],
     "ignoreWords": [],
     "import": []
 }
