@@ -7,8 +7,8 @@
         "MonoGame",
         ".NET"
     ],
-    "excerpt": "Videogame project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
-    "description": "<p>This project is a simple game made with the <a href=\"https://monogame.net/\">MonoGame framework</a> (C#) where robots collect ores in a procedurally generated world. The game showcases basic mechanics of world generation and robot behaviors, though it is still in its early stages of development. And most development time has been put into 'engine' tools such as audio & sprite managers.</p>\n<br>\n<h3>Features:</h3>\n<ul>\n  <li><strong>World Generation:</strong> The game creates a basic world for robots to gather ores.</li>\n  <li><strong>Robots:</strong> When the player selects ores, robots will fly towards them to gather resource, clumsily pathfinding towards the ore, possibly crashing into eachother. They then bring these ores back to their 'home base'.</li>\n</ul>",
+    "excerpt": "Video-game project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
+    "description": "<p>This project is a simple game made with the <a href=\"https://monogame.net/\">MonoGame framework</a> (C#) where robots collect ores in a procedurally generated world. The game showcases basic mechanics of world generation and robot behaviors, though it is still in its early stages of development. And most development time has been put into 'engine' tools such as audio & sprite managers.</p>\n<br>\n<h3>Features:</h3>\n<ul>\n  <li><strong>World Generation:</strong> The game creates a basic world for robots to gather ores.</li>\n  <li><strong>Robots:</strong> When the player selects ores, robots will fly towards them to gather resource, clumsily pathfinding towards the ore, possibly crashing into each other. They then bring these ores back to their 'home base'.</li>\n</ul>",
     "html_url": "https://github.com/DaFrankort/hivemind",
     "private": false
 }

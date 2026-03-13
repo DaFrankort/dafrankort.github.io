@@ -26,7 +26,7 @@
             "file": "demiplane.json",
             "display_name": "Demiplane",
             "priority": 3,
-            "excerpt": "Demiplane is an in-development tool where users can interact online through an online whiteboard. Intended to be used as a discord-activity.",
+            "excerpt": "Demiplane is an interactive collaborative whiteboard tool designed to be used as a lightweight virtual tabletop environment. Users can move tokens around, set a grid, and apply a background. Currently still in heavy development.",
             "techstack": [
                 "C#",
                 "Typescript",
@@ -34,11 +34,11 @@
                 "HTML",
                 "CSS"
             ],
-            "private": true
+            "private": false
         },
         {
             "file": "discord-movienight.json",
-            "display_name": "Discord Movienight",
+            "display_name": "Discord Movie-night",
             "priority": 5,
             "excerpt": "A Discord bot designed for movie nights which tracks movies and integrates AI to offer remarks about movies or participate in conversations, all while impersonating Adam Sandler.",
             "techstack": [
@@ -54,7 +54,7 @@
             "file": "hivemind.json",
             "display_name": "Hivemind Game",
             "priority": 1,
-            "excerpt": "Videogame project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
+            "excerpt": "Video-game project in C# using MonoGame, featuring robots collecting ores in a procedurally generated world.",
             "techstack": [
                 "C#",
                 "MonoGame",
