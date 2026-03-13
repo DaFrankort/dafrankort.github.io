@@ -28,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           ) : (
             <>
               {project.techstack.slice(0, maxChipCount - 1).map((tech, index) => (
-                <Chip key={index} text={tech} className="opacity-90" /> // More than x techstacks, => last chip becomes "More" chip
+                <Chip key={index} text={tech} className="opacity-90" /> // More than x techstack, => last chip becomes "More" chip
               ))}
               <Chip
                 key="more"

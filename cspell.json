@@ -1,0 +1,32 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [
+        "html",
+        "css",
+        "typescript",
+        "python"
+    ],
+    "words": [
+        "bingeflix",
+        "Carlito",
+        "dafrankort",
+        "Daniël",
+        "Demiplane",
+        "devicon",
+        "Flix",
+        "Frankort",
+        "Javacord",
+        "kute",
+        "movienight",
+        "OMDB",
+        "pathfinding",
+        "Sandler",
+        "sashirestela's",
+        "techstack",
+        "windeploy"
+    ],
+    "ignoreWords": [],
+    "import": []
+}
