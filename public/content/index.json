@@ -26,7 +26,7 @@
             "file": "demiplane.json",
             "display_name": "Demiplane",
             "priority": 3,
-            "excerpt": "Demiplane is an in-development tool where users can interact online through an online whiteboard. Intended to be used as a discord-activity.",
+            "excerpt": "Demiplane is an interactive collaborative whiteboard tool designed to be used as a lightweight virtual tabletop environment. Users can move tokens around, set a grid, and apply a background. Currently still in heavy development.",
             "techstack": [
                 "C#",
                 "Typescript",
@@ -34,7 +34,7 @@
                 "HTML",
                 "CSS"
             ],
-            "private": true
+            "private": false
         },
         {
             "file": "discord-movienight.json",
