@@ -1,6 +1,6 @@
 {
     "name": "discord-movienight",
-    "priority": 5,
+    "priority": 3,
     "display_name": "Discord Movienight",
     "techstack": [
         "Java",

@@ -1,10 +1,10 @@
 {
     "name": "demiplane",
-    "priority": 3,
+    "priority": 5,
     "display_name": "Demiplane",
     "techstack": [
         "C#",
-        "Typescript",
+        "TypeScript",
         "CI/CD",
         "HTML",
         "CSS"
