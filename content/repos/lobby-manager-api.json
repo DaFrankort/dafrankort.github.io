@@ -1,0 +1,16 @@
+{
+    "name": "lobby-manager-api",
+    "priority": 6,
+    "display_name": "Lobby Manager API",
+    "techstack": [
+        "C#",
+        "ASP.NET",
+        "CI/CD",
+        "TypeScript",
+        "React"
+    ],
+    "excerpt": "A REST API for managing game lobbies and users, designed as a extensible template with CRUD endpoints, token-based authentication, and lobby/user management.",
+    "description": "<p>A REST API for managing game lobbies and users, built with <strong>C# (ASP.NET Core)</strong>. Includes a demo frontend using <strong>React, TypeScript & Node.js</strong>.\n</p>\n<br>\n\n  <h2>Features</h2>\n<p>This API serves as a template for future projects. While some parts are simplified, it includes the following key features:</p>\n<ul>\n  <li>CRUD endpoints for users and lobbies</li>\n  <li>Token-based authentication</li>\n  <li>Lobby creation and user-management</li>\n  <li>Demo frontend for interacting with the API</li>\n  <li>Basic thread-safety for shared data</li>\n</ul>\n<br>\n  <h2>Endpoints</h2>\n\n  <b>Users</b>\n  <ul>\n    <li><code>POST /api/user</code> - Create a new user (returns a bearer token)</li>\n    <li><code>DELETE /api/user</code> - Delete your own user</li>\n    <li><code>GET /api/user/me</code> - Get your profile</li>\n    <li><code>GET /api/user</code> - List all users (paginated)</li>\n  </ul>\n\n  <b>Lobbies</b>\n  <ul>\n    <li><code>GET /api/lobby</code> - List all lobbies (paginated)</li>\n    <li><code>POST /api/lobby</code> - Create a new lobby</li>\n    <li><code>GET /api/lobby/{lobbyId}</code> - Get details of a specific lobby</li>\n    <li><code>DELETE /api/lobby/{lobbyId}</code> - Delete a lobby (owner only)</li>\n    <li><code>POST /api/lobby/{lobbyId}/members</code> - Join a lobby</li>\n    <li><code>DELETE /api/lobby/{lobbyId}/members</code> - Leave a lobby</li>\n    <li><code>DELETE /api/lobby/{lobbyId}/members/{userId}</code> - Remove a user from a lobby</li>\n  </ul>",
+    "html_url": "https://github.com/DaFrankort/lobby-manager-api",
+    "private": false
+}

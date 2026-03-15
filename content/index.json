@@ -1,16 +1,6 @@
 {
     "repos": [
         {
-            "file": "bup-cli.json",
-            "display_name": "Folder Backup Tool",
-            "priority": 0,
-            "excerpt": "A basic collection of terminal commands to back up folders as zip files on your Windows PC.",
-            "techstack": [
-                "Python"
-            ],
-            "private": false
-        },
-        {
             "file": "chrome-extension-bingeflix.json",
             "display_name": "BingeFlix",
             "priority": 0,
@@ -25,11 +15,11 @@
         {
             "file": "demiplane.json",
             "display_name": "Demiplane",
-            "priority": 3,
+            "priority": 5,
             "excerpt": "Demiplane is an interactive collaborative whiteboard tool designed to be used as a lightweight virtual tabletop environment. Users can move tokens around, set a grid, and apply a background. Currently still in heavy development.",
             "techstack": [
                 "C#",
-                "Typescript",
+                "TypeScript",
                 "CI/CD",
                 "HTML",
                 "CSS"
@@ -38,8 +28,8 @@
         },
         {
             "file": "discord-movienight.json",
-            "display_name": "Discord Movie-night",
-            "priority": 5,
+            "display_name": "Discord Movienight",
+            "priority": 3,
             "excerpt": "A Discord bot designed for movie nights which tracks movies and integrates AI to offer remarks about movies or participate in conversations, all while impersonating Adam Sandler.",
             "techstack": [
                 "Java",
@@ -58,7 +48,7 @@
             "techstack": [
                 "C#",
                 "MonoGame",
-                ".NET"
+                ".NET 8"
             ],
             "private": false
         },
@@ -71,6 +61,20 @@
                 "Python",
                 "Typescript",
                 "CI/CD"
+            ],
+            "private": false
+        },
+        {
+            "file": "lobby-manager-api.json",
+            "display_name": "Lobby Manager API",
+            "priority": 6,
+            "excerpt": "A REST API for managing game lobbies and users, designed as a extensible template with CRUD endpoints, token-based authentication, and lobby/user management.",
+            "techstack": [
+                "C#",
+                "ASP.NET",
+                "CI/CD",
+                "TypeScript",
+                "React"
             ],
             "private": false
         }
