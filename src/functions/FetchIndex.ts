@@ -38,7 +38,6 @@ export async function fetchIndex(): Promise<IndexProject[]> {
         }
 
         const data: ProjectData = await response.json();
-        console.log(data);
         return data.repos.sort((a, b) => b.priority - a.priority);
     } catch (error) {
         console.error('Error fetching projects:', error);
